@@ -1,0 +1,38 @@
+@use "./globals.scss";
+@use "./blueprint/blueprint.scss";
+@use "./main/main.scss";
+@use "./quoter/quoter.scss";
+@use "./whatsappFloatingButton/whatsappFloatingButton.scss";
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    color: var(--secondary-color);
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+}

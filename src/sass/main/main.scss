@@ -1,0 +1,11 @@
+.layout-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.blueprint-container {
+    flex: 0.75;
+    height: 98vh;
+    padding: 0 2em;
+    /* background-color: green; */
+}
