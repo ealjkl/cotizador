@@ -42,16 +42,16 @@
   /* remove any border */
 }
 
+.blueprint-container {
+  flex: 1;
+  justify-content: center;
+  height: 98vh;
+  padding: 2em 2em;
+}
+
 .layout-container {
   display: flex;
   flex-flow: row wrap;
-}
-
-.blueprint-container {
-  flex: 0.75;
-  height: 98vh;
-  padding: 0 2em;
-  /* background-color: green; */
 }
 
 .quoter-container {
@@ -67,11 +67,31 @@
 .quoter {
   flex: 0.96;
   min-height: 90%;
-}
-
-.quoter {
   padding: 0.8em;
   background-color: #ddd;
+}
+
+.quoter-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quoter-close-button {
+  width: 1.5em;
+  aspect-ratio: 1/1;
+  font-size: 1.4em;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quoter-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quoter-close-button > * {
+  margin: 0;
 }
 
 .floating-whatsapp-button {
@@ -155,10 +175,6 @@ span {
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

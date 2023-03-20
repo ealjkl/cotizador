@@ -4,22 +4,16 @@ import * as d3 from "d3";
 import { ZoomBehavior } from "d3";
 
 interface Props {
-  width: number;
-  height: number;
   svgRef: React.RefObject<SVGSVGElement>;
 }
 
-function handleZoom(e: any) {
-  d3.select("g").attr("transform", e.transform);
-}
+export default function PannerAndZoomerWrapper({ svgRef }: Props) {
+  let zoom: ZoomBehavior<Element, unknown>;
 
-export default function PannerAndZoomerWrapper({
-  width,
-  height,
-  svgRef,
-}: Props) {
-  // const zoomRef = useRef<{ zoom: ZoomBehavior<Element, unknown> }>(null);
-  const zoom = d3
+  const width = svgRef.current?.clientWidth ?? 1000;
+  const height = svgRef.current?.clientHeight ?? 1000;
+
+  zoom = d3
     .zoom()
     .scaleExtent([1, 3])
     .translateExtent([
@@ -27,7 +21,17 @@ export default function PannerAndZoomerWrapper({
       [width, height],
     ]);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
+    console.log("ref", svgRef);
+
+    function handleZoom(e: any) {
+      const g = svgRef.current?.querySelector(":scope > g");
+      if (g) {
+        d3.select(g).attr("transform", e.transform);
+      }
+    }
     zoom.on("zoom", handleZoom);
     d3.select(svgRef.current).call(zoom as any);
   }, [zoom, svgRef]);
@@ -39,7 +43,7 @@ export default function PannerAndZoomerWrapper({
     d3.select(svgRef.current).call(zoom.scaleBy as any, 1 / 1.5);
   }
   return (
-    <div className="PannerAndZoomerWrapper" style={{ width, height }}>
+    <div className="PannerAndZoomerWrapper">
       <div>
         <button onClick={handleZoomIn}>Zoom In</button>
         <button onClick={handleZoomOut}>Zoom Out</button>

@@ -7,18 +7,22 @@ type Props = {
     ev: React.MouseEvent<SVGPolygonElement, MouseEvent>,
     id: string
   ) => void;
+  svgRef?: React.RefObject<SVGSVGElement>;
 };
 
-export function Blueprint({ data, onClick }: Props) {
+export function Blueprint({ data, onClick, svgRef }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 594.94 381.43"
       className="blueprint"
+      ref={svgRef}
     >
-      {Object.entries(data).map(([_, pData]) => {
-        return <SVGLot key={pData.id} pData={pData} onClick={onClick} />;
-      })}
+      <g className="blueprint__main-group">
+        {Object.entries(data).map(([_, pData]) => {
+          return <SVGLot key={pData.id} pData={pData} onClick={onClick} />;
+        })}
+      </g>
     </svg>
   );
 }

@@ -2,6 +2,8 @@
 import { useContext, useRef, useState } from "react";
 import { Lote, LoteContext } from "./Main";
 import QuoterForm from "./QuoterForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   lote?: Lote | null;
@@ -23,7 +25,11 @@ export function Quoter({ onQuoterClose }: Props) {
 
   return (
     <div className="quoter">
-      <button onClick={onQuoterClose}>close</button>
+      <div className="quoter-button-container">
+        <button onClick={onQuoterClose} className="quoter-close-button">
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+      </div>
       {component}
       <QuoterForm />
     </div>

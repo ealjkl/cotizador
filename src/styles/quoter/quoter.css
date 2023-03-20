@@ -11,11 +11,31 @@
 .quoter {
   flex: 0.96;
   min-height: 90%;
-}
-
-.quoter {
   padding: 0.8em;
   background-color: #ddd;
+}
+
+.quoter-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quoter-close-button {
+  width: 1.5em;
+  aspect-ratio: 1/1;
+  font-size: 1.4em;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quoter-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quoter-close-button > * {
+  margin: 0;
 }
 
 /*# sourceMappingURL=quoter.css.map */

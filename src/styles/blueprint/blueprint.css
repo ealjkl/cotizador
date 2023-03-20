@@ -34,4 +34,11 @@
   /* remove any border */
 }
 
+.blueprint-container {
+  flex: 1;
+  justify-content: center;
+  height: 98vh;
+  padding: 2em 2em;
+}
+
 /*# sourceMappingURL=blueprint.css.map */
