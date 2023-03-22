@@ -11,7 +11,7 @@ export default function App() {
       <Main />
       {/* <FloatingWhatsAppButton phoneNumber="9996586910" /> */}
       {/* <Map height={400} width={400} /> */}
-      <ExampleZoomerPanner />
+      {/* <ExampleZoomerPanner /> */}
     </div>
   );
 }

@@ -8,23 +8,25 @@ interface Props {
 }
 
 export default function PannerAndZoomerWrapper({ svgRef }: Props) {
-  let zoom: ZoomBehavior<Element, unknown>;
-
-  const width = svgRef.current?.clientWidth ?? 1000;
-  const height = svgRef.current?.clientHeight ?? 1000;
-
-  zoom = d3
-    .zoom()
-    .scaleExtent([1, 3])
-    .translateExtent([
-      [0, 0],
-      [width, height],
-    ]);
-
-  useEffect(() => {}, []);
+  const zoomRef = useRef<{ zoom: ZoomBehavior<Element, unknown> | null }>({
+    zoom: null,
+  });
+  const step = 1.8;
 
   useEffect(() => {
-    console.log("ref", svgRef);
+    // const { width, height } = svgRef.current!.getBoundingClientRect();
+    const { x, y, width, height } = svgRef.current!.viewBox.baseVal;
+    console.log("width", "height", height, height);
+
+    const zoom = d3
+      .zoom()
+      .scaleExtent([1, step * step])
+      .translateExtent([
+        [x, y],
+        [width, height],
+      ]);
+
+    zoomRef.current!.zoom = zoom;
 
     function handleZoom(e: any) {
       const g = svgRef.current?.querySelector(":scope > g");
@@ -34,13 +36,20 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     }
     zoom.on("zoom", handleZoom);
     d3.select(svgRef.current).call(zoom as any);
-  }, [zoom, svgRef]);
+  }, [svgRef]);
 
   function handleZoomIn() {
-    d3.select(svgRef.current).call(zoom.scaleBy as any, 1.5);
+    if (zoomRef.current?.zoom) {
+      d3.select(svgRef.current).call(zoomRef.current.zoom.scaleBy as any, step);
+    }
   }
   function handleZoomOut() {
-    d3.select(svgRef.current).call(zoom.scaleBy as any, 1 / 1.5);
+    if (zoomRef.current?.zoom) {
+      d3.select(svgRef.current).call(
+        zoomRef.current.zoom.scaleBy as any,
+        1 / step
+      );
+    }
   }
   return (
     <div className="PannerAndZoomerWrapper">

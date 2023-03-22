@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useRef } from "react";
-import submitHubspotForm from "../utils/submitHubspotForm";
+import submitHubspotForm from "../../utils/submitHubspotForm";
 
 export default function QuoterForm() {
   const nameRef = useRef<HTMLInputElement>(null);

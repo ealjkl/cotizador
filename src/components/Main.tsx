@@ -1,7 +1,7 @@
 "use client";
 import { Blueprint } from "./Blueprint";
 import PannerAndZoomerWrapper from "./PannerAndZoomerWrapper";
-import { Quoter } from "./Quoter";
+import { Quoter } from "./Quoter/Quoter";
 // import styles from "./Main.module.css";
 import { createContext, useRef, useState } from "react";
 import { useContext } from "react";

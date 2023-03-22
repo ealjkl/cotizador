@@ -1,3 +1,8 @@
+@use "./quoterForm.scss";
+@use "./quoterHeader.scss";
+@use "./quoterMain.scss";
+
+
 .quoter-container {
     display: flex;
     justify-content: center;
@@ -9,11 +14,13 @@
 }
 
 .quoter {
-    // --local-margin: calc((100% - var(--local-width)) / 2);
+    font-size: 1.4rem;
     flex: .96;
     min-height: 90%;
-    padding: 0.8em;
-    background-color: #ddd;
+    padding: .9em;
+    // background-color: #ddd;
+    background-color: var(--primary-color);
+    border: var(--secondary-color) solid 2px;
 }
 
 .quoter-button-container {
@@ -38,18 +45,3 @@
 .quoter-close-button>* {
     margin: 0;
 }
-
-
-// .quoter__title {
-//     color: red;
-//     font-size: 2.5rem;
-// }
-
-// .quoter__total-price__label {
-//     font-size: 1.6rem;
-// }
-
-// .quoter__total-price__value {
-//     font-size: 4rem;
-//     font-weight: bold;
-// }
