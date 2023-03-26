@@ -77,9 +77,7 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
         <EngancheSection
           enganche={enganche}
           total={totalPrice}
-          onChange={(ev) => {
-            setEnganche(parseInt(ev.currentTarget.value));
-          }}
+          setEnganche={setEnganche}
         />
         {enganche !== 100 ? (
           <div className="no-mensualidades-input-container">
