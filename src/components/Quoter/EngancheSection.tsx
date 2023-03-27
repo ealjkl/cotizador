@@ -1,71 +1,77 @@
+import React, { useEffect } from "react";
 import EngancheSelect from "./EngancheSelect";
 
 type Props = {
   total: number;
   enganche: number;
+  engancheString: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   minEnganchePercentage?: number;
   maxEnganchePercentage?: number;
-  setEnganche?: (value: React.SetStateAction<number>) => void;
+  setEngancheString?: (value: React.SetStateAction<string>) => void;
+  setEnganche: (value: React.SetStateAction<number>) => void;
 };
 
 export default function EngancheSection({
   onChange,
   enganche,
+  engancheString,
   total,
+  setEngancheString,
   setEnganche,
   minEnganchePercentage = 10,
-  maxEnganchePercentage = 100,
+  maxEnganchePercentage = 90,
 }: Props) {
   const minEngancheValue = Math.floor((minEnganchePercentage * total) / 100);
   const maxEngancheValue = Math.ceil((maxEnganchePercentage * total) / 100);
-  let displayedEnganche = enganche;
-  if (Number.isNaN(enganche)) {
-    displayedEnganche = minEngancheValue;
-  } else if (enganche < minEngancheValue) {
-    displayedEnganche = minEngancheValue;
-  } else if (enganche > maxEngancheValue) {
-    displayedEnganche = maxEngancheValue;
-  }
-  Number.isNaN(enganche) || 0 < minEngancheValue ? minEngancheValue : enganche;
+
+  useEffect(() => {
+    const candEganche = parseInt(engancheString);
+    if (Number.isNaN(candEganche) && engancheString != "") {
+      return;
+    }
+    if (candEganche > maxEngancheValue) {
+      setEnganche(maxEngancheValue);
+      return;
+    }
+    if (candEganche < minEngancheValue || engancheString == "") {
+      setEnganche(minEngancheValue);
+      return;
+    }
+
+    setEnganche(candEganche);
+  }, [engancheString, minEngancheValue, maxEngancheValue, setEnganche]);
+
   return (
-    <div className="enganche-input-container">
+    <div className="enganche-input-container input-section">
       <label htmlFor="enganche" className="quoter__enganche-label">
         Enganche
       </label>
-      {/* <EngancheSelect
-        onChange={onChange}
-        // onChange={(ev) => { if (ev.currentTarget.value === "other") {
-        //     setOtherEnganche(true);
-        //   } else {
-        //     setOtherEnganche(false);
-        //     setEnganche(parseInt(ev.currentTarget.value));
-        //   }
-        // }}
-      /> */}
       <input
-        type="number"
-        value={Number.isNaN(enganche) ? "" : enganche}
-        onChange={(ev) => {
-          if (!setEnganche) return;
-          let val = parseInt(ev.currentTarget.value);
-          setEnganche(val);
+        type="currency"
+        className="enganche-input-box"
+        value={engancheString}
+        onInput={(ev) => {
+          if (!setEngancheString) return;
+          setEngancheString(ev.currentTarget.value);
         }}
       />
       <input
         type="range"
+        className="enganche-input-slider"
         min={minEngancheValue}
         max={maxEngancheValue}
-        value={Number.isNaN(enganche) ? "" : enganche}
-        onChange={(ev) => {
-          if (!setEnganche) return;
-          let val = parseInt(ev.currentTarget.value);
-          setEnganche(val);
+        step={1000}
+        value={enganche}
+        onInput={(ev) => {
+          if (!setEngancheString) return;
+          setEngancheString(ev.currentTarget.value);
         }}
       />
-      <p>enganche {displayedEnganche}</p>
-
-      <p>{Math.floor((displayedEnganche / total) * 100)}</p>
+      {/* <p className="enganche-percentage">
+        {Math.floor((enganche / total) * 100)}
+        <span className="enganche-percentage-symbol">%</span>
+      </p> */}
     </div>
   );
 }

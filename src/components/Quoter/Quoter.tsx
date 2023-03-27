@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Lote, LoteContext } from "../Main";
 import QuoterForm from "./QuoterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,15 +7,14 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import PlazoSelect from "./PlazoSelect";
 import EngancheSelect from "./EngancheSelect";
 import EngancheSection from "./EngancheSection";
+import PlazoSection from "./PlazoSection";
+import CotizacionSection from "./CotizacionSection";
+import moneyFormater from "@/utils/moneyFormater";
 
 type Props = {
   lote?: Lote | null;
   onQuoterClose?: React.MouseEventHandler<HTMLButtonElement>;
 };
-const moneyFormater = new Intl.NumberFormat("es-MX", {
-  style: "currency",
-  currency: "MXN",
-});
 
 export function Quoter({ onQuoterClose }: Props) {
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
@@ -34,7 +33,7 @@ export function Quoter({ onQuoterClose }: Props) {
         </button>
       </div>
       {component}
-      <QuoterForm />
+      {/* <QuoterForm /> */}
     </div>
   );
 }
@@ -49,13 +48,22 @@ type NonNullLoteProps = {
 };
 
 function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
-  const [enganche, setEnganche] = useState<number>(10);
-  const [noMensualidades, setNoMensualidades] = useState<number>(36);
-  const [otherEnganche, setOtherEnganche] = useState<boolean>(false);
-  const [otherNoMensualidades, setOtherNoMensualidades] =
-    useState<boolean>(false);
   const totalPrice = priceM2 * lote.area;
-  const remaining = totalPrice - (enganche / 100) * totalPrice;
+  const minEnganchePercentage = 10;
+  const maxEnganchePercentage = 100;
+  const minEngancheValue = Math.floor(
+    (totalPrice * minEnganchePercentage) / 100
+  );
+  const [engancheString, setEngancheString] = useState<string>(
+    String(minEngancheValue)
+  );
+  const [enganche, setEnganche] = useState<number>(parseInt(engancheString));
+  const [plazo, setPlazo] = useState<number>(36);
+
+  const remaining = totalPrice - enganche;
+  console.log("mensualidades", remaining);
+
+  console.log("enganche", enganche);
 
   return (
     <div className="quoter-main">
@@ -76,43 +84,20 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
       <section className="quoter__input">
         <EngancheSection
           enganche={enganche}
-          total={totalPrice}
+          engancheString={engancheString}
           setEnganche={setEnganche}
+          setEngancheString={setEngancheString}
+          total={totalPrice}
         />
-        {enganche !== 100 ? (
-          <div className="no-mensualidades-input-container">
-            <label htmlFor="no-mensualidades" className="quoter__plazo-label">
-              Plazo{" "}
-            </label>
-            <PlazoSelect
-              onChange={(ev) => {
-                if (ev.currentTarget.value == "other") {
-                  setOtherNoMensualidades(true);
-                } else {
-                  setOtherNoMensualidades(false);
-                  setNoMensualidades(parseInt(ev.currentTarget.value));
-                }
-              }}
-            />
-            {otherNoMensualidades ? (
-              <div>
-                <label htmlFor="no-mensualidades-input"></label>
-                <input
-                  type="number"
-                  id="no-mensualidades-input"
-                  name="no-mensualidades"
-                />
-              </div>
-            ) : null}
-          </div>
-        ) : null}
+        <hr />
+        <PlazoSection plazo={plazo} setPlazo={setPlazo} />
+        {/* <hr /> */}
       </section>
-      {enganche !== 100 ? (
-        <p>
-          {noMensualidades} Mensualidades de:{" "}
-          {moneyFormater.format(remaining / noMensualidades)}
-        </p>
-      ) : null}
+      <CotizacionSection
+        plazo={plazo}
+        mensualidadPrice={remaining / plazo}
+        enganche={enganche}
+      />
     </div>
   );
 }
