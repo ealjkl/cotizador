@@ -1,7 +1,56 @@
-.quoter__enganche-label {
-    font-weight: bold;
+.quoter-form {
+    padding: 1em 0;
+    display: flex;
+    flex-flow: column;
+    gap: .3em;
 }
 
-.quoter__plazo-label {
+.quoter-form__input-container {
+    display: flex;
+    flex-flow: column;
+}
+
+.quoter-form__label {
     font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.quoter-form__input {
+    font-size: 1.4rem;
+    color: black;
+    line-height: 2rem;
+    outline: none;
+    border: none;
+    border-bottom: 3px black solid;
+}
+
+.quoter-form__input:focus {
+    border-bottom-color: var(--highlight-input);
+}
+
+.quoter-form__errors {
+    color: var(--color-error);
+    font-size: 1.1rem;
+    justify-self: start;
+    align-self: start;
+}
+
+.quoter-form__submit-button {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.6rem;
+    padding: .4em;
+    margin: 1.2em 0;
+    border: none;
+    appearance: none;
+
+    &:hover {
+        background-color: var(--highlight-input);
+        // color: var(--secondary-color);
+    }
+}
+
+
+.hidden {
+    visibility: hidden;
 }

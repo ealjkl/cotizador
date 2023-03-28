@@ -61,13 +61,21 @@ export default function EngancheSection({
         className="enganche-input-slider"
         min={minEngancheValue}
         max={maxEngancheValue}
-        step={1000}
+        step={Math.floor((maxEngancheValue - minEngancheValue) / 10)}
         value={enganche}
         onInput={(ev) => {
           if (!setEngancheString) return;
           setEngancheString(ev.currentTarget.value);
         }}
       />
+      <div className="enganche-input-slider__min-max-labels">
+        <span className="enganche-input-slider__min-label">
+          {minEnganchePercentage}%
+        </span>
+        <span className="enganche-input-slider__min-label">
+          {maxEnganchePercentage}%
+        </span>
+      </div>
       {/* <p className="enganche-percentage">
         {Math.floor((enganche / total) * 100)}
         <span className="enganche-percentage-symbol">%</span>

@@ -1,3 +1,7 @@
+.quoter__plazo-label {
+  font-weight: bold;
+}
+
 .plazo-input-container {
   display: flex;
   justify-content: center;

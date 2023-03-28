@@ -10,6 +10,7 @@ import EngancheSection from "./EngancheSection";
 import PlazoSection from "./PlazoSection";
 import CotizacionSection from "./CotizacionSection";
 import moneyFormater from "@/utils/moneyFormater";
+import TestForm from "./TestForm";
 
 type Props = {
   lote?: Lote | null;
@@ -34,6 +35,7 @@ export function Quoter({ onQuoterClose }: Props) {
       </div>
       {component}
       {/* <QuoterForm /> */}
+      <TestForm />
     </div>
   );
 }
@@ -61,9 +63,6 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
   const [plazo, setPlazo] = useState<number>(36);
 
   const remaining = totalPrice - enganche;
-  console.log("mensualidades", remaining);
-
-  console.log("enganche", enganche);
 
   return (
     <div className="quoter-main">

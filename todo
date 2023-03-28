@@ -1,0 +1,19 @@
+1. Solucionar problemas del input
+  - warnings (cuando sean letras y números, también cuando se pase del min o max)
+  - Throthiling o debounce para warnings
+  - mostrar porcentaje
+  - animaciones
+  - formatear dinero
+
+2. Breakpoints
+  - Grande
+  - Mediano
+
+3. Forma
+  - Styling
+  - Throthiling o debounce
+
+4. Svg
+  - style zoom
+
+5. Deploy
