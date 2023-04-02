@@ -2,11 +2,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { ZoomBehavior } from "d3";
+import { Box, Button, ButtonGroup } from "@chakra-ui/react";
 
 interface Props {
   svgRef: React.RefObject<SVGSVGElement>;
 }
 
+//Maybe move this functionality into a hook
 export default function PannerAndZoomerWrapper({ svgRef }: Props) {
   const zoomRef = useRef<{ zoom: ZoomBehavior<Element, unknown> | null }>({
     zoom: null,
@@ -40,23 +42,24 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
   function handleZoomIn() {
     if (zoomRef.current?.zoom) {
-      d3.select(svgRef.current).call(zoomRef.current.zoom.scaleBy as any, step);
+      d3.select(svgRef.current)
+        .transition()
+        .duration(500)
+        .call(zoomRef.current.zoom.scaleBy as any, step);
     }
   }
   function handleZoomOut() {
     if (zoomRef.current?.zoom) {
-      d3.select(svgRef.current).call(
-        zoomRef.current.zoom.scaleBy as any,
-        1 / step
-      );
+      d3.select(svgRef.current)
+        .transition()
+        .duration(500)
+        .call(zoomRef.current.zoom.scaleBy as any, 1 / step);
     }
   }
   return (
-    <div className="PannerAndZoomerWrapper">
-      <div>
-        <button onClick={handleZoomIn}>Zoom In</button>
-        <button onClick={handleZoomOut}>Zoom Out</button>
-      </div>
-    </div>
+    <ButtonGroup display="flex" justifyContent="center" margin="1em">
+      <Button onClick={handleZoomIn}>Zoom In</Button>
+      <Button onClick={handleZoomOut}>Zoom Out</Button>
+    </ButtonGroup>
   );
 }

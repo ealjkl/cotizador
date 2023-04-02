@@ -11,28 +11,34 @@ const schema = yup.object().shape({
   phone: yup.string().required("Campo requerido"),
 });
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Box, Button } from "@chakra-ui/react";
 
 export default function TestForm() {
   const {
     register,
     handleSubmit,
     getValues,
-    formState: { errors },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<{ name: string; email: string; phone: string }>({
     delayError: 600,
     resolver: yupResolver(schema),
     mode: "all",
   });
-  const onSubmit = (data: any) => {
-    const { email, phone, name } = getValues();
-    submitHubspotForm(
-      name,
-      phone,
-      email,
-      "24240113",
-      "3836fc42-4397-4abc-9730-919960d2a1d1"
-    );
+  const onSubmit: SubmitHandler<{
+    name: string;
+    email: string;
+    phone: string;
+  }> = async (data) => {
+    const { email, phone, name } = data;
+    // await submitHubspotForm(
+    //   name,
+    //   phone,
+    //   email,
+    //   "24240113",
+    //   "3836fc42-4397-4abc-9730-919960d2a1d1"
+    // );
+    console.log("form submited");
   };
 
   // console.log(watch("example")); // watch input value by passing the name of it
@@ -115,9 +121,23 @@ export default function TestForm() {
         </p>
       </div>
 
-      <button type="submit" className="quoter-form__submit-button">
-        Cotizar!
-      </button>
+      {!isSubmitSuccessful ? (
+        <Button
+          type="submit"
+          className="quoter-form__submit-button"
+          isLoading={isSubmitting}
+        >
+          Cotizar!
+        </Button>
+      ) : (
+        <h3 className="quoter-form__submitted-success-text">
+          <span className="quoter-form-submitted-success-text-highlight">
+            ¡Excelente!
+          </span>{" "}
+          Tus datos han sido recibidos. Nos pondremos en contacto contigo en
+          breve para brindarte toda la información que necesitas.
+        </h3>
+      )}
     </form>
   );
 }

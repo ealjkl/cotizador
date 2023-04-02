@@ -4,6 +4,11 @@
   flex-flow: column;
   gap: 0.3em;
 }
+@media (min-width: 45em) {
+  .quoter-form {
+    flex: 0.5;
+  }
+}
 
 .quoter-form__input-container {
   display: flex;
@@ -39,17 +44,29 @@
   background-color: var(--secondary-color);
   color: white;
   font-size: 1.6rem;
-  padding: 0.4em;
-  margin: 1.2em 0;
+  padding: 0.2em 0;
   border: none;
-  appearance: none;
+  border-radius: 0;
 }
 .quoter-form__submit-button:hover {
   background-color: var(--highlight-input);
+  color: var(--secondary-color);
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.quoter-form__submitted-success-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.quoter-form-submitted-success-text-highlight {
+  font-size: 1.6rem;
+  color: var(--color-success);
 }
 
 /*# sourceMappingURL=quoterForm.css.map */

@@ -196,6 +196,12 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 1.6rem;
 }
 
+@media (min-width: 45em) {
+  .quoter-main {
+    flex: 0.5;
+  }
+}
+
 .quoter__price-section {
   padding: 1em 1.4em 1.4em 1.4em;
 }

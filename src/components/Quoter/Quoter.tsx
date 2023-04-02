@@ -87,6 +87,8 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
           setEnganche={setEnganche}
           setEngancheString={setEngancheString}
           total={totalPrice}
+          minEnganchePercentage={minEnganchePercentage}
+          maxEnganchePercentage={maxEnganchePercentage}
         />
         <hr />
         <PlazoSection plazo={plazo} setPlazo={setPlazo} />

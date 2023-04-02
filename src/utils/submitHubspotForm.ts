@@ -60,9 +60,7 @@ export default async function submitHubspotForm(
       }
     })
     .then((data) => {
-      // Handle the successful submission of the form
-      console.log("HubSpot form submitted successfully:", data);
-      // You can add your own code here to handle the successful submission of the form
+      return data;
     })
     .catch((error) => {
       // Handle any errors that occurred during the submission of the form
