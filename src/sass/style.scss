@@ -3,6 +3,8 @@
 @use "./main/main.scss";
 @use "./quoter/quoter.scss";
 @use "./whatsappFloatingButton/whatsappFloatingButton.scss";
+@use "./header/header.scss";
+@use "./footer/footer.scss";
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -32,4 +34,8 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    min-height: 100vh;
 }

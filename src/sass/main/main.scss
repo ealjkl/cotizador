@@ -1,4 +1,8 @@
+@use "../banner/banner.scss";
+
 .layout-container {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    min-height: 100vh;
 }

@@ -38,26 +38,4 @@
   background-color: var(--available-3);
 }
 
-.banner {
-  flex: 100%;
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 300;
-}
-.banner > * {
-  margin: 0.6em;
-}
-@media (min-width: 45em) {
-  .banner {
-    font-size: 2.5rem;
-  }
-}
-
-.layout-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=indicator.css.map */

@@ -57,7 +57,12 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     }
   }
   return (
-    <ButtonGroup display="flex" justifyContent="center" margin="1em">
+    <ButtonGroup
+      display="flex"
+      justifyContent="center"
+      margin="1em"
+      flex="100%"
+    >
       <Button onClick={handleZoomIn}>Zoom In</Button>
       <Button onClick={handleZoomOut}>Zoom Out</Button>
     </ButtonGroup>

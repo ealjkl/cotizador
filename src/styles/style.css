@@ -7,6 +7,7 @@
   --highlight-input: #2497E3;
   --color-error: #bf4342;
   --color-success: #389977;
+  --highlight-text: #8bdce6;
 }
 
 [data-available="1"] {
@@ -31,29 +32,91 @@
   opacity: 0.9;
 }
 
+[data-available] {
+  stroke: white;
+}
+
 .blueprint {
-  width: 100%;
-  max-height: 100%;
-  box-sizing: border-box;
-  /* add this property */
-  padding: 0;
-  /* remove any padding */
-  margin: 0;
-  /* remove any margin */
-  border: none;
-  /* remove any border */
+  flex: 100%;
+}
+@media (min-width: 45em) {
+  .blueprint {
+    flex: 50% 0.5;
+  }
 }
 
 .blueprint-container {
   flex: 1;
+  display: flex;
   justify-content: center;
-  height: 98vh;
-  padding: 1.5em 0;
+  flex-flow: row wrap;
+}
+@media (min-width: 45em) {
+  .blueprint-container {
+    padding: 1.5em 0;
+  }
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  gap: 0.4em 1.2em;
+  flex-flow: wrap row;
+}
+@media (min-width: 45em) {
+  .indicator {
+    font-size: 1.4rem;
+  }
+}
+
+.indicator__option {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border: solid var(--secondary-color) 1px;
+  padding: 0.4em;
+  border-radius: 20px;
+}
+
+.indicator__label {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+
+.indicator__label__disponible {
+  background-color: var(--available-1);
+}
+
+.indicator__label__apartado {
+  background-color: var(--available-2);
+}
+
+.indicator__label__no-disponible {
+  background-color: var(--available-3);
+}
+
+.banner {
+  flex: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.banner > * {
+  margin: 0.6em;
+}
+@media (min-width: 45em) {
+  .banner {
+    font-size: 2.5rem;
+  }
 }
 
 .layout-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .quoter-form {
@@ -425,9 +488,9 @@ input[type=range]:focus::-ms-fill-upper {
   align-items: center;
   background-color: #25d366;
   color: #fff;
-  width: 80px;
-  height: 50px;
-  border-radius: 25px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
@@ -436,20 +499,26 @@ input[type=range]:focus::-ms-fill-upper {
 .floating-whatsapp-button:hover {
   width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
 }
 
-.whatsapp-icon {
-  margin-right: 10px;
-}
-
-.button-text-container {
+.whatsapp-button-text-container {
   position: relative;
-  width: 120px;
   height: 100%;
   overflow: hidden;
 }
 
-.button-text {
+.floating-whatsapp-button:hover {
+  transition: all 0.3s ease-in-out;
+}
+.floating-whatsapp-button:hover .whatsapp-button-text-container {
+  width: 120px;
+}
+.floating-whatsapp-button:hover .whatsapp-icon {
+  margin-right: 10px;
+}
+
+.whatsapp-button-text {
   position: absolute;
   top: 0;
   left: 120px;
@@ -466,8 +535,44 @@ input[type=range]:focus::-ms-fill-upper {
   transform: translateX(0);
 }
 
-.floating-whatsapp-button:hover .button-text.visible {
+.whatsapp-button-text:hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-whatsapp-button:hover .whatsapp-button-text.visible {
   transform: translateX(-120px);
+}
+
+.header {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+}
+
+.header .logo-anchor {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1em;
+  flex: 100%;
+  align-items: flex-end;
+}
+
+.footer .logo-anchor {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > .logo-anchor > img {
+  width: 4em;
 }
 
 :root {
@@ -488,6 +593,10 @@ input[type=range]:focus::-ms-fill-upper {
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

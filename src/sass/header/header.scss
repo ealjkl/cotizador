@@ -1,0 +1,13 @@
+.header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+.header .logo-anchor {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

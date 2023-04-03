@@ -1,0 +1,17 @@
+@use "indicator";
+@use "../breakpoints.scss" as bp;
+
+.banner {
+    flex: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+
+    &>* {
+        margin: .6em;
+    }
+
+    @media (min-width: bp.$md) {
+        font-size: 2.5rem;
+    }
+}

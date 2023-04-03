@@ -6,6 +6,9 @@ import { Quoter } from "./Quoter/Quoter";
 import { createContext, useRef, useState } from "react";
 import { useContext } from "react";
 import { lotes } from "../utils/lotes";
+import Banner from "./Banner";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export type Lote = {
   available: number;
@@ -28,6 +31,8 @@ export default function Main() {
   return (
     <LoteContext.Provider value={{ current: lote, lotes, priceM2: 19_000 }}>
       <div className="layout-container">
+        <Header />
+        <Banner />
         <div className="blueprint-container">
           <Blueprint
             svgRef={blueprintRef}
@@ -55,6 +60,7 @@ export default function Main() {
             />
           </div>
         ) : null}
+        <Footer />
       </div>
     </LoteContext.Provider>
   );

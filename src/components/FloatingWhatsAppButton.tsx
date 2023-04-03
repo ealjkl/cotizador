@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -29,9 +29,9 @@ function FloatingWhatsAppButton(props: Props) {
       onMouseLeave={handleLeave}
     >
       <FontAwesomeIcon icon={faWhatsapp} size="2x" className="whatsapp-icon" />
-      <div className="button-text-container">
-        <div className={`button-text${hovered ? " visible" : ""}`}>
-          Send a message
+      <div className="whatsapp-button-text-container">
+        <div className={`whatsapp-button-text${hovered ? " visible" : ""}`}>
+          Envía un mensaje
         </div>
       </div>
     </a>

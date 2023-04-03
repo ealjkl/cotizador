@@ -1,0 +1,41 @@
+@use "../breakpoints.scss" as bp;
+
+.indicator {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    gap: .4em 1.2em;
+    flex-flow: wrap row;
+
+    @media (min-width: bp.$md) {
+        font-size: 1.4rem;
+    }
+}
+
+.indicator__option {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    border: solid var(--secondary-color) 1px;
+    padding: .4em;
+    border-radius: 20px;
+}
+
+.indicator__label {
+    width: 1em;
+    // aspect-ratio: 1 / 1;
+    height: 1em;
+    border-radius: 50%;
+}
+
+.indicator__label__disponible {
+    background-color: var(--available-1);
+}
+
+.indicator__label__apartado {
+    background-color: var(--available-2);
+}
+
+.indicator__label__no-disponible {
+    background-color: var(--available-3);
+}

@@ -7,9 +7,9 @@
   align-items: center;
   background-color: #25d366;
   color: #fff;
-  width: 80px;
-  height: 50px;
-  border-radius: 25px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
@@ -18,20 +18,26 @@
 .floating-whatsapp-button:hover {
   width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
 }
 
-.whatsapp-icon {
-  margin-right: 10px;
-}
-
-.button-text-container {
+.whatsapp-button-text-container {
   position: relative;
-  width: 120px;
   height: 100%;
   overflow: hidden;
 }
 
-.button-text {
+.floating-whatsapp-button:hover {
+  transition: all 0.3s ease-in-out;
+}
+.floating-whatsapp-button:hover .whatsapp-button-text-container {
+  width: 120px;
+}
+.floating-whatsapp-button:hover .whatsapp-icon {
+  margin-right: 10px;
+}
+
+.whatsapp-button-text {
   position: absolute;
   top: 0;
   left: 120px;
@@ -48,7 +54,11 @@
   transform: translateX(0);
 }
 
-.floating-whatsapp-button:hover .button-text.visible {
+.whatsapp-button-text:hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-whatsapp-button:hover .whatsapp-button-text.visible {
   transform: translateX(-120px);
 }
 
