@@ -306,16 +306,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0.4em 0;
 }
 
-.quoter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  flex-flow: row wrap;
-  height: 100vh;
-  width: 100%;
-}
-
 .quoter {
   border-radius: 12px;
   font-size: 1.4rem;
@@ -323,8 +313,6 @@ input[type=range]:focus::-ms-fill-upper {
   min-height: 90%;
   padding: 0.9em;
   background-color: var(--primary-color);
-  border: #ddd solid 2px;
-  box-shadow: 0px 0px 15px 5px #aaa;
 }
 @media (min-width: 45em) {
   .quoter {
@@ -332,6 +320,11 @@ input[type=range]:focus::-ms-fill-upper {
     flex-flow: row wrap;
     gap: 1em;
   }
+}
+
+.quoter-container {
+  top: 0;
+  margin: 2em;
 }
 
 .quoter-button-container {

@@ -2,7 +2,6 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   padding: 1em;
-  flex: 100%;
   align-items: flex-end;
 }
 

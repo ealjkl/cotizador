@@ -9,6 +9,14 @@ import { lotes } from "../utils/lotes";
 import Banner from "./Banner";
 import Header from "./Header";
 import Footer from "./Footer";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 export type Lote = {
   available: number;
@@ -27,39 +35,44 @@ export default function Main() {
   const [lote, setLote] = useState<Lote | null>(null);
   const [quoterVisible, setQuoterVisible] = useState<boolean>(false);
   const blueprintRef = useRef<SVGSVGElement>(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <LoteContext.Provider value={{ current: lote, lotes, priceM2: 19_000 }}>
-      <div className="layout-container">
-        <Header />
-        <Banner />
-        <div className="blueprint-container">
-          <Blueprint
-            svgRef={blueprintRef}
-            data={lotes}
-            onClick={(_, id) => {
-              setLote(lotes[id]);
-              setQuoterVisible(true);
-            }}
-          />
-          <PannerAndZoomerWrapper svgRef={blueprintRef} />
-        </div>
-        {quoterVisible ? (
-          <div
-            className="quoter-container"
-            onClick={(ev) => {
-              if (ev.target == ev.currentTarget) {
-                setQuoterVisible(false);
-              }
-            }}
-          >
+      <div className="footer-layout-container">
+        <div className="layout-container">
+          <Header />
+          <Banner />
+          <div className="blueprint-container">
+            <Blueprint
+              svgRef={blueprintRef}
+              data={lotes}
+              onClick={(_, id) => {
+                setLote(lotes[id]);
+                onOpen();
+              }}
+            />
+            <PannerAndZoomerWrapper svgRef={blueprintRef} />
+          </div>
+          {true ? (
+            // <div
+            //   className="quoter-container"
+            //   onClick={(ev) => {
+            //     if (ev.target == ev.currentTarget) {
+            //       setQuoterVisible(false);
+            //     }
+            //   }}
+            // >
             <Quoter
+              onClose={onClose}
+              isOpen={isOpen}
               onQuoterClose={() => {
                 setQuoterVisible(false);
               }}
             />
-          </div>
-        ) : null}
+          ) : // </div>
+          null}
+        </div>
         <Footer />
       </div>
     </LoteContext.Provider>

@@ -9,12 +9,14 @@ import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
 import chakraTheme from "@chakra-ui/theme";
 import { CacheProvider } from "@chakra-ui/next-js";
 
-const { Spinner, Button } = chakraTheme.components;
+const { Spinner, Button, Modal, CloseButton } = chakraTheme.components;
 
 const theme = extendBaseTheme({
   components: {
     Spinner,
     Button,
+    Modal,
+    CloseButton,
   },
 });
 

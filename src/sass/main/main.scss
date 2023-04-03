@@ -1,7 +1,14 @@
 @use "../banner/banner.scss";
 
 .layout-container {
+    // display: flex;
+    // flex-flow: row wrap;
+    // min-height: 100vh;
+}
+
+.footer-layout-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     min-height: 100vh;
+    justify-content: space-between;
 }

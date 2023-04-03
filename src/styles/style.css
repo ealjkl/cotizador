@@ -112,10 +112,11 @@
   }
 }
 
-.layout-container {
+.footer-layout-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   min-height: 100vh;
+  justify-content: space-between;
 }
 
 .quoter-form {
@@ -426,16 +427,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0.4em 0;
 }
 
-.quoter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  flex-flow: row wrap;
-  height: 100vh;
-  width: 100%;
-}
-
 .quoter {
   border-radius: 12px;
   font-size: 1.4rem;
@@ -443,8 +434,6 @@ input[type=range]:focus::-ms-fill-upper {
   min-height: 90%;
   padding: 0.9em;
   background-color: var(--primary-color);
-  border: #ddd solid 2px;
-  box-shadow: 0px 0px 15px 5px #aaa;
 }
 @media (min-width: 45em) {
   .quoter {
@@ -452,6 +441,11 @@ input[type=range]:focus::-ms-fill-upper {
     flex-flow: row wrap;
     gap: 1em;
   }
+}
+
+.quoter-container {
+  top: 0;
+  margin: 2em;
 }
 
 .quoter-button-container {
@@ -493,6 +487,7 @@ input[type=range]:focus::-ms-fill-upper {
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 
 .floating-whatsapp-button:hover {
@@ -560,7 +555,6 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   padding: 1em;
-  flex: 100%;
   align-items: flex-end;
 }
 

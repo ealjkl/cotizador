@@ -11,14 +11,26 @@ import PlazoSection from "./PlazoSection";
 import CotizacionSection from "./CotizacionSection";
 import moneyFormater from "@/utils/moneyFormater";
 import TestForm from "./TestForm";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 type Props = {
   lote?: Lote | null;
   onQuoterClose?: React.MouseEventHandler<HTMLButtonElement>;
+  isOpen: boolean;
+  onClose: () => void;
 };
 
-export function Quoter({ onQuoterClose }: Props) {
+export function Quoter({ onQuoterClose, isOpen, onClose }: Props) {
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
+
   let component = null;
   if (currentLote == null) {
     component = <NullLote />;
@@ -27,16 +39,24 @@ export function Quoter({ onQuoterClose }: Props) {
   }
 
   return (
-    <div className="quoter">
-      <div className="quoter-button-container">
-        <button onClick={onQuoterClose} className="quoter-close-button">
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
-      </div>
-      {component}
-      {/* <QuoterForm /> */}
-      <TestForm />
-    </div>
+    // <div className="quoter">
+    <Modal isOpen={isOpen} onClose={onClose} size="4xl" isCentered={false}>
+      <ModalOverlay />
+      <ModalContent className="quoter-container">
+        <ModalCloseButton size={"lg"} />
+        <ModalBody className="quoter">
+          {/* <div className="quoter-button-container">
+            <button onClick={onQuoterClose} className="quoter-close-button">
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+          </div> */}
+          {component}
+          <TestForm />
+        </ModalBody>
+        {/* <QuoterForm /> */}
+      </ModalContent>
+    </Modal>
+    // </div>
   );
 }
 
