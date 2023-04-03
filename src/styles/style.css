@@ -74,9 +74,9 @@
   display: flex;
   align-items: center;
   gap: 0.4em;
-  border: solid var(--secondary-color) 1px;
+  border: solid var(--secondary-color) 2px;
   padding: 0.4em;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .indicator__label {
@@ -115,7 +115,6 @@
 .layout-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   min-height: 100vh;
 }
 
