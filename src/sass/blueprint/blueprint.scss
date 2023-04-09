@@ -39,9 +39,19 @@
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+    position: relative;
 
     // padding: 1.5em 0;
     @media (min-width: bp.$md) {
         padding: 1.5em 0;
     }
+}
+
+.blueprint__cover {
+    background-color: salmon;
+    opacity: 0.5;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }

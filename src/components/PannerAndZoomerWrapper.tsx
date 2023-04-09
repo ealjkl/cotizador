@@ -7,18 +7,76 @@ import { Box, Button, ButtonGroup } from "@chakra-ui/react";
 interface Props {
   svgRef: React.RefObject<SVGSVGElement>;
 }
+console.log("guatafak");
+
+// let startX: any, startY: any, endX: any, endY: any;
+// let threshold = 50; // the minimum distance the finger must travel to trigger a color change
+
+// document.addEventListener("touchstart", function (event) {
+//   startX = event.touches[0].clientX;
+//   startY = event.touches[0].clientY;
+// });
+
+// document.addEventListener("touchmove", function (event) {
+//   endX = event.touches[0].clientX;
+//   endY = event.touches[0].clientY;
+
+//   let deltaX = endX - startX;
+//   let deltaY = endY - startY;
+
+//   if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
+//     // the finger has moved enough to trigger a color change
+//     if (Math.abs(deltaX) > Math.abs(deltaY)) {
+//       // horizontal movement
+//       if (deltaX > 0) {
+//         // right to left
+//         document.body.style.backgroundColor = "green";
+//       } else {
+//         // left to right
+//         document.body.style.backgroundColor = "yellow";
+//       }
+//     } else {
+//       // vertical movement
+//       if (deltaY > 0) {
+//         // up to down
+//         document.body.style.backgroundColor = "blue";
+//       } else {
+//         // down to up
+//         document.body.style.backgroundColor = "red";
+//       }
+//     }
+//   }
+// });
+// console.log("touchemoved");
+// document.addEventListener("touchmove", (ev) => {
+//   console.log("touches custom", ev.touches);
+// });
 
 //Maybe move this functionality into a hook
 export default function PannerAndZoomerWrapper({ svgRef }: Props) {
   const zoomRef = useRef<{ zoom: ZoomBehavior<Element, unknown> | null }>({
     zoom: null,
   });
+  const prevPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const isBorderRef = useRef<{
+    top: boolean;
+    bottom: boolean;
+    left: boolean;
+    right: boolean;
+  }>({
+    top: false,
+    bottom: false,
+    left: false,
+    right: false,
+  });
   const step = 1.8;
 
   useEffect(() => {
     // const { width, height } = svgRef.current!.getBoundingClientRect();
+    const svgSel = d3.select(svgRef.current);
+    const gSel = svgSel.select(":scope > g");
     const { x, y, width, height } = svgRef.current!.viewBox.baseVal;
-    console.log("width", "height", height, height);
+    const threshold = 20;
 
     const zoom = d3
       .zoom()
@@ -30,14 +88,69 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
     zoomRef.current!.zoom = zoom;
 
-    function handleZoom(e: any) {
-      const g = svgRef.current?.querySelector(":scope > g");
-      if (g) {
-        d3.select(g).attr("transform", e.transform);
-      }
+    function handleZoom(e: d3.D3ZoomEvent<SVGElement, any>) {
+      gSel.attr("transform", e.transform.toString());
     }
-    zoom.on("zoom", handleZoom);
-    d3.select(svgRef.current).call(zoom as any);
+
+    zoom.on("zoom", handleZoom).filter((event, datum) => {
+      if (event.type == "touchstart" || event.type == "touchmove") {
+        const [[x, y], [width, height]] = zoom.translateExtent();
+        if (event.type == "touchstart") {
+          const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
+          const _event = event as TouchEvent;
+          prevPosRef.current!.x = _event.touches[0].clientX;
+          prevPosRef.current!.y = _event.touches[0].clientY;
+          isBorderRef.current!.top = -tY < threshold;
+          isBorderRef.current!.bottom =
+            Math.abs(height * k - height + tY) < threshold;
+          isBorderRef.current!.left = -tX < threshold;
+          isBorderRef.current!.right = width * k - width + tX < threshold;
+        }
+
+        if (event.type == "touchmove") {
+          const _event = event as TouchEvent;
+          const touches = _event.touches;
+          let currX = touches[0].clientX;
+          let currY = touches[0].clientY;
+          let prevX = prevPosRef.current!.x;
+          let prevY = prevPosRef.current!.y;
+          const deltaX = currX - prevX;
+          const deltaY = currY - prevY;
+          const isVertical = Math.abs(deltaY) >= Math.abs(deltaX);
+          const isHorizontal = !isVertical;
+          let shouldFilter = true;
+          const { top, bottom, left, right } = isBorderRef.current!;
+
+          if (left && isHorizontal && deltaX >= 0) {
+            shouldFilter = false;
+          } else if (right && isHorizontal && deltaX < 0) {
+            shouldFilter = false;
+          } else if (top && isVertical && deltaY >= 0) {
+            shouldFilter = false;
+          } else if (bottom && isVertical && deltaY < 0) {
+            shouldFilter = false;
+          }
+
+          prevPosRef.current!.x = currX;
+          prevPosRef.current!.y = currY;
+          return shouldFilter;
+        }
+      }
+      return true;
+    });
+
+    svgSel.call(zoom as any);
+    // svgSel.on("touchmove.zoom", (event) => {
+    //   console.log("I am quite moving");
+    //   console.log();
+    // });
+
+    // zoom(svgSel as any);
+    // svgSel.on("touchmove.zoom", (event) => {});
+
+    return () => {
+      svgSel.on(".zoom", null);
+    };
   }, [svgRef]);
 
   function handleZoomIn() {
@@ -48,6 +161,7 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
         .call(zoomRef.current.zoom.scaleBy as any, step);
     }
   }
+
   function handleZoomOut() {
     if (zoomRef.current?.zoom) {
       d3.select(svgRef.current)
@@ -56,6 +170,7 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
         .call(zoomRef.current.zoom.scaleBy as any, 1 / step);
     }
   }
+
   return (
     <ButtonGroup
       display="flex"
