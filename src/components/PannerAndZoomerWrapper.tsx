@@ -7,50 +7,6 @@ import { Box, Button, ButtonGroup } from "@chakra-ui/react";
 interface Props {
   svgRef: React.RefObject<SVGSVGElement>;
 }
-console.log("guatafak");
-
-// let startX: any, startY: any, endX: any, endY: any;
-// let threshold = 50; // the minimum distance the finger must travel to trigger a color change
-
-// document.addEventListener("touchstart", function (event) {
-//   startX = event.touches[0].clientX;
-//   startY = event.touches[0].clientY;
-// });
-
-// document.addEventListener("touchmove", function (event) {
-//   endX = event.touches[0].clientX;
-//   endY = event.touches[0].clientY;
-
-//   let deltaX = endX - startX;
-//   let deltaY = endY - startY;
-
-//   if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
-//     // the finger has moved enough to trigger a color change
-//     if (Math.abs(deltaX) > Math.abs(deltaY)) {
-//       // horizontal movement
-//       if (deltaX > 0) {
-//         // right to left
-//         document.body.style.backgroundColor = "green";
-//       } else {
-//         // left to right
-//         document.body.style.backgroundColor = "yellow";
-//       }
-//     } else {
-//       // vertical movement
-//       if (deltaY > 0) {
-//         // up to down
-//         document.body.style.backgroundColor = "blue";
-//       } else {
-//         // down to up
-//         document.body.style.backgroundColor = "red";
-//       }
-//     }
-//   }
-// });
-// console.log("touchemoved");
-// document.addEventListener("touchmove", (ev) => {
-//   console.log("touches custom", ev.touches);
-// });
 
 //Maybe move this functionality into a hook
 export default function PannerAndZoomerWrapper({ svgRef }: Props) {
@@ -69,6 +25,7 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     left: false,
     right: false,
   });
+  const touchmoveStarted = useRef<boolean>(false);
   const step = 1.8;
 
   useEffect(() => {
@@ -94,10 +51,10 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
     zoom.on("zoom", handleZoom).filter((event, datum) => {
       if (event.type == "touchstart" || event.type == "touchmove") {
+        const _event = event as TouchEvent;
         const [[x, y], [width, height]] = zoom.translateExtent();
         if (event.type == "touchstart") {
           const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
-          const _event = event as TouchEvent;
           prevPosRef.current!.x = _event.touches[0].clientX;
           prevPosRef.current!.y = _event.touches[0].clientY;
           isBorderRef.current!.top = -tY < threshold;
@@ -108,8 +65,13 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
         }
 
         if (event.type == "touchmove") {
-          const _event = event as TouchEvent;
           const touches = _event.touches;
+          if (touchmoveStarted.current) {
+            return false;
+          }
+          if (touches.length > 1 || _event.shiftKey) {
+            return true;
+          }
           let currX = touches[0].clientX;
           let currY = touches[0].clientY;
           let prevX = prevPosRef.current!.x;
@@ -123,12 +85,16 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
           if (left && isHorizontal && deltaX >= 0) {
             shouldFilter = false;
+            touchmoveStarted.current! = true;
           } else if (right && isHorizontal && deltaX < 0) {
             shouldFilter = false;
+            touchmoveStarted.current! = true;
           } else if (top && isVertical && deltaY >= 0) {
             shouldFilter = false;
+            touchmoveStarted.current! = true;
           } else if (bottom && isVertical && deltaY < 0) {
             shouldFilter = false;
+            touchmoveStarted.current! = true;
           }
 
           prevPosRef.current!.x = currX;
@@ -140,6 +106,16 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     });
 
     svgSel.call(zoom as any);
+    // svgSel.on("touchended", (event) => {
+    //   console.log("andn now", event);
+    // });
+    //I don't know why I had to do this instead of just doing svgSel.on("touchend") or "touchended"
+    const onTouchEnd = (_event: TouchEvent) => {
+      touchmoveStarted.current! = false;
+      console.log(touchmoveStarted.current!);
+    };
+
+    svgSel.node()!.addEventListener("touchend", onTouchEnd);
     // svgSel.on("touchmove.zoom", (event) => {
     //   console.log("I am quite moving");
     //   console.log();
@@ -150,6 +126,7 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
     return () => {
       svgSel.on(".zoom", null);
+      svgSel.node()!.removeEventListener("touchend", onTouchEnd, true);
     };
   }, [svgRef]);
 
