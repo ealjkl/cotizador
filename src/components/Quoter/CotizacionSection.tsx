@@ -1,16 +1,11 @@
+import useQuoterContext from "@/hooks/useQuoterContext";
 import moneyFormater from "@/utils/moneyFormater";
 
-type Props = {
-  plazo: number;
-  mensualidadPrice: number;
-  enganche: number;
-};
+type Props = {};
 
-export default function CotizacionSection({
-  mensualidadPrice,
-  plazo,
-  enganche,
-}: Props) {
+export default function CotizacionSection({}: Props) {
+  const { enganche, pagoMensualidad, plazo } = useQuoterContext();
+
   return (
     <section className="cotizador-section">
       <h3 className="cotizador-section__title">Cotización</h3>
@@ -24,7 +19,7 @@ export default function CotizacionSection({
         <section className="cotizador-section__mensualidad-sub">
           <h4 className="cotizador-section__subtitle">Mensualidades</h4>
           <p className="cotizador-section__text-body">
-            {plazo} mensualidades de {moneyFormater.format(mensualidadPrice)}
+            {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
           </p>
         </section>
       </div>

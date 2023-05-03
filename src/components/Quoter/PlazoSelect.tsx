@@ -1,14 +1,18 @@
-type Props = {
-  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
-};
+import useQuoterContext from "@/hooks/useQuoterContext";
 
-export default function PlazoSelect({ onChange }: Props) {
+type Props = {};
+
+export default function PlazoSelect({}: Props) {
+  const { plazo, setPlazo } = useQuoterContext();
   return (
     <div className="plazo-select-container">
       <select
+        value={plazo}
         name="no-mensualidades"
         id="no-mensualidades"
-        onChange={onChange}
+        onChange={(ev) => {
+          setPlazo(parseInt(ev.currentTarget.value));
+        }}
         className="plazo-select-input"
       >
         <option value="36">36 meses</option>

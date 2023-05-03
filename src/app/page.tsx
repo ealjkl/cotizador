@@ -9,7 +9,7 @@ import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
 import chakraTheme from "@chakra-ui/theme";
 import { CacheProvider } from "@chakra-ui/next-js";
 
-const { Spinner, Button, Modal, CloseButton } = chakraTheme.components;
+const { Spinner, Button, Modal, CloseButton, Slider } = chakraTheme.components;
 
 const theme = extendBaseTheme({
   components: {
@@ -17,6 +17,7 @@ const theme = extendBaseTheme({
     Button,
     Modal,
     CloseButton,
+    Slider,
   },
 });
 

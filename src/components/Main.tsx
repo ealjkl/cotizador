@@ -1,7 +1,7 @@
 "use client";
 import { Blueprint } from "./Blueprint";
 import PannerAndZoomerWrapper from "./PannerAndZoomerWrapper";
-import { Quoter } from "./Quoter/Quoter";
+import { QuoterSection } from "./Quoter/QuoterSection";
 // import styles from "./Main.module.css";
 import { createContext, useRef, useState } from "react";
 import { useContext } from "react";
@@ -17,6 +17,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
+import useEnganche from "@/hooks/useEnganche";
 
 export type Lote = {
   available: number;
@@ -33,9 +34,15 @@ export const LoteContext = createContext<{
 }>({ current: null, lotes, priceM2: 19_000 });
 export default function Main() {
   const [lote, setLote] = useState<Lote | null>(null);
-  const [quoterVisible, setQuoterVisible] = useState<boolean>(false);
   const blueprintRef = useRef<SVGSVGElement>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const precioBase = 399100000705020;
+  const { enganche, enganchePercentage, setEnganche, setEnganchePercentage } =
+    useEnganche({
+      engancheInicialPercentage: 20,
+      precioBase,
+    });
 
   return (
     <LoteContext.Provider value={{ current: lote, lotes, priceM2: 19_000 }}>
@@ -54,24 +61,14 @@ export default function Main() {
             />
             <PannerAndZoomerWrapper svgRef={blueprintRef} />
           </div>
-          {true ? (
-            // <div
-            //   className="quoter-container"
-            //   onClick={(ev) => {
-            //     if (ev.target == ev.currentTarget) {
-            //       setQuoterVisible(false);
-            //     }
-            //   }}
-            // >
-            <Quoter
-              onClose={onClose}
-              isOpen={isOpen}
-              onQuoterClose={() => {
-                setQuoterVisible(false);
-              }}
-            />
-          ) : // </div>
-          null}
+
+          <QuoterSection
+            onClose={onClose}
+            isOpen={isOpen}
+            onQuoterClose={() => {
+              onClose();
+            }}
+          />
         </div>
         <Footer />
       </div>
