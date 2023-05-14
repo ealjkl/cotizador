@@ -3,8 +3,9 @@ import { useState } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
 
-export default function useQuoter(
+export default function useQuoter<T>(
   input: {
+    preciosTable?: T;
     precioBase: number;
     plazoInicial?: number;
     minEnganchePercentage?: number;
@@ -13,6 +14,7 @@ export default function useQuoter(
 ): QuoterContextType {
   let {
     precioBase,
+    preciosTable,
     plazoInicial = 12,
     minEnganchePercentage = 0,
     maxEnganchePercentage = 100,

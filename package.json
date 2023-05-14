@@ -27,23 +27,25 @@
     "@types/react-dom": "18.0.11",
     "babel-plugin-macros": "^3.1.0",
     "d3": "^7.8.2",
+    "d3-zoom": "github:ealjkl/d3-zoom",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "formik": "^2.2.9",
     "framer-motion": "^10.9.2",
     "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
+    "multikey-map": "^0.2.1",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.8",
     "sass": "^1.59.3",
     "typescript": "^4.9.5",
-    "yup": "^1.0.2",
-    "d3-zoom": "github:ealjkl/d3-zoom"
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@types/d3": "^7.4.0",
-    "@types/lodash": "^4.14.192"
+    "@types/lodash": "^4.14.192",
+    "hotscript": "^1.0.12"
   }
 }

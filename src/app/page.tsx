@@ -1,9 +1,6 @@
 "use client";
 import Main from "../components/Main";
 import FloatingWhatsAppButton from "../components/FloatingWhatsAppButton";
-import Map from "../components/Example";
-import PannerAndZoomerWrapper from "@/components/PannerAndZoomerWrapper";
-import ExampleZoomerPanner from "@/components/ExampleZoomerPanner";
 
 import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
 import chakraTheme from "@chakra-ui/theme";
