@@ -62,13 +62,7 @@ export default function Main() {
             <PannerAndZoomerWrapper svgRef={blueprintRef} />
           </div>
 
-          <QuoterSection
-            onClose={onClose}
-            isOpen={isOpen}
-            onQuoterClose={() => {
-              onClose();
-            }}
-          />
+          <QuoterSection onClose={onClose} isOpen={isOpen} />
         </div>
         <Footer />
       </div>
