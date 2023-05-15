@@ -49,20 +49,27 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
       gSel.attr("transform", e.transform.toString());
     }
 
+    function onTouchEnd(_event: TouchEvent) {
+      touchmoveStarted.current! = false;
+      console.log("touchevent", _event.type);
+    }
+
+    function onTouchStart(event: TouchEvent) {
+      console.log("hey bro");
+      const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
+      prevPosRef.current!.x = event.touches[0].clientX;
+      prevPosRef.current!.y = event.touches[0].clientY;
+      isBorderRef.current!.top = -tY < threshold;
+      isBorderRef.current!.bottom =
+        Math.abs(height * k - height + tY) < threshold;
+      isBorderRef.current!.left = -tX < threshold;
+      isBorderRef.current!.right = width * k - width + tX < threshold;
+    }
+
     zoom.on("zoom", handleZoom).filter((event, datum) => {
       if (event.type == "touchstart" || event.type == "touchmove") {
         const _event = event as TouchEvent;
         const [[x, y], [width, height]] = zoom.translateExtent();
-        if (event.type == "touchstart") {
-          const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
-          prevPosRef.current!.x = _event.touches[0].clientX;
-          prevPosRef.current!.y = _event.touches[0].clientY;
-          isBorderRef.current!.top = -tY < threshold;
-          isBorderRef.current!.bottom =
-            Math.abs(height * k - height + tY) < threshold;
-          isBorderRef.current!.left = -tX < threshold;
-          isBorderRef.current!.right = width * k - width + tX < threshold;
-        }
 
         if (event.type == "touchmove") {
           const touches = _event.touches;
@@ -105,28 +112,19 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
       return true;
     });
 
-    svgSel.call(zoom as any);
-    // svgSel.on("touchended", (event) => {
-    //   console.log("andn now", event);
-    // });
     //I don't know why I had to do this instead of just doing svgSel.on("touchend") or "touchended"
-    const onTouchEnd = (_event: TouchEvent) => {
-      touchmoveStarted.current! = false;
-      console.log(touchmoveStarted.current!);
-    };
 
+    svgSel.node()!.addEventListener("touchstart", onTouchStart);
     svgSel.node()!.addEventListener("touchend", onTouchEnd);
-    // svgSel.on("touchmove.zoom", (event) => {
-    //   console.log("I am quite moving");
-    //   console.log();
-    // });
+    svgSel.node()!.addEventListener("touchcancel", onTouchEnd);
 
-    // zoom(svgSel as any);
-    // svgSel.on("touchmove.zoom", (event) => {});
+    svgSel.call(zoom as any);
 
     return () => {
       svgSel.on(".zoom", null);
       svgSel.node()!.removeEventListener("touchend", onTouchEnd, true);
+      svgSel.node()!.removeEventListener("touchcancel", onTouchEnd, true);
+      svgSel.node()!.removeEventListener("touchstart", onTouchStart, true);
     };
   }, [svgRef]);
 
