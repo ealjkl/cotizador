@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import PannerAndZoomerWrapper from "./PannerAndZoomerWrapper";
+import PannerAndZoomerWrapper from "../zoom/PannerAndZoomerWrapper";
 
 export default function ExampleZoomerPanner() {
   const svgRef = useRef<SVGSVGElement>(null);

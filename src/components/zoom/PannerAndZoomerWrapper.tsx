@@ -25,11 +25,12 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     left: false,
     right: false,
   });
-  const touchmoveStarted = useRef<boolean>(false);
+  const defaultTouchmoveStarted = useRef<boolean>(false);
+  const zoomTouchmoveStarted = useRef<boolean>(false);
+
   const step = 1.8;
 
   useEffect(() => {
-    // const { width, height } = svgRef.current!.getBoundingClientRect();
     const svgSel = d3.select(svgRef.current);
     const gSel = svgSel.select(":scope > g");
     const { x, y, width, height } = svgRef.current!.viewBox.baseVal;
@@ -50,12 +51,13 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
     }
 
     function onTouchEnd(_event: TouchEvent) {
-      touchmoveStarted.current! = false;
-      console.log("touchevent", _event.type);
+      // console.log(_event.type);
+      defaultTouchmoveStarted.current! = false;
+      zoomTouchmoveStarted.current! = false;
     }
 
     function onTouchStart(event: TouchEvent) {
-      console.log("hey bro");
+      console.log(event.type);
       const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
       prevPosRef.current!.x = event.touches[0].clientX;
       prevPosRef.current!.y = event.touches[0].clientY;
@@ -66,49 +68,64 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
       isBorderRef.current!.right = width * k - width + tX < threshold;
     }
 
-    zoom.on("zoom", handleZoom).filter((event, datum) => {
-      if (event.type == "touchstart" || event.type == "touchmove") {
-        const _event = event as TouchEvent;
-        const [[x, y], [width, height]] = zoom.translateExtent();
-
-        if (event.type == "touchmove") {
-          const touches = _event.touches;
-          if (touchmoveStarted.current) {
-            return false;
-          }
-          if (touches.length > 1 || _event.shiftKey) {
-            return true;
-          }
-          let currX = touches[0].clientX;
-          let currY = touches[0].clientY;
-          let prevX = prevPosRef.current!.x;
-          let prevY = prevPosRef.current!.y;
-          const deltaX = currX - prevX;
-          const deltaY = currY - prevY;
-          const isVertical = Math.abs(deltaY) >= Math.abs(deltaX);
-          const isHorizontal = !isVertical;
-          let shouldFilter = true;
-          const { top, bottom, left, right } = isBorderRef.current!;
-
-          if (left && isHorizontal && deltaX >= 0) {
-            shouldFilter = false;
-            touchmoveStarted.current! = true;
-          } else if (right && isHorizontal && deltaX < 0) {
-            shouldFilter = false;
-            touchmoveStarted.current! = true;
-          } else if (top && isVertical && deltaY >= 0) {
-            shouldFilter = false;
-            touchmoveStarted.current! = true;
-          } else if (bottom && isVertical && deltaY < 0) {
-            shouldFilter = false;
-            touchmoveStarted.current! = true;
-          }
-
-          prevPosRef.current!.x = currX;
-          prevPosRef.current!.y = currY;
-          return shouldFilter;
+    zoom.on("zoom", handleZoom).filter((event: Event) => {
+      //returning true means that it will preventDefault
+      const _event = event as TouchEvent;
+      if (event.type == "touchmove") {
+        // console.log(event.type);
+        const touches = _event.touches;
+        if (defaultTouchmoveStarted.current) {
+          //if thee touch already started (meaning default wasn't prevented) it cannot be cancelled
+          return false;
         }
+        if (zoomTouchmoveStarted.current) {
+          return true;
+        }
+        if (touches.length > 1 || _event.shiftKey) {
+          return true;
+        }
+        //CURRENT
+        //start sets left as true
+        //touchmove 1 with vertical has no problem
+        //touchmove 2 with horizontal does something that avoids preventing default
+        //touchmove 3 with vertical wont even go down
+
+        //EXPECTED
+        //start sets left as true
+        //touchmove 1 with vertical has no problem
+        //touchmove 2 with horizontal still has no problem
+        //touchmove 3 with vertical still has no problem
+        let currX = touches[0].clientX;
+        let currY = touches[0].clientY;
+        let prevX = prevPosRef.current!.x;
+        let prevY = prevPosRef.current!.y;
+        const deltaX = currX - prevX;
+        const deltaY = currY - prevY;
+        const isVertical = Math.abs(deltaY) >= Math.abs(deltaX);
+        const isHorizontal = !isVertical;
+        let shouldFilter = true;
+        const { top, bottom, left, right } = isBorderRef.current!;
+
+        console.log(isHorizontal ? "Horizontal" : "Veretical");
+        if (left && isHorizontal && deltaX >= 0) {
+          shouldFilter = false;
+          defaultTouchmoveStarted.current = true;
+        } else if (right && isHorizontal && deltaX < 0) {
+          shouldFilter = false;
+          defaultTouchmoveStarted.current = true;
+        } else if (top && isVertical && deltaY >= 0) {
+          shouldFilter = false;
+          defaultTouchmoveStarted.current = true;
+        } else if (bottom && isVertical && deltaY < 0) {
+          shouldFilter = false;
+          defaultTouchmoveStarted.current = true;
+        } else {
+          zoomTouchmoveStarted.current = true;
+        }
+
+        return shouldFilter;
       }
+
       return true;
     });
 
@@ -122,9 +139,9 @@ export default function PannerAndZoomerWrapper({ svgRef }: Props) {
 
     return () => {
       svgSel.on(".zoom", null);
-      svgSel.node()!.removeEventListener("touchend", onTouchEnd, true);
-      svgSel.node()!.removeEventListener("touchcancel", onTouchEnd, true);
-      svgSel.node()!.removeEventListener("touchstart", onTouchStart, true);
+      svgSel.node()!.removeEventListener("touchend", onTouchEnd);
+      svgSel.node()!.removeEventListener("touchcancel", onTouchEnd);
+      svgSel.node()!.removeEventListener("touchstart", onTouchStart);
     };
   }, [svgRef]);
 

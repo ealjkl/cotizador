@@ -1,7 +1,7 @@
 "use client";
-import { Blueprint } from "./Blueprint";
-import PannerAndZoomerWrapper from "./PannerAndZoomerWrapper";
-import { QuoterSection } from "./Quoter/QuoterSection";
+import { Blueprint } from "./blueprint/Blueprint";
+import PannerAndZoomerWrapper from "./zoom/PannerAndZoomerWrapper";
+import { QuoterSection } from "./quoter/QuoterSection";
 // import styles from "./Main.module.css";
 import { createContext, useRef, useState } from "react";
 import { useContext } from "react";
@@ -18,6 +18,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
+import ExampleUseZoom from "./examples/ExampleUseZoom";
 
 export type Lote = {
   available: number;
@@ -51,15 +52,16 @@ export default function Main() {
           <Header />
           <Banner />
           <div className="blueprint-container">
-            <Blueprint
+            {/* <Blueprint
               svgRef={blueprintRef}
               data={lotes}
               onClick={(_, id) => {
                 setLote(lotes[id]);
                 onOpen();
               }}
-            />
-            <PannerAndZoomerWrapper svgRef={blueprintRef} />
+            /> */}
+            {/* <PannerAndZoomerWrapper svgRef={blueprintRef} /> */}
+            <ExampleUseZoom />
           </div>
 
           <QuoterSection onClose={onClose} isOpen={isOpen} />

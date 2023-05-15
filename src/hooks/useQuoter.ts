@@ -1,4 +1,4 @@
-import { QuoterContextType } from "@/components/Quoter/QuoterContext";
+import { QuoterContextType } from "@/components/quoter/QuoterContext";
 import { useState } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
