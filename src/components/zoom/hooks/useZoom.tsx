@@ -39,7 +39,7 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
       .scaleExtent([1, step * step])
       .translateExtent([
         [x, y],
-        [width, height],
+        [x + width, y + height],
       ]);
 
     zoomRef.current!.zoom = zoom;
@@ -67,9 +67,15 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
     }
 
     zoom.on("zoom", handleZoom).filter((event: Event) => {
+      if (event.type == "wheel") {
+        const _event = event as WheelEvent;
+        if (!(_event.ctrlKey || _event.shiftKey)) {
+          return false;
+        }
+      }
       //returning true means that it will preventDefault
-      const _event = event as TouchEvent;
       if (event.type == "touchmove") {
+        const _event = event as TouchEvent;
         // console.log(event.type);
         const touches = _event.touches;
         if (defaultTouchmoveStarted.current) {

@@ -23,7 +23,7 @@ export default function App() {
     <div className="App">
       <CacheProvider>
         <ChakraBaseProvider theme={theme}>
-          <FloatingWhatsAppButton phoneNumber="9996586910" />
+          {/* <FloatingWhatsAppButton phoneNumber="9996586910" /> */}
           <Main />
         </ChakraBaseProvider>
       </CacheProvider>

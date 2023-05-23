@@ -26,10 +26,10 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
   };
 
   const margin = {
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
+    top: 50,
+    right: 50,
+    left: 50,
+    bottom: 50,
   };
 
   const viewBox = {
@@ -42,8 +42,8 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // viewBox="0 0 594.94 381.43"
-      viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
+      viewBox="0 0 594.94 381.43"
+      // viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
       className="blueprint"
       ref={svgRef}
       style={{
@@ -55,7 +55,7 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
           href="blueprint-background.jpg"
           x={background.x}
           y={background.y}
-          // width={background.width}
+          width={background.width}
           // height={background.height}
         /> */}
         {Object.entries(data).map(([_, pData]) => {
