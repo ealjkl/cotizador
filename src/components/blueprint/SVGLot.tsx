@@ -1,4 +1,4 @@
-import { Lote } from "./Main";
+import { Lote } from "../Main";
 
 type Props = {
   pData: Lote;

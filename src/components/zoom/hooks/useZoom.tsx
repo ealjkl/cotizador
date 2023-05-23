@@ -1,15 +1,15 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { ZoomBehavior } from "d3";
-import { Box, Button, ButtonGroup } from "@chakra-ui/react";
 
 interface Args {
   svgRef: React.RefObject<SVGSVGElement>;
   step?: number;
 }
 
-//Maybe move this functionality into a hook
+const THRESHOLD = 20;
+//TODO: the step is not consistent with step, but rather zooms by a scale of 2, we may need to modify s3 source code
 export default function useZoom({ svgRef, step = 1.8 }: Args) {
   const zoomRef = useRef<{ zoom: ZoomBehavior<Element, unknown> | null }>({
     zoom: null,
@@ -29,13 +29,10 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
   const defaultTouchmoveStarted = useRef(false);
   const zoomTouchmoveStarted = useRef(false);
 
-  // const step = 1.8;
-
   useEffect(() => {
     const svgSel = d3.select(svgRef.current);
-    const gSel = svgSel.select(":scope > g");
+    const gSel = svgSel.selectChildren();
     const { x, y, width, height } = svgRef.current!.viewBox.baseVal;
-    const threshold = 20;
 
     const zoom = d3
       .zoom()
@@ -62,11 +59,11 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
       const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
       prevPosRef.current!.x = event.touches[0].clientX;
       prevPosRef.current!.y = event.touches[0].clientY;
-      isBorderRef.current!.top = -tY < threshold;
+      isBorderRef.current!.top = -tY < THRESHOLD;
       isBorderRef.current!.bottom =
-        Math.abs(height * k - height + tY) < threshold;
-      isBorderRef.current!.left = -tX < threshold;
-      isBorderRef.current!.right = width * k - width + tX < threshold;
+        Math.abs(height * k - height + tY) < THRESHOLD;
+      isBorderRef.current!.left = -tX < THRESHOLD;
+      isBorderRef.current!.right = width * k - width + tX < THRESHOLD;
     }
 
     zoom.on("zoom", handleZoom).filter((event: Event) => {
@@ -140,7 +137,7 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
     if (zoomRef.current?.zoom) {
       d3.select(svgRef.current)
         .transition()
-        .duration(500)
+        .duration(250)
         .call(zoomRef.current.zoom.scaleBy as any, step);
     }
   }
@@ -149,7 +146,7 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
     if (zoomRef.current?.zoom) {
       d3.select(svgRef.current)
         .transition()
-        .duration(500)
+        .duration(250)
         .call(zoomRef.current.zoom.scaleBy as any, 1 / step);
     }
   }

@@ -19,6 +19,8 @@ import {
 } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
 import ExampleUseZoom from "./examples/ExampleUseZoom";
+import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
+import ExampleBluePirntAndImage from "./examples/ExampleBluePrintAndImage";
 
 export type Lote = {
   available: number;
@@ -51,19 +53,15 @@ export default function Main() {
         <div className="layout-container">
           <Header />
           <Banner />
-          <div className="blueprint-container">
-            {/* <Blueprint
-              svgRef={blueprintRef}
-              data={lotes}
-              onClick={(_, id) => {
-                setLote(lotes[id]);
-                onOpen();
-              }}
-            /> */}
-            {/* <PannerAndZoomerWrapper svgRef={blueprintRef} /> */}
-            <ExampleUseZoom />
-          </div>
+          <ZoomableBlueprint
+            onClick={(_ev, id) => {
+              setLote(lotes[id]);
+              onOpen();
+            }}
+          />
 
+          {/* <ExampleUseZoom /> */}
+          {/* <ExampleBluePirntAndImage /> */}
           <QuoterSection onClose={onClose} isOpen={isOpen} />
         </div>
         <Footer />

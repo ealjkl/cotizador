@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
-import useZoom from "../zoom/useZoom";
+import useZoom from "../zoom/hooks/useElementZoom";
 import { Box, Button, ButtonGroup } from "@chakra-ui/react";
+import useZoomWithDefaultOnVerticalBorder from "../zoom/hooks/useZoomWithDefaultOnVerticalBorder";
+import useZoomWithDefaultOnZoomedOutMax from "../zoom/hooks/useZoomWithDefaultOnZoomedOutMax";
 
 interface ZoomControlsProps {
   onZoomIn: () => void;
@@ -23,13 +25,27 @@ const ZoomControls: React.FC<ZoomControlsProps> = ({ onZoomIn, onZoomOut }) => {
 
 function ExampleUseZoom() {
   const svgRef = useRef<SVGSVGElement>(null);
-  const { zoomIn, zoomOut } = useZoom({ svgRef });
+  const { zoomIn, zoomOut } = useZoomWithDefaultOnZoomedOutMax({ svgRef });
 
   return (
     <div>
       <svg ref={svgRef} viewBox="0 0 800 600" style={{ border: "1px solid" }}>
         <g>
           <circle cx={400} cy={300} r={200} fill="lightblue" />
+          <image
+            href="blueprint-background.jpg"
+            x="0"
+            y="0"
+            width="800"
+            height="600"
+          />
+          {/* <image
+            href="https://picsum.photos/500/400"
+            x="0"
+            y="0"
+            width="500"
+            height="400"
+          /> */}
         </g>
       </svg>
       <ZoomControls onZoomIn={zoomIn} onZoomOut={zoomOut} />
