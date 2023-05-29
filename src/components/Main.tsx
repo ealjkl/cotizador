@@ -21,6 +21,7 @@ import useEnganche from "@/hooks/useEnganche";
 import ExampleUseZoom from "./examples/ExampleUseZoom";
 import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
 import ExampleBluePirntAndImage from "./examples/ExampleBluePrintAndImage";
+import { PDFPreviewer } from "@/components/chepinas/PDFPreviewer";
 
 export type Lote = {
   available: number;
@@ -63,6 +64,7 @@ export default function Main() {
           {/* <ExampleUseZoom /> */}
           {/* <ExampleBluePirntAndImage /> */}
           <QuoterSection onClose={onClose} isOpen={isOpen} />
+          {/* <PDFPreviewer url="sample.pdf" /> */}
         </div>
         <Footer />
       </div>

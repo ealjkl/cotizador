@@ -19,17 +19,17 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
   };
 
   const background = {
-    x: -84,
-    y: -90,
-    width: 710,
+    x: -81,
+    y: -87,
+    width: 717,
     // height: 900,
   };
 
   const margin = {
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
+    top: 30,
+    right: 30,
+    left: 30,
+    bottom: 30,
   };
 
   const viewBox = {
@@ -51,13 +51,13 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
       }}
     >
       <g className="blueprint__main-group">
-        {/* <image
+        <image
           href="blueprint-background.jpg"
           x={background.x}
           y={background.y}
-          // width={background.width}
+          width={background.width}
           // height={background.height}
-        /> */}
+        />
         {Object.entries(data).map(([_, pData]) => {
           return <SVGLot key={pData.id} pData={pData} onClick={onClick} />;
         })}
