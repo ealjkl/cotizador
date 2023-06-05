@@ -1,12 +1,13 @@
+"use client";
+import Image from "next/image";
 import { Lote } from "../Main";
 import SVGLot from "./SVGLot";
+import AriaMasterPlan from "./AriaMasterPlanSvg";
+import { forwardRef, useEffect } from "react";
 
 type Props = {
   data: { [id: string]: Lote };
-  onClick?: (
-    ev: React.MouseEvent<SVGPolygonElement, MouseEvent>,
-    id: string
-  ) => void;
+  onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
   svgRef?: React.RefObject<SVGSVGElement>;
 };
 
@@ -38,30 +39,50 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
     width: main.width + margin.left + margin.right,
     height: main.height + margin.top + margin.bottom,
   };
+  useEffect(() => {
+    console.log("svgRef", svgRef);
+  }, [svgRef]);
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      // viewBox="0 0 594.94 381.43"
-      viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
-      className="blueprint"
+    <AriaMasterPlan
       ref={svgRef}
-      style={{
-        border: "solid 1px black",
+      onClick={(ev) => {
+        if (ev.target === ev.currentTarget) {
+          return;
+        }
+        if (!(ev.target as any).dataset.number) {
+          return;
+        }
+        const lotElement = ev.target as Element;
+        const id = lotElement.id;
+
+        if (onClick && id != undefined) {
+          onClick(ev, id);
+        }
       }}
-    >
-      <g className="blueprint__main-group">
-        <image
-          href="blueprint-background.jpg"
-          x={background.x}
-          y={background.y}
-          width={background.width}
-          // height={background.height}
-        />
-        {Object.entries(data).map(([_, pData]) => {
-          return <SVGLot key={pData.id} pData={pData} onClick={onClick} />;
-        })}
-      </g>
-    </svg>
+    />
   );
+  // <svg
+  //   xmlns="http://www.w3.org/2000/svg"
+  //   // viewBox="0 0 594.94 381.43"
+  //   viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}
+  //   className="blueprint"
+  //   ref={svgRef}
+  //   style={{
+  //     border: "solid 1px black",
+  //   }}
+  // >
+  //   <g className="blueprint__main-group">
+  //     <image
+  //       href="blueprint-background.jpg"
+  //       x={background.x}
+  //       y={background.y}
+  //       width={background.width}
+  //       // height={background.height}
+  //     />
+  //     {/* {Object.entries(data).map(([_, pData]) => {
+  //       return <SVGLot key={pData.id} pData={pData} onClick={onClick} />;
+  //     })} */}
+  //   </g>
+  // </svg>
 }

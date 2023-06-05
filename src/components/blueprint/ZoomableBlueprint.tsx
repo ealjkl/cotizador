@@ -6,10 +6,7 @@ import useZoom from "../zoom/hooks/useZoom";
 import { Blueprint } from "./Blueprint";
 
 type Props = {
-  onClick?: (
-    ev: React.MouseEvent<SVGPolygonElement, MouseEvent>,
-    id: string
-  ) => void;
+  onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
 };
 
 export default function ZoomableBlueprint(props: Props) {

@@ -55,9 +55,12 @@ export default function Main() {
           <Header />
           <Banner />
           <ZoomableBlueprint
-            onClick={(_ev, id) => {
-              setLote(lotes[id]);
-              onOpen();
+            onClick={(ev, id) => {
+              ev.stopPropagation();
+              if (lotes[id].available == 1) {
+                setLote(lotes[id]);
+                onOpen();
+              }
             }}
           />
 
