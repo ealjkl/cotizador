@@ -1,4 +1,5 @@
 import { customCreateSvgElementFromObject } from "@/utils/customCreateSvgElementFromObject";
+import getLots from "@/utils/getLot";
 import React, { forwardRef } from "react";
 import svg from "../../data/aria-masterplan.json";
 import { createSvgElementFromObject } from "../../utils/createSvgElementFromObject";
@@ -37,6 +38,8 @@ const viewBox = {
 };
 
 svg.attributes.viewBox = `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`;
+
+// const lotsOb = await getLots();
 
 const AriaMasterPlan = forwardRef<SVGSVGElement, Props>((props, ref) => {
   return customCreateSvgElementFromObject(

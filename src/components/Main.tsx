@@ -1,34 +1,19 @@
 "use client";
-import { Blueprint } from "./blueprint/Blueprint";
-import PannerAndZoomerWrapper from "./zoom/PannerAndZoomerWrapper";
 import { QuoterSection } from "./quoter/QuoterSection";
-// import styles from "./Main.module.css";
 import { createContext, useRef, useState } from "react";
-import { useContext } from "react";
 import { lotes } from "../utils/lotes";
 import Banner from "./Banner";
 import Header from "./Header";
 import Footer from "./Footer";
-import {
-  Button,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalOverlay,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
-import ExampleUseZoom from "./examples/ExampleUseZoom";
 import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
-import ExampleBluePirntAndImage from "./examples/ExampleBluePrintAndImage";
-import { PDFPreviewer } from "@/components/chepinas/PDFPreviewer";
 
 export type Lote = {
   available: number;
   area: number;
   number: string;
   id: string;
-  points: string;
 };
 
 export const LoteContext = createContext<{
