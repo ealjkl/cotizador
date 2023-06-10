@@ -2,12 +2,12 @@
 import Image from "next/image";
 import { Lote } from "../Main";
 import SVGLot from "./SVGLot";
-import AriaMasterPlan from "./AriaMasterPlanSvg";
+import AriaMasterPlan from "./AriaMasterPlanSvg2";
 import { forwardRef, useEffect } from "react";
 
 type Props = {
   data: { [id: string]: Lote };
-  onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
+  onClick?: (ev: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => void;
   svgRef?: React.RefObject<SVGSVGElement>;
 };
 
@@ -46,7 +46,7 @@ export function Blueprint({ data, onClick, svgRef }: Props) {
   return (
     <AriaMasterPlan
       ref={svgRef}
-      onClick={(ev) => {
+      onClick={(ev: any) => {
         if (ev.target === ev.currentTarget) {
           return;
         }
