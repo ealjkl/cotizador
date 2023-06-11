@@ -1,11 +1,11 @@
 import { customCreateSvgElementFromObject } from "@/utils/customCreateSvgElementFromObject";
-import getLots from "@/utils/getLot";
+import { SvgObject } from "@/utils/getSvg";
 import React, { forwardRef } from "react";
-import svg from "../../data/aria-masterplan.json";
-import { createSvgElementFromObject } from "../../utils/createSvgElementFromObject";
+import ariaSvg from "../../data/aria-masterplan.json";
 
 type Props = {
   ref?: React.RefObject<SVGSVGElement>;
+  svgObject: SvgObject;
   onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
 };
 
@@ -37,13 +37,11 @@ const viewBox = {
   height: main.height + margin.top + margin.bottom,
 };
 
-svg.attributes.viewBox = `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`;
-
-// const lotsOb = await getLots();
-
 const AriaMasterPlan = forwardRef<SVGSVGElement, Props>((props, ref) => {
+  //TODO: make all this modifications before
+  props.svgObject.attributes.viewBox = `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`;
   return customCreateSvgElementFromObject(
-    svg,
+    props.svgObject,
     {
       onClick: props.onClick,
       ref,

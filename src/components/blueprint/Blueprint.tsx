@@ -1,19 +1,20 @@
-import getLots from "@/utils/getLot";
+import React, { useEffect } from "react";
 import { Lote } from "../Main";
 import AriaMasterPlan from "./AriaMasterPlanSvg2";
+import { SvgObject } from "../../utils/getSvg";
 
 type Props = {
   data: { [id: string]: Lote };
   onClick?: (ev: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => void;
   svgRef?: React.RefObject<SVGSVGElement>;
+  svgObject: SvgObject;
 };
 
-export async function Blueprint({ data, onClick, svgRef }: Props) {
-  const lotsOb = await getLots();
-  console.log(lotsOb);
+export function Blueprint({ data, onClick, svgRef, svgObject }: Props) {
   return (
     <AriaMasterPlan
       ref={svgRef}
+      svgObject={svgObject}
       onClick={(ev: any) => {
         if (ev.target === ev.currentTarget) {
           return;

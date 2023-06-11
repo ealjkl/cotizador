@@ -1,13 +1,13 @@
 "use client";
 import { QuoterSection } from "./quoter/QuoterSection";
 import { createContext, useRef, useState } from "react";
-import { lotes } from "../utils/lotes";
 import Banner from "./Banner";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useDisclosure } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
 import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
+import { SvgObject } from "@/utils/getSvg";
 
 export type Lote = {
   available: number;
@@ -18,10 +18,15 @@ export type Lote = {
 
 export const LoteContext = createContext<{
   current: Lote | null;
-  lotes: typeof lotes;
+  lotes: { [lotId: string]: Lote } | null;
   priceM2: number;
-}>({ current: null, lotes, priceM2: 19_000 });
-export default function Main() {
+}>({ current: null, lotes: null, priceM2: 19_000 });
+
+type Props = {
+  svgObject: SvgObject;
+  lotes: { [lotId: string]: Lote };
+};
+export default function Main(props: Props) {
   const [lote, setLote] = useState<Lote | null>(null);
   const blueprintRef = useRef<SVGSVGElement>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,16 +39,20 @@ export default function Main() {
     });
 
   return (
-    <LoteContext.Provider value={{ current: lote, lotes, priceM2: 19_000 }}>
+    <LoteContext.Provider
+      value={{ current: lote, lotes: props.lotes, priceM2: 19_000 }}
+    >
       <div className="footer-layout-container">
         <div className="layout-container">
           <Header />
           <Banner />
           <ZoomableBlueprint
+            temp="hey"
+            svgObject={props.svgObject}
             onClick={(ev, id) => {
               ev.stopPropagation();
-              if (lotes[id].available == 1) {
-                setLote(lotes[id]);
+              if (props.lotes[id].available == 1) {
+                setLote(props.lotes[id]);
                 onOpen();
               }
             }}
