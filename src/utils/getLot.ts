@@ -8,6 +8,7 @@ const URL =
 export default async function getLots() {
   const lotsRes = await fetch(URL, { next: { revalidate: 10 } });
   const textCsv = await lotsRes.text();
+  console.log("textCsv", textCsv);
   const streamCsv = Readable.from(textCsv);
   const jsonData: any = {};
 
