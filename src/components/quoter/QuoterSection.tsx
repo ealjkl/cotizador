@@ -14,6 +14,7 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import Quoter from "./Quoter";
+import Chepina from "./chepinas/Chepina";
 
 type Props = {
   lote?: Lote | null;
@@ -72,6 +73,9 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
             {lote.area}m<sup>2</sup>
           </p>
         </header>
+        <section className="quoter__chepina-section">
+          <Chepina lote={lote} />
+        </section>
         <section className="quoter__price-section">
           <h2 className="quoter__total-price__label">Precio total:</h2>
           <p className="quoter__total-price__value-container">
