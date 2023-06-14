@@ -1,17 +1,22 @@
 .footer {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--primary-color);
     padding: 1em;
     // flex: 100% 1;
     align-items: flex-end;
 }
 
-.footer .logo-anchor {
-    text-align: center;
+.footer {
     display: flex;
     justify-content: center;
 }
 
+.footer .logo-anchor {
+    text-align: center;
+    display: block;
+    // justify-content: center;
+}
+
 .footer>.logo-anchor>img {
-    width: 4em;
+    width: 10em;
 }

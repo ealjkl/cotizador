@@ -1,0 +1,24 @@
+.blueprint-group {
+    position: relative;
+}
+
+.blueprint__zoom-button-group {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    gap: .2em;
+}
+
+.blueprint__zoom-button {
+    background-color: rgba(255, 255, 255, .7);
+    padding: .5em;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: var(--secondary-color);
+    font-size: .8em;
+    // min-width: none;
+    // height: 2em;
+    // font-size: 1em;
+}

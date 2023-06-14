@@ -11,7 +11,9 @@
 .chepina__open-button {
     position: absolute;
     font-size: 1.4rem;
-    background-color: #eee;
+    // background-color: #eee;
+    background-color: var(--secondary-color);
+    color: white;
     padding: .3em .6em;
     margin: 1.4em .8em;
     right: 0;
@@ -21,5 +23,5 @@
 }
 
 .chepina__open-button:hover {
-    background-color: #ccc;
+    background-color: var(--highlight-input);
 }

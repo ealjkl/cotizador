@@ -23,14 +23,19 @@ export default function Chepina(props: Props) {
   return (
     <div className="chepina-container">
       <div className="chepina">
-        <Skeleton isLoaded={imageLoaded}>
+        <Skeleton
+          isLoaded={imageLoaded}
+          // isLoaded={false}
+          startColor="var(--app-skeleton-start-color)"
+          endColor="var(--app-skeleton-end-color)"
+        >
           <Image
             src={imageUri}
             width={"300"}
             style={{
               height: "auto",
             }}
-            height={"450"}
+            height={"424"}
             alt={`Chepina del lote ${props.lote.number}`}
             onLoad={() => {
               setImageLoaded(true);

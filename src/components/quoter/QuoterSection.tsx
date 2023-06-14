@@ -1,4 +1,3 @@
-"use client";
 import { useContext } from "react";
 import { Lote, LoteContext } from "../Main";
 import EngancheSection from "./EngancheSection";

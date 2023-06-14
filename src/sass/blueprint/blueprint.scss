@@ -1,15 +1,18 @@
 @use "../breakpoints.scss" as bp;
 
 [data-available="1"] {
-    fill: #226f54;
+    fill: var(--available-1);
+    // fill: var(--secondary-color);
 }
 
 [data-available="2"] {
-    fill: #f1d302;
+    fill: var(--available-2);
+    // fill: transparent;
 }
 
 [data-available="3"] {
-    fill: #bf4342;
+    fill: var(--available-3);
+    // fill: transparent;
 }
 
 [data-available] {
@@ -17,7 +20,8 @@
     /* transition: fill 0.2s ease-in-out; */
 }
 
-[data-available]:hover {
+[data-available="1"]:hover {
+    cursor: pointer;
     filter: brightness(65%);
     opacity: 0.9;
 }
@@ -26,7 +30,7 @@
     stroke: white;
 }
 
-.blueprint {
+.blueprint-group {
     flex: 100%;
 
     @media (min-width: bp.$md) {

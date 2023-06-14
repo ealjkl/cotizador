@@ -23,16 +23,17 @@
 .plazo-select-input {
     font-size: 1.8rem;
     outline: none;
-    border: none;
-    border-bottom: 2px solid black;
-    padding: .5em;
+    text-align: center;
+    // border-bottom: 2px solid black;
+    // padding: .5em;
     // width: 100%;
 }
 
+
 .plazo-select-input>option {
-    font-size: 1rem;
-    color: blue;
-    display: block;
-    width: 100px;
-    appearance: none;
+    // text-align: center;
+    // font-size: 1rem;
+    // display: block;
+    // width: 100px;
+    // appearance: none;
 }

@@ -17,7 +17,7 @@ export default function Banner() {
             textDecoration: "underline",
           }}
         >
-          Cotiza tu Smart Home
+          Cotiza tu Terreno
         </Highlight>
       </Heading>
       <Indicator />

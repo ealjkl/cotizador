@@ -11,12 +11,13 @@ type Props = {
   children: React.ReactNode;
 } & EngancheInicialVar;
 
-const Quoter: React.FC<Props> = (input) => {
-  const all = useQuoter(input);
+const Quoter: React.FC<Props> = (props) => {
+  const {children, ...rest}= props;
+  const all = useQuoter(rest);
 
   return (
     <QuoterContext.Provider value={all}>
-      {input.children}
+      {children}
     </QuoterContext.Provider>
   );
 };

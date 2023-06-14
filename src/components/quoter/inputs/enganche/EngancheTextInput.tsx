@@ -16,6 +16,7 @@ export default function EngancheTextInput() {
     <input
       key="enganche-input-box"
       type="currency"
+      id="enganche"
       className="enganche-input-box"
       value={engancheString}
       onInput={(ev) => {

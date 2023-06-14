@@ -21,6 +21,9 @@ export default function EngancheDiscreteSlider({ step = 1 }: Props = {}) {
     useQuoterContext();
   return (
     <Slider
+      sx={{
+        margin: "1em 0",
+      }}
       focusThumbOnChange={false}
       value={enganche}
       min={minEnganche}
@@ -30,22 +33,11 @@ export default function EngancheDiscreteSlider({ step = 1 }: Props = {}) {
         setEnganche(val);
       }}
     >
-      <SliderTrack>
+      <SliderTrack bg="var(--terciary-color)">
         <Box position="relative" right={10} />
-        <SliderFilledTrack />
+        <SliderFilledTrack bg="var(--highlight-input)" />
       </SliderTrack>
       <SliderThumb boxSize={6} />
     </Slider>
-
-    // <input
-    //   type="range"
-    //   value={enganche}
-    //   min={minEnganche}
-    //   max={maxEnganche}
-    //   step={step}
-    //   onChange={(ev) => {
-    //     setEnganche(ev.currentTarget.valueAsNumber);
-    //   }}
-    // />
   );
 }
