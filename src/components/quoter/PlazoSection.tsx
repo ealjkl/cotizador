@@ -1,5 +1,6 @@
 import useQuoterContext from "@/hooks/useQuoterContext";
-import PlazoSelect from "./PlazoSelect";
+import PlanSelect from "./inputs/plan/PlanSelect";
+import PlazoSelect from "./inputs/plazo/PlazoSelect";
 
 type Props = {};
 
@@ -9,7 +10,7 @@ export default function PlazoSection({}: Props) {
       <label htmlFor="plazo" className="quoter__plazo-label">
         Plazo{" "}
       </label>
-      <PlazoSelect />
+      <PlanSelect />
     </div>
   );
 }

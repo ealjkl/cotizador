@@ -19,6 +19,9 @@ export default function EngancheDiscreteSlider({ step = 1 }: Props = {}) {
   //TODO: see if this is the way to handle the null case, because this should not be used without a context
   const { enganche, minEnganche, maxEnganche, setEnganche } =
     useQuoterContext();
+
+  console.log("minEnganche", minEnganche);
+  console.log("maxEnganche", maxEnganche);
   return (
     <Slider
       sx={{

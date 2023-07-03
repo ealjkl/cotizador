@@ -6,19 +6,17 @@ import QuoterContext from "./QuoterContext";
 type Props = {
   precioBase: number;
   plazoInicial?: number;
-  minEnganchePercentage?: number;
-  maxEnganchePercentage?: number;
+  minEnganchePercentageInicial?: number;
+  maxEnganchePercentageInicial?: number;
   children: React.ReactNode;
 } & EngancheInicialVar;
 
 const Quoter: React.FC<Props> = (props) => {
-  const {children, ...rest}= props;
+  const { children, ...rest } = props;
   const all = useQuoter(rest);
 
   return (
-    <QuoterContext.Provider value={all}>
-      {children}
-    </QuoterContext.Provider>
+    <QuoterContext.Provider value={all}>{children}</QuoterContext.Provider>
   );
 };
 

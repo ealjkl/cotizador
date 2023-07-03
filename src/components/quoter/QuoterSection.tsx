@@ -62,8 +62,8 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
       <Quoter
         {...{
           precioBase: totalPrice,
-          minEnganchePercentage: 10,
-          maxEnganchePercentage: 100,
+          minEnganchePercentageInicial: 10,
+          maxEnganchePercentageInicial: 100,
         }}
       >
         <header className="quoter__header">
