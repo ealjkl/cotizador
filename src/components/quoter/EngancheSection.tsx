@@ -2,7 +2,7 @@ import { useInputTextAsNum } from "@/hooks/useInputTextAsNum";
 import useQuoterContext from "@/hooks/useQuoterContext";
 import React, { use, useContext, useEffect, useState } from "react";
 import EngancheDiscreteSlider from "./inputs/enganche/EngancheDiscreteSlider";
-import EnganchePercentageSlider from "./inputs/enganche/EnganchePercentageDiscreteSlider";
+import EnganchePercentageDiscreteSlider from "./inputs/enganche/EnganchePercentageDiscreteSlider";
 import EngancheTextInput from "./inputs/enganche/EngancheTextInput";
 
 type Props = {};
@@ -22,9 +22,10 @@ export default function EngancheSection({}: Props) {
       </label>
 
       <EngancheTextInput />
-      <EngancheDiscreteSlider
+      {/* <EngancheDiscreteSlider
         step={Math.floor((maxEnganche - minEnganche) / 10)}
-      />
+      /> */}
+      <EnganchePercentageDiscreteSlider />
 
       <div className="enganche-input-slider__min-max-labels">
         <span className="enganche-input-slider__min-label">

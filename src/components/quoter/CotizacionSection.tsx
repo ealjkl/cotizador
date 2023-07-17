@@ -36,14 +36,17 @@ export default function CotizacionSection({}: Props) {
         </section>
 
         {/* ) : null} */}
-        {pagoContraEntrega > 1 ? (
-          <section className="cotizador-section__contra-entrega-sub">
-            <h4 className="cotizador-section__subtitle">Contra entrega</h4>
-            <p className="cotizador-section__text-body">
-              1 pago contra entrega de {moneyFormater.format(pagoContraEntrega)}
-            </p>
-          </section>
-        ) : null}
+        <section
+          className="cotizador-section__contra-entrega-sub"
+          style={{
+            visibility: pagoContraEntrega > 1 ? "visible" : "hidden",
+          }}
+        >
+          <h4 className="cotizador-section__subtitle">Contra entrega</h4>
+          <p className="cotizador-section__text-body">
+            1 pago contra entrega de {moneyFormater.format(pagoContraEntrega)}
+          </p>
+        </section>
 
         {/* <Button
           onClick={() => {}}

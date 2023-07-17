@@ -65,7 +65,7 @@ function DescargarCotizacionButton() {
         disabled={currentLote == null || loading}
         isLoading={loading}
       >
-        Download
+        Descargar
       </Button>
     </>
   );
