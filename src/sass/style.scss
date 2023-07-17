@@ -5,9 +5,13 @@
 @use "./whatsappFloatingButton/whatsappFloatingButton.scss";
 @use "./header/header.scss";
 @use "./footer/footer.scss";
+@use "./fonts/fonts.scss";
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-1: 'DM Sans';
+    --font-2: 'Dolce Vita';
+    font-family: var(--font-1);
 }
 
 :root {

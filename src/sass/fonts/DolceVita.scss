@@ -1,0 +1,26 @@
+// Regular
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('/fonts/DolceVita/DolceVita.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Light
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('/fonts/DolceVita/DolceVitaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Heavy Bold
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('/fonts/DolceVita/DolceVitaHeavyBold.ttf') format('truetype');
+    font-weight: 800; // or 900, depending on how heavy the bold is
+    font-style: normal;
+    font-display: swap;
+}
