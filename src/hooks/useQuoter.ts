@@ -1,19 +1,20 @@
 import { QuoterContextType } from "@/components/quoter/QuoterContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
 import usePlanQuoter, { PlanKind } from "./usePlan";
+import plans, { planInicial, planKindInicial } from "@/data/plans";
 
 export default function useQuoter(
   input: {
-    precioBase: number;
+    m2: number;
     plazoInicial?: number;
     minEnganchePercentageInicial?: number;
     maxEnganchePercentageInicial?: number;
   } & EngancheInicialVar
 ): QuoterContextType {
   let {
-    precioBase,
+    m2,
     plazoInicial = 12,
     minEnganchePercentageInicial = 0,
     maxEnganchePercentageInicial = 100,
@@ -27,10 +28,6 @@ export default function useQuoter(
   const [maxEnganchePercentage, setMaxEnganchePercentage] = useState<number>(
     maxEnganchePercentageInicial
   );
-
-  const minEnganche = (minEnganchePercentage * precioBase) / 100;
-  const maxEnganche = (maxEnganchePercentage * precioBase) / 100;
-
   minEnganchePercentageInicial ??= 0;
   maxEnganchePercentageInicial ??= 100;
 
@@ -44,6 +41,10 @@ export default function useQuoter(
   } as EngancheInicialVar;
 
   const [plazo, setPlazo] = useState<number>(plazoInicial);
+  const [precioBase, setPrecioBase] = useState<number>(
+    planInicial.precioM2 * m2
+  );
+
   const { enganche, enganchePercentage, setEnganche, setEnganchePercentage } =
     useEnganche({
       ...engancheInicialVar,
@@ -65,9 +66,15 @@ export default function useQuoter(
     }
   );
 
+  useEffect(() => {
+    setPrecioBase(plans[planKind].precioM2 * m2);
+  }, [planKind]);
+
+  const minEnganche = (minEnganchePercentage * precioBase) / 100;
+  const maxEnganche = (maxEnganchePercentage * precioBase) / 100;
+
   const { pagoInicial, pagoMensualidad, pagoTotal, pagoContraEntrega } =
     computePagos({
-      planKind,
       precioBase,
       enganchePercentage,
       plazo,
@@ -98,13 +105,11 @@ export default function useQuoter(
 }
 
 function computePagos({
-  planKind,
   precioBase,
   enganchePercentage,
   plazo,
   pagoContraEntregaPercentage,
 }: {
-  planKind: PlanKind;
   precioBase: number;
   enganchePercentage: number;
   plazo: number;
@@ -112,10 +117,7 @@ function computePagos({
 }) {
   // TODO: this should change based on formula
   let pagoTotal = precioBase;
-  // if (planKind == "contado") {
-  //   pagoTotal =
-  // }
-  //NOTE: this could change if there are more initial charges other than enganche, like an insurance
+
   const pagoMensualidadesTotalPercentage =
     100 - enganchePercentage - pagoContraEntregaPercentage;
   const pagoContraEntregaRealPercentage =

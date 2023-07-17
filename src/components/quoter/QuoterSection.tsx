@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Quoter from "./Quoter";
 import Chepina from "./chepinas/Chepina";
+import TotalPriceSection from "./TotalPriceSection";
 
 type Props = {
   lote?: Lote | null;
@@ -64,6 +65,7 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
           precioBase: totalPrice,
           minEnganchePercentageInicial: 10,
           maxEnganchePercentageInicial: 100,
+          m2: lote["area"],
         }}
       >
         <header className="quoter__header">
@@ -75,18 +77,11 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
         <section className="quoter__chepina-section">
           <Chepina lote={lote} />
         </section>
-        <section className="quoter__price-section">
-          <h2 className="quoter__total-price__label">Precio total:</h2>
-          <p className="quoter__total-price__value-container">
-            <span className="quoter__total-price__value">
-              {moneyFormater.format(totalPrice)}
-            </span>
-          </p>
-        </section>
+        <TotalPriceSection />
         <section className="quoter__input">
-          <EngancheSection />
-          <hr />
           <PlazoSection />
+          <hr />
+          <EngancheSection />
         </section>
         <CotizacionSection />
       </Quoter>

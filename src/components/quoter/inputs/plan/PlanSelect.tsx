@@ -26,7 +26,7 @@ export default function PlanSelect({}: Props) {
         <option value="contado">Contado</option>
         <option value="24-meses">24 meses</option>
         <option value="36-meses">36 meses</option>
-        <option value="constructor">Constructor</option>
+        <option value="constructorPlan">Constructor</option>
       </Select>
     </div>
   );

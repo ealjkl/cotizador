@@ -20,8 +20,6 @@ export default function EngancheDiscreteSlider({ step = 1 }: Props = {}) {
   const { enganche, minEnganche, maxEnganche, setEnganche } =
     useQuoterContext();
 
-  console.log("minEnganche", minEnganche);
-  console.log("maxEnganche", maxEnganche);
   return (
     <Slider
       sx={{

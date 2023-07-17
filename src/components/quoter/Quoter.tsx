@@ -4,7 +4,7 @@ import React from "react";
 import QuoterContext from "./QuoterContext";
 
 type Props = {
-  precioBase: number;
+  m2: number;
   plazoInicial?: number;
   minEnganchePercentageInicial?: number;
   maxEnganchePercentageInicial?: number;

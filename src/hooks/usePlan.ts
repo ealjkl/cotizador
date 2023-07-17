@@ -31,6 +31,7 @@ export default function usePlanQuoter(
     setEnganchePercentage(plan.engancheInicialPercentage);
     setMinEnganchePercentage(plan.minEnganchePercentageInicial);
     setMaxEnganchePercentage(plan.maxEnganchePercentageInicial);
+    setPagoContraEntregaPercentage(plan.pagoContraEntregaPercentage);
     setPlazo(plan.plazoInicial);
   }, [planKind, setPlazo]);
   return {

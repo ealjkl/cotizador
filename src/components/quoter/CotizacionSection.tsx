@@ -17,14 +17,19 @@ export default function CotizacionSection({}: Props) {
             1 pago de {moneyFormater.format(enganche)}
           </p>
         </section>
-        {pagoMensualidad > 1 ? (
-          <section className="cotizador-section__mensualidad-sub">
-            <h4 className="cotizador-section__subtitle">Mensualidades</h4>
-            <p className="cotizador-section__text-body">
-              {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
-            </p>
-          </section>
-        ) : null}
+        {/* {pagoMensualidad > 1 ? ( */}
+        <section
+          className="cotizador-section__mensualidad-sub"
+          style={{
+            visibility: pagoMensualidad > 1 ? "visible" : "hidden",
+          }}
+        >
+          <h4 className="cotizador-section__subtitle">Mensualidades</h4>
+          <p className="cotizador-section__text-body">
+            {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
+          </p>
+        </section>
+        {/* ) : null} */}
         {pagoContraEntrega > 1 ? (
           <section className="cotizador-section__contra-entrega-sub">
             <h4 className="cotizador-section__subtitle">Contra entrega</h4>
