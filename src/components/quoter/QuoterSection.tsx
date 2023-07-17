@@ -16,12 +16,19 @@ import {
 import Quoter from "./Quoter";
 import Chepina from "./chepinas/Chepina";
 import TotalPriceSection from "./TotalPriceSection";
+// import { Template } from "./buttons/Template";
+import dynamic from "next/dynamic";
 
 type Props = {
   lote?: Lote | null;
   isOpen: boolean;
   onClose: () => void;
 };
+
+const Previewer = dynamic(() => import("../Previewer"), {
+  loading: () => <h1>hola</h1>,
+  ssr: false,
+});
 
 export function QuoterSection({ isOpen, onClose }: Props) {
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
@@ -65,6 +72,7 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
         m2: lote["area"],
       }}
     >
+      <Previewer />
       <div className="quoter-main">
         <section className="quoter__input">
           <PlazoSection />
