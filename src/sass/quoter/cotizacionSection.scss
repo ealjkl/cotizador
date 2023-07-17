@@ -1,3 +1,5 @@
+@use "../breakpoints.scss" as bp;
+
 .cotizador-section {
     background-color: var(--terciary-color);
     // color: black;
@@ -22,4 +24,59 @@
 
 .cotizador-section__text-body {
     font-size: 1.6rem;
+}
+
+.cotizacion-section__buttonGroup {
+    margin: .4em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8em;
+
+    @media (min-width: bp.$md) {
+        flex: 1;
+    }
+}
+
+
+.cotizacion-section__buttonGroup>* {
+    border: 1px solid black;
+    font-size: 1.3rem;
+    border: 0;
+    font-weight: 500;
+}
+
+.cotizador-section__button-descargar {
+    flex: 1 100%;
+    display: block;
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+
+    &:hover {
+        background-color: var(--highlight-input);
+    }
+
+    @media (min-width: bp.$md) {
+        flex: .5;
+    }
+}
+
+
+.cotizador-section__button-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 100%;
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-whatsapp);
+    color: white;
+
+    &:hover {
+        background-color: var(--color-whatsapp-dark);
+    }
+
+    @media (min-width: bp.$md) {
+        flex: .5;
+    }
 }

@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
 const DescargarCotizacionButton = dynamic(
@@ -6,9 +7,9 @@ const DescargarCotizacionButton = dynamic(
     ssr: false,
     loading: () => {
       return (
-        <button disabled className="chepina__open-button disabled">
+        <Button disabled className="cotizador-section__button-descargar">
           Descargar
-        </button>
+        </Button>
       );
     },
   }

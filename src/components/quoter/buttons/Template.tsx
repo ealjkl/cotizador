@@ -177,9 +177,6 @@ MyDocumentProps) {
         <View style={styles.headerSection}>
           <PdfImage src="./aria/brand/logotipo.png" style={styles.logo} />
           <View>
-            {/* <Text style={styles.modelText}>
-              MODELO {lote.MODELO.toUpperCase()}
-            </Text> */}
             <Text
               style={{
                 ...styles.loteText,
@@ -213,7 +210,7 @@ MyDocumentProps) {
               }}
             >
               Plan:
-            </Text>{" "}
+            </Text>
             <Text>{plan}</Text>
           </View>
           {plazo > 0 ? (
@@ -230,7 +227,7 @@ MyDocumentProps) {
                 }}
               >
                 Mensualidades:
-              </Text>{" "}
+              </Text>
               <Text>{plazo}</Text>
             </View>
           ) : null}
@@ -287,7 +284,6 @@ MyDocumentProps) {
               </View>
             </View>
           </View>
-          {/* TODO: use the right model */}
         </View>
 
         <View style={styles.informacionSection}>

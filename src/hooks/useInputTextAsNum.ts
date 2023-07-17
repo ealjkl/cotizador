@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { boolean } from "yup";
 
 const baseErrors = {
   valLTMinError: new Error("Value less than min"),
@@ -11,11 +10,13 @@ export function useInputTextAsNum({
   minValue = -Infinity,
   maxValue = Infinity,
   setValue,
+  round = true,
 }: {
   value: number;
   minValue?: number;
   maxValue?: number;
   setValue: React.Dispatch<React.SetStateAction<number>>;
+  round?: boolean;
 }) {
   const [valueString, setValueStringInner] = useState<string>(String(value));
   const [valLTMinError, setValLTMinError] = useState<Error | null>(null);
@@ -55,8 +56,12 @@ export function useInputTextAsNum({
   );
 
   useEffect(() => {
+    let newValue = value;
+    if (round) {
+      newValue = Math.round(value);
+    }
     if (shouldStringValChange) {
-      setValueStringInner(String(value));
+      setValueStringInner(String(newValue));
     }
     setShouldStringValChange(true);
   }, [value]); // eslint-disable-line
