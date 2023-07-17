@@ -7,6 +7,12 @@
 @use "./footer/footer.scss";
 @use "./fonts/fonts.scss";
 
+@font-face {
+    font-family: 'dolce';
+    src: url("/public/dolce-vita.ttf");
+}
+
+
 :root {
     // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     --font-1: 'DM Sans';

@@ -4,6 +4,7 @@ import EngancheSection from "./EngancheSection";
 import PlazoSection from "./PlazoSection";
 import CotizacionSection from "./CotizacionSection";
 import moneyFormater from "@/utils/moneyFormater";
+import { QuoterComplement } from "./QuoterComplement";
 import TestForm from "./TestForm";
 import {
   Modal,
@@ -37,10 +38,7 @@ export function QuoterSection({ isOpen, onClose }: Props) {
       <ModalOverlay />
       <ModalContent className="quoter-container">
         <ModalCloseButton size={"lg"} />
-        <ModalBody className="quoter">
-          {component}
-          <TestForm />
-        </ModalBody>
+        <ModalBody className="quoter">{component}</ModalBody>
       </ModalContent>
     </Modal>
   );
@@ -59,32 +57,22 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
   const totalPrice = priceM2 * lote.area;
 
   return (
-    <div className="quoter-main">
-      <Quoter
-        {...{
-          precioBase: totalPrice,
-          minEnganchePercentageInicial: 10,
-          maxEnganchePercentageInicial: 100,
-          m2: lote["area"],
-        }}
-      >
-        <header className="quoter__header">
-          <h3 className="quoter__title">Lote {lote.number}</h3>
-          <p className="quoter__area">
-            {lote.area}m<sup>2</sup>
-          </p>
-        </header>
-        <section className="quoter__chepina-section">
-          <Chepina lote={lote} />
-        </section>
-        <TotalPriceSection />
+    <Quoter
+      {...{
+        precioBase: totalPrice,
+        minEnganchePercentageInicial: 10,
+        maxEnganchePercentageInicial: 100,
+        m2: lote["area"],
+      }}
+    >
+      <div className="quoter-main">
         <section className="quoter__input">
           <PlazoSection />
           <hr />
           <EngancheSection />
         </section>
         <CotizacionSection />
-      </Quoter>
-    </div>
+      </div>
+    </Quoter>
   );
 }
