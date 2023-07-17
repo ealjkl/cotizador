@@ -14,11 +14,38 @@
     // border: #ddd solid 2px;
     // box-shadow: 0px 0px 15px 5px #aaa;
 
-    // @media (min-width: bp.$md) {
-    //     display: flex;
-    //     flex-flow: row wrap;
-    //     gap: 1em;
-    // }
+}
+
+.quoter__header {
+    display: flex;
+    justify-content: center;
+} 
+
+.quoter__title {
+    font-family: "Dolce Vita";
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+.quoter__details {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+
+
+.quoter__area-section {
+    padding-right: 1em;
+    text-align: end;
+    font-size: 1.5rem;
+    width: 50%;
+    border-right: 1px solid var(--secondary-color);
+}
+
+.quoter__area {
+    font-weight: bold;
+    text-align: end;
+    font-size: 1.5rem;
 }
 
 .quoter-container {
@@ -52,4 +79,15 @@
 
 .quoter__chepina-section {
     padding: .4em 0;
+}
+
+
+.quoter-main {
+    padding-top: 1em;
+    border-top: solid 1px var(--secondary-color);
+}
+
+/* Temporary fix*/
+.chakra-select__icon-wrapper {
+    display: none;
 }

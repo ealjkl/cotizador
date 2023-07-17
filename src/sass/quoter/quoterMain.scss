@@ -4,26 +4,30 @@
 @use "../breakpoints.scss" as bp;
 
 .quoter-main {
+
     @media (min-width: bp.$md) {
-        flex: 0.5;
+        display: flex;
+        flex-flow: row;
+        gap: 1em;
     }
 }
 
 .quoter__price-section {
-    padding: 1em 1.4em 1.4em 1.4em;
+    padding-left: 1em;
+    width: 50%;
 }
 
 .quoter__total-price__label {
     font-size: 1.4rem;
-    text-align: end;
+    // text-align: end;
 }
 
 .quoter__total-price__value-container {
-    text-align: end;
+    // text-align: end;
 }
 
 .quoter__total-price__value {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: end;
 }
