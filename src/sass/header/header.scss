@@ -1,13 +1,67 @@
 .header {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    height: 100vh;
     color: var(--primary-color);
     width: 100%;
     padding: 1em;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header .logo-anchor {
     text-align: center;
-    display: flex;
+    // display: flex;
     justify-content: center;
 }
+
+.link-to-banner {
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.1s ease-in;
+}
+
+.link-to-banner:hover {
+    // background-color: #555;
+    outline: 3px solid var(--highlight-input-strong);
+    border: 1px solid var(--highlight-input-strong);
+    color: var(--highlight-input-strong)
+}
+
+.link-to-banner:hover .arrow {  
+    border: solid var(--highlight-input-strong);
+    border-width: 0 3px 3px 0;
+}
+
+
+.link-to-banner p {
+    font-size: 1.5em;
+}
+
+.arrow {
+    border: solid var(--secondary-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+
+  @keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    50% {
+        transform: translateY(10px) rotate(45deg);
+    }
+  }

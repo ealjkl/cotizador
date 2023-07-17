@@ -599,7 +599,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 body {
-  min-height: 180vh;
+  min-height: 100dvh;
 }
 
 /*# sourceMappingURL=style.css.map */

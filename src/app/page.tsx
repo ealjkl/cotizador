@@ -1,32 +1,20 @@
-"use client";
+import getLots from "@/utils/getLot";
+import getSvg from "@/utils/getSvg";
 import Main from "../components/Main";
-import FloatingWhatsAppButton from "../components/FloatingWhatsAppButton";
+import { Providers } from "../components/providers/providers";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
-import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
-import chakraTheme from "@chakra-ui/theme";
-import { CacheProvider } from "@chakra-ui/next-js";
-
-const { Spinner, Button, Modal, CloseButton, Slider } = chakraTheme.components;
-
-const theme = extendBaseTheme({
-  components: {
-    Spinner,
-    Button,
-    Modal,
-    CloseButton,
-    Slider,
-  },
-});
-
-export default function App() {
+export default async function App() {
+  const lotes = await getLots();
+  const svgObject = await getSvg(lotes);
   return (
     <div className="App">
-      <CacheProvider>
-        <ChakraBaseProvider theme={theme}>
-          <FloatingWhatsAppButton phoneNumber="9996586910" />
-          <Main />
-        </ChakraBaseProvider>
-      </CacheProvider>
+      <Providers>
+        {/* <FloatingWhatsAppButton phoneNumber="9996586910" /> */}
+        <Main svgObject={svgObject} lotes={lotes} />
+      </Providers>
     </div>
   );
 }

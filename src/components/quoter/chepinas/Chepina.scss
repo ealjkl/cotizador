@@ -1,0 +1,27 @@
+.chepina-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.chepina {
+    position: relative;
+}
+
+.chepina__open-button {
+    position: absolute;
+    font-size: 1.4rem;
+    // background-color: #eee;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: .3em .6em;
+    margin: 1.4em .8em;
+    right: 0;
+    top: 0;
+    // border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.chepina__open-button:hover {
+    background-color: var(--highlight-input);
+}

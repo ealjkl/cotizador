@@ -1,4 +1,4 @@
-import QuoterContext from "@/components/Quoter/QuoterContext";
+import QuoterContext from "@/components/quoter/QuoterContext";
 import NoQuoterContextError from "@/errors/NoQuoterContextError";
 import { useContext } from "react";
 

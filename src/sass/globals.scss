@@ -1,11 +1,23 @@
 :root {
-    --primary-color: white;
-    --secondary-color: #16243C;
-    // --terciary-color: ;
-    --available-1: #226f54;
-    --available-2: #f1d302;
-    --available-3: #bf4342;
-    --highlight-input: #2497E3;
+    --primary-color: #E2E0E4;
+    --secondary-color: #574646;
+    --terciary-color: white;
+
+    --app-skeleton-start-color: #cecbd0;
+    --app-skeleton-end-color: #9b8e8e;
+
+    // --available-1: #226f54;
+    // --available-2: #f1d302;
+    // --available-3: #bf4342;
+
+    --available-1: #51A3A3;
+    --available-2: #EAD94C;
+    --available-3: #DD7373;
+
+
+    // --highlight-input: #2497E3;
+    --highlight-input: #C6AB80;
+    --highlight-input-strong: #112A46;
     --color-error: #bf4342;
     --color-success: #389977;
     --highlight-text: #8bdce6;

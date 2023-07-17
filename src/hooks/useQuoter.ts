@@ -1,35 +1,38 @@
-import { QuoterContextType } from "@/components/Quoter/QuoterContext";
-import { useState } from "react";
+import { QuoterContextType } from "@/components/quoter/QuoterContext";
+import { useEffect, useState } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
+import usePlanQuoter, { PlanKind } from "./usePlan";
+import plans, { planInicial, planKindInicial } from "@/data/plans";
 
-export default function useQuoter<T>(
+export default function useQuoter(
   input: {
-    preciosTable?: T;
-    precioBase: number;
+    m2: number;
     plazoInicial?: number;
-    minEnganchePercentage?: number;
-    maxEnganchePercentage?: number;
+    minEnganchePercentageInicial?: number;
+    maxEnganchePercentageInicial?: number;
   } & EngancheInicialVar
 ): QuoterContextType {
   let {
-    precioBase,
-    preciosTable,
+    m2,
     plazoInicial = 12,
-    minEnganchePercentage = 0,
-    maxEnganchePercentage = 100,
+    minEnganchePercentageInicial = 0,
+    maxEnganchePercentageInicial = 100,
     engancheInicial,
     engancheInicialPercentage,
   } = input;
 
-  const minEnganche = (minEnganchePercentage * precioBase) / 100;
-  const maxEnganche = (maxEnganchePercentage * precioBase) / 100;
-
-  minEnganchePercentage ??= 0;
-  maxEnganchePercentage ??= 100;
+  const [minEnganchePercentage, setMinEnganchePercentage] = useState<number>(
+    minEnganchePercentageInicial
+  );
+  const [maxEnganchePercentage, setMaxEnganchePercentage] = useState<number>(
+    maxEnganchePercentageInicial
+  );
+  minEnganchePercentageInicial ??= 0;
+  maxEnganchePercentageInicial ??= 100;
 
   if (engancheInicial == undefined && engancheInicialPercentage == undefined) {
-    engancheInicialPercentage = minEnganchePercentage;
+    engancheInicialPercentage = minEnganchePercentageInicial;
   }
 
   let engancheInicialVar = {
@@ -38,34 +41,64 @@ export default function useQuoter<T>(
   } as EngancheInicialVar;
 
   const [plazo, setPlazo] = useState<number>(plazoInicial);
+  const [precioBase, setPrecioBase] = useState<number>(
+    planInicial.precioM2 * m2
+  );
+
   const { enganche, enganchePercentage, setEnganche, setEnganchePercentage } =
     useEnganche({
       ...engancheInicialVar,
       precioBase,
-      maxEnganchePercentage,
-      minEnganchePercentage,
+      maxEnganchePercentage: maxEnganchePercentageInicial,
+      minEnganchePercentage: minEnganchePercentageInicial,
     });
 
-  const { pagoInicial, pagoMensualidad, pagoTotal } = computePagos({
-    precioBase,
-    enganche,
-    plazo,
-  });
+  const { planKind, setPlanKind, pagoContraEntregaPercentage } = usePlanQuoter(
+    {
+      planInicial: "contado",
+    },
+    {
+      setEnganche,
+      setEnganchePercentage,
+      setMinEnganchePercentage,
+      setMaxEnganchePercentage,
+      setPlazo,
+    }
+  );
+
+  useEffect(() => {
+    setPrecioBase(plans[planKind].precioM2 * m2);
+  }, [planKind]);
+
+  const minEnganche = (minEnganchePercentage * precioBase) / 100;
+  const maxEnganche = (maxEnganchePercentage * precioBase) / 100;
+
+  const { pagoInicial, pagoMensualidad, pagoTotal, pagoContraEntrega } =
+    computePagos({
+      precioBase,
+      enganchePercentage,
+      plazo,
+      pagoContraEntregaPercentage,
+    });
 
   return {
     precioBase,
     enganche,
+    pagoContraEntrega,
     enganchePercentage,
     minEnganche,
     maxEnganche,
     minEnganchePercentage,
     maxEnganchePercentage,
     plazo,
+    planKind,
     pagoInicial,
     pagoMensualidad,
     pagoTotal,
-
     setEnganche,
+    setPlanKind,
+    setMinEnganchePercentage,
+    setMaxEnganchePercentage,
     setEnganchePercentage,
     setPlazo,
   };
@@ -73,23 +106,38 @@ export default function useQuoter<T>(
 
 function computePagos({
   precioBase,
-  enganche,
+  enganchePercentage,
   plazo,
+  pagoContraEntregaPercentage,
 }: {
   precioBase: number;
-  enganche: number;
+  enganchePercentage: number;
   plazo: number;
+  pagoContraEntregaPercentage: number;
 }) {
   // TODO: this should change based on formula
-  const pagoTotal = precioBase;
+  let pagoTotal = precioBase;
 
-  //NOTE: this could change if there are more initial charges other than enganche, like an insurance
-  const pagoInicial = enganche;
-  const pagoMensualidad = (pagoTotal - pagoInicial) / plazo;
+  const pagoMensualidadesTotalPercentage =
+    100 - enganchePercentage - pagoContraEntregaPercentage;
+  const pagoContraEntregaRealPercentage =
+    pagoContraEntregaPercentage + Math.min(0, pagoMensualidadesTotalPercentage);
+
+  const pagoMensualidadTotalRealPercentage = Math.max(
+    pagoMensualidadesTotalPercentage,
+    0
+  );
+
+  const pagoMensualidadPercentage = pagoMensualidadTotalRealPercentage / plazo;
+
+  const pagoInicial = (enganchePercentage * pagoTotal) / 100;
+  const pagoMensualidad = (pagoTotal * pagoMensualidadPercentage) / 100;
+  const pagoContraEntrega = (pagoTotal * pagoContraEntregaRealPercentage) / 100;
 
   return {
     pagoInicial,
     pagoMensualidad,
+    pagoContraEntrega,
     pagoTotal,
   };
 }

@@ -1,0 +1,23 @@
+import { EngancheInicialVar } from "@/hooks/useEnganche";
+import useQuoter from "@/hooks/useQuoter";
+import React from "react";
+import QuoterContext from "./QuoterContext";
+
+type Props = {
+  m2: number;
+  plazoInicial?: number;
+  minEnganchePercentageInicial?: number;
+  maxEnganchePercentageInicial?: number;
+  children: React.ReactNode;
+} & EngancheInicialVar;
+
+const Quoter: React.FC<Props> = (props) => {
+  const { children, ...rest } = props;
+  const all = useQuoter(rest);
+
+  return (
+    <QuoterContext.Provider value={all}>{children}</QuoterContext.Provider>
+  );
+};
+
+export default Quoter;

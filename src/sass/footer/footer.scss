@@ -1,17 +1,44 @@
 .footer {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 1em;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     // flex: 100% 1;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    gap: 1em;
 }
+
+
 
 .footer .logo-anchor {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    display: block;
+}
+
+.isotipo {
+    margin-right: auto;
 }
 
 .footer>.logo-anchor>img {
-    width: 4em;
+    width: 10em;
 }
+
+
+.facebook-icon {
+    font-size: 2em;
+    margin-right: 1.5em;
+}
+
+.phone-section {
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+
+.phone-icon {
+    margin-right: 0.7em;
+}
+
+.phone-number {
+    display: inline;
+}
+

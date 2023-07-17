@@ -5,20 +5,20 @@
 @use "./whatsappFloatingButton/whatsappFloatingButton.scss";
 @use "./header/header.scss";
 @use "./footer/footer.scss";
+@use "./fonts/fonts.scss";
 
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@font-face {
+    font-family: 'dolce';
+    src: url("/public/dolce-vita.ttf");
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// span {
-//     color: var(--secondary-color);
-// }
+
+:root {
+    // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-1: 'DM Sans';
+    --font-2: 'Dolce Vita';
+    font-family: var(--font-1);
+}
 
 :root {
     box-sizing: border-box;
@@ -37,5 +37,13 @@
 }
 
 body {
-    min-height: 180vh;
+    min-height: 100dvh;
+}
+
+input {
+    background-color: var(--primary-color);
+}
+
+select {
+    background-color: var(--primary-color);
 }

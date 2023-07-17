@@ -1,8 +1,10 @@
 .cotizador-section {
-    background-color: #eee;
-    color: black;
-    padding: .4em;
-    border-radius: 1em;
+    background-color: var(--terciary-color);
+    // color: black;
+    color: var(--secondary-color);
+    padding: 1em calc(.8em);
+    margin: 0 -.8em;
+    // border-radius: 2px;
 }
 
 .cotizador-section__title {
