@@ -72,14 +72,35 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
         m2: lote["area"],
       }}
     >
-      <Previewer />
-      <div className="quoter-main">
-        <section className="quoter__input">
+      <header className="quoter__header">
+        <div className="quoter__title-wrapper">
+          <h3 className="quoter__title">Lote {lote.number}</h3>
+        </div>
+      </header>
+
+      <div className="quoter__details">
+        <div className="quoter__area-section">
+          <h2 className="quoter__area-label">Área</h2>
+          <p className="quoter__area">
+            {lote.area}m<sup>2</sup>
+          </p>
+        </div>
+        <TotalPriceSection />
+      </div>
+
+      <section className="quoter__input">
+        <div className="quoter-main">
           <PlazoSection />
           <hr />
           <EngancheSection />
+        </div>
+      </section>
+      <CotizacionSection />
+
+      <div className="quoter-form">
+        <section className="quoter__chepina-section">
+          <Chepina lote={lote} />
         </section>
-        <CotizacionSection />
       </div>
     </Quoter>
   );
