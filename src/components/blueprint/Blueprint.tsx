@@ -4,13 +4,12 @@ import AriaMasterPlan from "./AriaMasterPlanSvg2";
 import { SvgObject } from "../../utils/getSvg";
 
 type Props = {
-  data: { [id: string]: Lote };
   onClick?: (ev: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => void;
   svgRef?: React.RefObject<SVGSVGElement>;
   svgObject: SvgObject;
 };
 
-export function Blueprint({ data, onClick, svgRef, svgObject }: Props) {
+export function Blueprint({ onClick, svgRef, svgObject }: Props) {
   return (
     <AriaMasterPlan
       ref={svgRef}

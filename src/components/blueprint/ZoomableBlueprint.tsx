@@ -1,6 +1,5 @@
 "use client";
 import { SvgObject } from "@/utils/getSvg";
-import { lotes } from "@/utils/lotes";
 import { Button } from "@chakra-ui/react";
 import { useRef } from "react";
 // import useZoom from "../zoom/hooks/useZoomWithDefaultOnZoomedOutMax";
@@ -31,7 +30,6 @@ export default function ZoomableBlueprint(props: Props) {
           svgObject={props.svgObject}
           svgRef={svgRef}
           onClick={props.onClick}
-          data={lotes}
         />
         <div className="blueprint__zoom-button-group">
           <button
