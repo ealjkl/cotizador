@@ -40,21 +40,25 @@ export default function EnganchePercentageDiscreteSlider({
         setEnganchePercentage(val);
       }}
     >
-      <SliderMark
-        value={Math.round(enganchePercentage)}
-        sx={{
-          borderRadius: "5px",
-          paddingX: "3px",
-        }}
-        textAlign="center"
-        bg="var(--secondary-color)"
-        color="white"
-        mt="5"
-        ml="-3"
-        w="15"
-      >
-        {Math.round(enganchePercentage)}%
-      </SliderMark>
+      {Math.round(enganchePercentage) != minEnganchePercentage &&
+      Math.round(enganchePercentage) != maxEnganchePercentage ? (
+        <SliderMark
+          value={Math.round(enganchePercentage)}
+          sx={{
+            borderRadius: "5px",
+            paddingX: "3px",
+          }}
+          textAlign="center"
+          bg="var(--secondary-color)"
+          opacity={".7"}
+          color="white"
+          mt="5"
+          ml="-3"
+          w="15"
+        >
+          {Math.round(enganchePercentage)}%
+        </SliderMark>
+      ) : null}
       <SliderTrack bg="var(--terciary-color)">
         <Box position="relative" right={10} />
         <SliderFilledTrack bg="var(--highlight-input)" />
