@@ -10,6 +10,7 @@ import {
 } from "@react-pdf/renderer";
 import moneyFormater from "../../../utils/moneyFormater";
 import type { Lote } from "@/components/Main";
+import { PlanKind } from "../../../hooks/usePlan";
 
 // // Register Dolce Vita fonts
 Font.register({
@@ -45,6 +46,13 @@ Font.register({
     },
   ],
 });
+
+const planMap = {
+  "24-meses": "24 Meses",
+  "36-meses": "36 Meses",
+  constructorPlan: "Constructor",
+  contado: "Contado",
+} as const;
 
 export const styles = StyleSheet.create({
   page: {
@@ -178,7 +186,7 @@ MyDocumentProps) {
   }
   const chepinaUri = `/aria/chepinas/images/lote${numberString}.png`;
 
-  const ariaPerspectivaUri = `./aria/images/aria-perspectiva.jpg`;
+  const ariaPerspectivaUri = `./aria/images/aria-perspectiva-resized.jpg`;
   const currentDate = new Date().toLocaleDateString("es-MX", {
     day: "numeric",
     month: "long",
@@ -226,7 +234,7 @@ MyDocumentProps) {
             >
               Plan:
             </Text>
-            <Text>{plan}</Text>
+            <Text>{planMap[plan as PlanKind] as any}</Text>
           </View>
           {plazo > 0 ? (
             <View
@@ -331,13 +339,49 @@ MyDocumentProps) {
           </View>
         </View>
       </Page>
-      <Page>
+      <Page style={styles.page}>
+        <View
+          style={{
+            ...styles.headerSection,
+            width: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          <View style={{ display: "flex", flexDirection: "row", gap: "20" }}>
+            <Text
+              style={{
+                ...styles.loteText,
+                fontFamily: "'Dolce Vita'",
+                fontWeight: "800" as any,
+              }}
+            >
+              Lote {lote.number}
+            </Text>
+            <Text style={{ ...styles.loteText }}>{currentDate}</Text>
+          </View>
+        </View>
+        <PdfImage
+          src="./aria/brand/logotipo.png"
+          style={{
+            ...styles.logo,
+            marginHorizontal: "auto",
+            marginVertical: "-60px",
+          }}
+        />
         <PdfImage
           style={{
             ...styles.roundBorders,
+            width: "380px",
+            marginHorizontal: "auto",
           }}
           src={chepinaUri}
         />
+        <View style={styles.footer}>
+          <View>
+            <Text style={styles.boldText}>Web</Text>
+            <Text>www.ariaresidencial.com</Text>
+          </View>
+        </View>
       </Page>
     </Document>
   );
