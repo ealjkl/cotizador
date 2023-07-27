@@ -13,10 +13,12 @@ import useQuoterContext from "@/hooks/useQuoterContext";
 
 type Props = {
   step?: number;
+  isDisabled?: boolean;
 };
 
 export default function EnganchePercentageDiscreteSlider({
   step = 1,
+  isDisabled = false,
 }: Props = {}) {
   //TODO: see if this is the way to handle the null case, because this should not be used without a context
   const {
@@ -33,6 +35,7 @@ export default function EnganchePercentageDiscreteSlider({
         margin: "1em 0",
       }}
       focusThumbOnChange={false}
+      isDisabled={isDisabled}
       value={enganchePercentage}
       min={minEnganchePercentage}
       max={maxEnganchePercentage}

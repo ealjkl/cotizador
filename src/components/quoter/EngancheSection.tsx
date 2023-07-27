@@ -13,6 +13,7 @@ export default function EngancheSection({}: Props) {
     maxEnganche,
     minEnganchePercentage,
     maxEnganchePercentage,
+    planKind,
   } = useQuoterContext();
 
   return (
@@ -25,7 +26,9 @@ export default function EngancheSection({}: Props) {
       {/* <EngancheDiscreteSlider
         step={Math.floor((maxEnganche - minEnganche) / 10)}
       /> */}
-      <EnganchePercentageDiscreteSlider />
+      <EnganchePercentageDiscreteSlider
+        isDisabled={planKind == "constructorPlan"}
+      />
 
       <div className="enganche-input-slider__min-max-labels">
         <span className="enganche-input-slider__min-label">

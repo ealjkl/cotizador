@@ -2,7 +2,7 @@ import plans from "@/data/plans";
 import React, { useEffect, useState } from "react";
 import useQuoterContext from "./useQuoterContext";
 
-export type PlanKind = "contado" | "24-meses" | "36-meses" | "constructor";
+export type PlanKind = "contado" | "24-meses" | "36-meses" | "constructorPlan";
 
 export default function usePlanQuoter(
   input: { planInicial: PlanKind },

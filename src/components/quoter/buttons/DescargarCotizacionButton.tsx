@@ -57,13 +57,26 @@ function DescargarCotizacionButton() {
     }
   };
 
+  const isDisabled =
+    currentLote == null || loading || planKind == "constructorPlan";
+
+  console.log("isDisabled", isDisabled);
+
   return (
     <>
       <Button
         className="cotizador-section__button-descargar"
         onClick={handleClick}
-        disabled={currentLote == null || loading}
+        // disabled={isDisabled}
+        isDisabled={isDisabled}
         isLoading={loading}
+        _disabled={{
+          "&:hover": {
+            bgColor: "#888",
+            cursor: "not-allowed",
+          },
+          bgColor: "#888",
+        }}
       >
         Descargar
       </Button>

@@ -7,54 +7,58 @@ import DescargarCotizacionButton from "./buttons/DescargarCotizacionButtonDynami
 type Props = {};
 
 export default function CotizacionSection({}: Props) {
-  const { enganche, pagoMensualidad, plazo, pagoContraEntrega } =
+  const { enganche, pagoMensualidad, plazo, pagoContraEntrega, planKind } =
     useQuoterContext();
+
+  console.log("planKind", planKind);
 
   return (
     <section className="cotizador-section">
-      <h3 className="cotizador-section__title">Cotización</h3>
+      {planKind != "constructorPlan" ? (
+        <h3 className="cotizador-section__title">Cotización</h3>
+      ) : null}
+
       <div className="cotizador-section__sub-container">
-        <section className="cotizador-section__pago-inicial-sub">
-          <h4 className="cotizador-section__subtitle">Pago inicial</h4>
-          <p className="cotizador-section__text-body">
-            1 pago de {moneyFormater.format(enganche)}
-          </p>
-        </section>
+        {planKind != "constructorPlan" ? (
+          <>
+            <section className="cotizador-section__pago-inicial-sub">
+              <h4 className="cotizador-section__subtitle">Pago inicial</h4>
+              <p className="cotizador-section__text-body">
+                1 pago de {moneyFormater.format(enganche)}
+              </p>
+            </section>
 
-        {/* {pagoMensualidad > 1 ? ( */}
+            {/* {pagoMensualidad > 1 ? ( */}
 
-        <section
-          className="cotizador-section__mensualidad-sub"
-          style={{
-            visibility: pagoMensualidad > 1 ? "visible" : "hidden",
-          }}
-        >
-          <h4 className="cotizador-section__subtitle">Mensualidades</h4>
-          <p className="cotizador-section__text-body">
-            {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
-          </p>
-        </section>
+            <section
+              className="cotizador-section__mensualidad-sub"
+              style={{
+                visibility: pagoMensualidad > 1 ? "visible" : "hidden",
+              }}
+            >
+              <h4 className="cotizador-section__subtitle">Mensualidades</h4>
+              <p className="cotizador-section__text-body">
+                {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
+              </p>
+            </section>
 
-        {/* ) : null} */}
-        <section
-          className="cotizador-section__contra-entrega-sub"
-          style={{
-            visibility: pagoContraEntrega > 1 ? "visible" : "hidden",
-          }}
-        >
-          <h4 className="cotizador-section__subtitle">Contra entrega</h4>
-          <p className="cotizador-section__text-body">
-            1 pago contra entrega de {moneyFormater.format(pagoContraEntrega)}
-          </p>
-        </section>
-
-        {/* <Button
-          onClick={() => {}}
-          style={{ width: "100%", marginBottom: "1em", marginTop: "1em" }}
-        >
-          {" "}
-          Descarga tu cotización{" "}
-        </Button> */}
+            <section
+              className="cotizador-section__contra-entrega-sub"
+              style={{
+                visibility: pagoContraEntrega > 1 ? "visible" : "hidden",
+              }}
+            >
+              <h4 className="cotizador-section__subtitle">Contra entrega</h4>
+              <p className="cotizador-section__text-body">
+                1 pago de {moneyFormater.format(pagoContraEntrega)}
+              </p>
+            </section>
+          </>
+        ) : (
+          <h2 className="cotizador-section__constructor-text">
+            Si eres constructor, contáctanos para más información.
+          </h2>
+        )}
 
         <div className="cotizacion-section__buttonGroup">
           <DescargarCotizacionButton />
