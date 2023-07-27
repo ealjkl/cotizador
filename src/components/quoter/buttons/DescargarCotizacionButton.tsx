@@ -60,10 +60,37 @@ function DescargarCotizacionButton() {
   const isDisabled =
     currentLote == null || loading || planKind == "constructorPlan";
 
-  console.log("isDisabled", isDisabled);
-
   return (
     <>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10,
+        }}
+      >
+        <PDFViewer
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Template
+            {...{
+              pagoTotal,
+              pagoInicial,
+              pagoContraEntrega,
+              pagoMensualidad,
+              plazo,
+              lote: currentLote!,
+              plan: planKind,
+            }}
+          />
+        </PDFViewer>
+      </div>
       <Button
         className="cotizador-section__button-descargar"
         onClick={handleClick}

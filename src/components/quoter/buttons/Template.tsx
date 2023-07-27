@@ -171,6 +171,20 @@ export function Template({
   plan,
 }: // lote,
 MyDocumentProps) {
+  let numberString: string = lote.number;
+
+  if (lote.number.length < 2) {
+    numberString = "0" + numberString;
+  }
+  const chepinaUri = `/aria/chepinas/images/lote${numberString}.png`;
+
+  const ariaPerspectivaUri = `./aria/images/aria-perspectiva.jpg`;
+  const currentDate = new Date().toLocaleDateString("es-MX", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -189,6 +203,7 @@ MyDocumentProps) {
             <Text style={{ ...styles.loteText, fontWeight: "light" }}>
               {lote.area} m<Text style={styles.super}>2</Text>
             </Text>
+            <Text style={{ ...styles.loteText }}>{currentDate}</Text>
           </View>
         </View>
         <View
@@ -253,7 +268,11 @@ MyDocumentProps) {
                 <View
                   style={{ ...styles.cotizacionCell, ...styles.numberCell }}
                 >
-                  <Text>{moneyFormater.format(pagoMensualidad)}</Text>
+                  <Text>
+                    {!Number.isNaN(pagoMensualidad)
+                      ? moneyFormater.format(pagoMensualidad)
+                      : moneyFormater.format(0)}
+                  </Text>
                 </View>
               </View>
               <View style={{ ...styles.cotizacionRow }}>
@@ -289,8 +308,10 @@ MyDocumentProps) {
         <View style={styles.informacionSection}>
           <View style={styles.plantaAltaSection}>
             <PdfImage
-              style={styles.roundBorders}
-              src={`./aria/images/aria-perspectiva.jpg`}
+              style={{
+                ...styles.roundBorders,
+              }}
+              src={ariaPerspectivaUri}
             />
           </View>
           <View
@@ -305,20 +326,18 @@ MyDocumentProps) {
         </View>
         <View style={styles.footer}>
           <View>
-            <Text style={styles.boldText}>Celular</Text>
-            <Text>9993 23 00 29</Text>
-          </View>
-
-          <View>
-            <Text style={styles.boldText}>Correo</Text>
-            <Text>mzapata@ardebb.com</Text>
-          </View>
-
-          <View>
             <Text style={styles.boldText}>Web</Text>
-            <Text>www.boreanaresidencial.com</Text>
+            <Text>www.ariaresidencial.com</Text>
           </View>
         </View>
+      </Page>
+      <Page>
+        <PdfImage
+          style={{
+            ...styles.roundBorders,
+          }}
+          src={chepinaUri}
+        />
       </Page>
     </Document>
   );
