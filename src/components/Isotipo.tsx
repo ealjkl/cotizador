@@ -3,7 +3,11 @@ import logo from "../../public/aria/brand/isotipo.png";
 
 export default function Isotipo() {
   return (
-    <a href="#" className="logo-anchor isotipo">
+    <a
+      href="https://ariaresidencial.com"
+      target="_blank"
+      className="logo-anchor isotipo"
+    >
       <Image
         // src="/aria/brand/logotipo.png"
         src={logo}

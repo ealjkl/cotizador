@@ -3,7 +3,11 @@ import logo from "../../public/aria/brand/logotipo.png";
 
 export default function Logo() {
   return (
-    <a href="#" className="logo-anchor">
+    <a
+      href="https://ariaresidencial.com"
+      target="_blank"
+      className="logo-anchor"
+    >
       <Image
         // src="/aria/brand/logotipo.png"
         src={logo}

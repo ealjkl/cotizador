@@ -30,6 +30,9 @@
 }
 
 .phone-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: auto;
     font-size: 1.5rem;
 }
@@ -41,4 +44,3 @@
 .phone-number {
     display: inline;
 }
-
