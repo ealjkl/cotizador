@@ -21,7 +21,7 @@ const plans: {
   "24-meses": {
     engancheInicialPercentage: 10,
     minEnganchePercentageInicial: 10,
-    maxEnganchePercentageInicial: 100,
+    maxEnganchePercentageInicial: 93,
     pagoContraEntregaPercentage: 65,
     plazoInicial: 24,
     precioM2: 3900,
@@ -29,7 +29,7 @@ const plans: {
   "36-meses": {
     engancheInicialPercentage: 10,
     minEnganchePercentageInicial: 10,
-    maxEnganchePercentageInicial: 100,
+    maxEnganchePercentageInicial: 93,
     pagoContraEntregaPercentage: 65,
     plazoInicial: 36,
     precioM2: 4100,
@@ -37,7 +37,7 @@ const plans: {
   constructorPlan: {
     engancheInicialPercentage: 15,
     minEnganchePercentageInicial: 15,
-    maxEnganchePercentageInicial: 100,
+    maxEnganchePercentageInicial: 93,
     pagoContraEntregaPercentage: 85,
     plazoInicial: 3,
     precioM2: 4100,

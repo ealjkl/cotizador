@@ -91,6 +91,7 @@ export default function useQuoter(
     computePagos({
       precioBase,
       enganchePercentage,
+      planKind,
       plazo,
       pagoContraEntregaPercentage,
     });
@@ -122,31 +123,71 @@ function computePagos({
   precioBase,
   enganchePercentage,
   plazo,
+  planKind,
   pagoContraEntregaPercentage,
 }: {
   precioBase: number;
   enganchePercentage: number;
   plazo: number;
+  planKind: PlanKind;
   pagoContraEntregaPercentage: number;
 }) {
   // TODO: this should change based on formula
   let pagoTotal = precioBase;
+  let discountPercentage = 0;
 
-  const pagoMensualidadesTotalPercentage =
-    100 - enganchePercentage - pagoContraEntregaPercentage;
-  const pagoContraEntregaRealPercentage =
-    pagoContraEntregaPercentage + Math.min(0, pagoMensualidadesTotalPercentage);
+  let pagoInicial = (enganchePercentage * precioBase) / 100;
+  if (enganchePercentage >= 90) {
+    discountPercentage = 7;
+  } else if (enganchePercentage >= 80) {
+    discountPercentage = 5;
+  } else if (enganchePercentage >= 50) {
+    discountPercentage = 3;
+  }
+  if (planKind == "contado") {
+    discountPercentage = 0;
+  }
+  pagoTotal = precioBase * ((100 - discountPercentage) / 100);
 
-  const pagoMensualidadTotalRealPercentage = Math.max(
-    pagoMensualidadesTotalPercentage,
+  console.log("$useQuoter: original", pagoContraEntregaPercentage);
+  console.log(
+    "$useQuoter: tuned",
+    100 - discountPercentage - enganchePercentage
+  );
+  const pagoContraEntregaPercentageReal = Math.max(
+    Math.min(
+      pagoContraEntregaPercentage,
+      100 - discountPercentage - enganchePercentage
+    ),
     0
   );
+  console.log("$useQuoter: final", pagoContraEntregaPercentageReal);
 
-  const pagoMensualidadPercentage = pagoMensualidadTotalRealPercentage / plazo;
+  const pagoContraEntrega =
+    (pagoContraEntregaPercentageReal * precioBase) / 100;
 
-  const pagoInicial = (enganchePercentage * pagoTotal) / 100;
-  const pagoMensualidad = (pagoTotal * pagoMensualidadPercentage) / 100;
-  const pagoContraEntrega = (pagoTotal * pagoContraEntregaRealPercentage) / 100;
+  // console.log("pagoContraEntrega", pagoContraEntregaPercentage);
+  // console.log("pagoContraEntrega", pagoContraEntrega);
+
+  const pagoMensualidadTotal = pagoTotal - pagoContraEntrega - pagoInicial;
+  const pagoMensualidad = pagoMensualidadTotal / plazo;
+
+  // const pagoMensualidadesTotalPercentage =
+  //   100 - enganchePercentage - pagoContraEntregaPercentage;
+
+  // const pagoContraEntregaRealPercentage =
+  //   pagoContraEntregaPercentage + Math.min(0, pagoMensualidadesTotalPercentage);
+
+  // const pagoMensualidadTotalRealPercentage = Math.max(
+  //   pagoMensualidadesTotalPercentage,
+  //   0
+  // );
+
+  // const pagoMensualidadPercentage = pagoMensualidadTotalRealPercentage / plazo;
+
+  // const pagoInicial = (enganchePercentage * pagoTotal) / 100;
+  // const pagoMensualidad = (pagoTotal * pagoMensualidadPercentage) / 100;
+  // const pagoContraEntrega = (pagoTotal * pagoContraEntregaRealPercentage) / 100;
 
   return {
     pagoInicial,
