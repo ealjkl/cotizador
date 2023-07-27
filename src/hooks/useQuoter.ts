@@ -53,7 +53,12 @@ export default function useQuoter(
       minEnganchePercentage: minEnganchePercentageInicial,
     });
 
-  const { planKind, setPlanKind, pagoContraEntregaPercentage } = usePlanQuoter(
+  const {
+    planKind,
+    setPlanKind,
+    pagoContraEntregaPercentage,
+    setPagoContraEntregaPercentage,
+  } = usePlanQuoter(
     {
       planInicial: "contado",
     },
@@ -69,6 +74,15 @@ export default function useQuoter(
   useEffect(() => {
     setPrecioBase(plans[planKind].precioM2 * m2);
   }, [planKind]);
+
+  useEffect(() => {
+    const plan = plans[planKind];
+    setEnganchePercentage(plan.engancheInicialPercentage);
+    setMinEnganchePercentage(plan.minEnganchePercentageInicial);
+    setMaxEnganchePercentage(plan.maxEnganchePercentageInicial);
+    setPagoContraEntregaPercentage(plan.pagoContraEntregaPercentage);
+    setPlazo(plan.plazoInicial);
+  }, [precioBase, planKind]);
 
   const minEnganche = (minEnganchePercentage * precioBase) / 100;
   const maxEnganche = (maxEnganchePercentage * precioBase) / 100;
