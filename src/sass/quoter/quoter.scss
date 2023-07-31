@@ -19,11 +19,11 @@
 .quoter__header {
     display: flex;
     justify-content: center;
-} 
+}
 
 .quoter__title {
     font-family: "Dolce Vita";
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--secondary-color);
 }
 
@@ -79,6 +79,10 @@
 
 .quoter__chepina-section {
     padding: .4em 0;
+
+    @media (min-width: bp.$md) {
+        margin-top: -2em;
+    }
 }
 
 

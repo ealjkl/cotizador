@@ -18,6 +18,12 @@
     padding: .4em;
 }
 
+.cotizador-section__sub-sub-container {
+    @media (min-width: bp.$md) {
+        display: flex;
+    }
+}
+
 .cotizador-section__subtitle {
     font-size: 1.6rem;
     font-weight: 600;
@@ -85,4 +91,10 @@
 
 .cotizador-section__constructor-text {
     font-size: 2rem;
+}
+
+.cotizador-section__details {
+    @media (min-width: bp.$md) {
+        flex: 50%;
+    }
 }

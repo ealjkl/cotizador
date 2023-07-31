@@ -137,13 +137,13 @@ function computePagos({
   let discountPercentage = 0;
 
   let pagoInicial = (enganchePercentage * precioBase) / 100;
-  if (enganchePercentage >= 90) {
-    discountPercentage = 7;
-  } else if (enganchePercentage >= 80) {
-    discountPercentage = 5;
-  } else if (enganchePercentage >= 50) {
-    discountPercentage = 3;
-  }
+  // if (enganchePercentage >= 90) {
+  //   discountPercentage = 7;
+  // } else if (enganchePercentage >= 80) {
+  //   discountPercentage = 5;
+  // } else if (enganchePercentage >= 50) {
+  //   discountPercentage = 3;
+  // }
   if (planKind == "contado") {
     discountPercentage = 0;
   }

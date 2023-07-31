@@ -24,11 +24,6 @@ type Props = {
   onClose: () => void;
 };
 
-const Previewer = dynamic(() => import("../Previewer"), {
-  loading: () => <h1>hola</h1>,
-  ssr: false,
-});
-
 export function QuoterSection({ isOpen, onClose }: Props) {
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
 
@@ -96,11 +91,11 @@ function NonNullLote({ lote, priceM2 }: NonNullLoteProps) {
       </section>
       <CotizacionSection />
 
-      <div className="quoter-form">
+      {/* <div className="quoter-form">
         <section className="quoter__chepina-section">
           <Chepina lote={lote} />
         </section>
-      </div>
+      </div> */}
     </Quoter>
   );
 }

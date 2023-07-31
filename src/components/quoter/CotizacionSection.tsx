@@ -2,13 +2,17 @@ import useQuoterContext from "@/hooks/useQuoterContext";
 import moneyFormater from "@/utils/moneyFormater";
 import { Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { useContext } from "react";
+import { LoteContext } from "../Main";
 import DescargarCotizacionButton from "./buttons/DescargarCotizacionButtonDynamic";
+import Chepina from "./chepinas/Chepina";
 
 type Props = {};
 
 export default function CotizacionSection({}: Props) {
   const { enganche, pagoMensualidad, plazo, pagoContraEntrega, planKind } =
     useQuoterContext();
+  const { current: lote } = useContext(LoteContext);
 
   console.log("planKind", planKind);
 
@@ -19,46 +23,55 @@ export default function CotizacionSection({}: Props) {
       ) : null}
 
       <div className="cotizador-section__sub-container">
-        {planKind != "constructorPlan" ? (
-          <>
-            <section className="cotizador-section__pago-inicial-sub">
-              <h4 className="cotizador-section__subtitle">Pago inicial</h4>
-              <p className="cotizador-section__text-body">
-                1 pago de {moneyFormater.format(enganche)}
-              </p>
-            </section>
+        <div className="cotizador-section__sub-sub-container">
+          <div className="cotizador-section__details">
+            {planKind != "constructorPlan" ? (
+              <>
+                <section className="cotizador-section__pago-inicial-sub">
+                  <h4 className="cotizador-section__subtitle">Pago inicial</h4>
+                  <p className="cotizador-section__text-body">
+                    1 pago de {moneyFormater.format(enganche)}
+                  </p>
+                </section>
 
-            {/* {pagoMensualidad > 1 ? ( */}
+                <section
+                  className="cotizador-section__mensualidad-sub"
+                  style={{
+                    visibility: pagoMensualidad > 1 ? "visible" : "hidden",
+                  }}
+                >
+                  <h4 className="cotizador-section__subtitle">Mensualidades</h4>
+                  <p className="cotizador-section__text-body">
+                    {plazo} mensualidades de{" "}
+                    {moneyFormater.format(pagoMensualidad)}
+                  </p>
+                </section>
 
-            <section
-              className="cotizador-section__mensualidad-sub"
-              style={{
-                visibility: pagoMensualidad > 1 ? "visible" : "hidden",
-              }}
-            >
-              <h4 className="cotizador-section__subtitle">Mensualidades</h4>
-              <p className="cotizador-section__text-body">
-                {plazo} mensualidades de {moneyFormater.format(pagoMensualidad)}
-              </p>
-            </section>
+                <section
+                  className="cotizador-section__contra-entrega-sub"
+                  style={{
+                    visibility: pagoContraEntrega > 1 ? "visible" : "hidden",
+                  }}
+                >
+                  <h4 className="cotizador-section__subtitle">
+                    Contra entrega
+                  </h4>
+                  <p className="cotizador-section__text-body">
+                    1 pago de {moneyFormater.format(pagoContraEntrega)}
+                  </p>
+                </section>
+              </>
+            ) : (
+              <h2 className="cotizador-section__constructor-text">
+                Si eres constructor, contáctanos para más información.
+              </h2>
+            )}
+          </div>
 
-            <section
-              className="cotizador-section__contra-entrega-sub"
-              style={{
-                visibility: pagoContraEntrega > 1 ? "visible" : "hidden",
-              }}
-            >
-              <h4 className="cotizador-section__subtitle">Contra entrega</h4>
-              <p className="cotizador-section__text-body">
-                1 pago de {moneyFormater.format(pagoContraEntrega)}
-              </p>
-            </section>
-          </>
-        ) : (
-          <h2 className="cotizador-section__constructor-text">
-            Si eres constructor, contáctanos para más información.
-          </h2>
-        )}
+          <section className="quoter__chepina-section">
+            <Chepina lote={lote!} />
+          </section>
+        </div>
 
         <div className="cotizacion-section__buttonGroup">
           <DescargarCotizacionButton />
