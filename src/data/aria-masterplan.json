@@ -3,426 +3,162 @@
   "type": "element",
   "value": "",
   "attributes": {
+    "version": "1.1",
+    "id": "svg1",
+    "class": "blueprint",
+    "viewBox": "0 0 1686 789",
+    "xmlns:xlink": "http://www.w3.org/1999/xlink",
     "xmlns": "http://www.w3.org/2000/svg",
-    "viewBox": "0 0 560.86 228.67",
-    "className": "blueprint"
+    "xmlns:svg": "http://www.w3.org/2000/svg"
   },
   "children": [
+    {
+      "name": "defs",
+      "type": "element",
+      "value": "",
+      "attributes": {
+        "id": "defs1"
+      },
+      "children": [
+        {
+          "name": "linearGradient",
+          "type": "element",
+          "value": "",
+          "attributes": {
+            "id": "swatch41"
+          },
+          "children": [
+            {
+              "name": "stop",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "stop-color:#000000;stop-opacity:1;",
+                "offset": "0",
+                "id": "stop41"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "meshgradient",
+          "type": "element",
+          "value": "",
+          "attributes": {
+            "id": "meshgradient132",
+            "gradientUnits": "userSpaceOnUse",
+            "x": "0",
+            "y": "0"
+          },
+          "children": [
+            {
+              "name": "meshrow",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "id": "meshrow132"
+              },
+              "children": [
+                {
+                  "name": "meshpatch",
+                  "type": "element",
+                  "value": "",
+                  "attributes": {
+                    "id": "meshpatch132"
+                  },
+                  "children": [
+                    {
+                      "name": "stop",
+                      "type": "element",
+                      "value": "",
+                      "attributes": {
+                        "path": "c 562,0  1124,0  1686,0",
+                        "style": "stop-color:#ffffff;stop-opacity:1",
+                        "id": "stop132"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "stop",
+                      "type": "element",
+                      "value": "",
+                      "attributes": {
+                        "path": "c 0,263  0,526  0,789",
+                        "style": "stop-color:#000000;stop-opacity:1",
+                        "id": "stop133"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "stop",
+                      "type": "element",
+                      "value": "",
+                      "attributes": {
+                        "path": "c -562,0  -1124,0  -1686,0",
+                        "style": "stop-color:#ffffff;stop-opacity:1",
+                        "id": "stop134"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "stop",
+                      "type": "element",
+                      "value": "",
+                      "attributes": {
+                        "path": "c 0,-263  0,-526  0,-789",
+                        "style": "stop-color:#000000;stop-opacity:1",
+                        "id": "stop135"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "g",
       "type": "element",
       "value": "",
       "attributes": {
-        "id": "blueprint__main-group",
-        "className": "blueprint__main-group"
+        "id": "blueprint__main-group"
       },
       "children": [
+        {
+          "name": "image",
+          "type": "element",
+          "value": "",
+          "attributes": {
+            "width": "1686",
+            "height": "789",
+            "preserveAspectRatio": "none",
+            "href": "aria/blueprint/aria-masterplan-background2.png",
+            "id": "image1",
+            "style": "display:inline;fill:url(#meshgradient132);fill-opacity:1"
+          },
+          "children": []
+        },
         {
           "name": "g",
           "type": "element",
           "value": "",
-          "attributes": {},
+          "attributes": {
+            "id": "lo-ts",
+            "style": "display:inline"
+          },
           "children": [
             {
               "name": "path",
               "type": "element",
               "value": "",
               "attributes": {
-                "data-available": "1",
-                "data-area": "264.25",
-                "data-number": "99",
-                "id": "lot-99",
-                "d": "M35.17,4.28C39.39-3.5,49.54,2,49.54,2V32.5l-14.37-4Z"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "98",
-                "id": "lot-98",
-                "points": "63.92 36.19 49.55 32.5 49.55 2.04 63.92 5.6 63.92 36.19"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "97",
-                "id": "lot-97",
-                "points": "78.29 40.15 63.92 36.19 63.92 5.6 78.29 9.42 78.29 40.15"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "96",
-                "id": "lot-96",
-                "points": "92.67 12.85 92.67 43.97 78.29 40.15 78.29 9.42 92.67 12.85"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "95",
-                "id": "lot-95",
-                "points": "107.17 17.46 92.67 12.85 92.67 43.97 107.17 47.66 107.17 17.46"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "94",
-                "id": "lot-94",
-                "points": "121.81 21.02 107.17 17.46 107.17 47.66 121.81 51.35 121.81 21.02"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "93",
-                "id": "lot-93",
-                "points": "135.65 54.65 121.81 51.35 121.81 21.02 135.65 24.19 135.65 54.65"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "92",
-                "id": "lot-92",
-                "points": "149.76 58.74 135.65 54.65 135.65 24.19 149.76 28.15 149.76 58.74"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "91",
-                "id": "lot-91",
-                "points": "164.14 62.43 149.76 58.74 149.76 28.15 164.14 31.97 164.14 62.43"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "90",
-                "id": "lot-90",
-                "points": "178.64 65.86 164.14 62.43 164.14 31.97 178.64 35.66 178.64 65.86"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "89",
-                "id": "lot-89",
-                "points": "193.02 69.82 178.64 65.86 178.64 35.66 193.02 39.35 193.02 69.82"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "88",
-                "id": "lot-88",
-                "points": "207.52 73.77 193.02 69.82 193.02 39.35 207.52 43.18 207.52 73.77"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "87",
-                "id": "lot-87",
-                "points": "221.76 77.33 207.52 73.77 207.52 43.18 222.42 47.66 221.76 77.33"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "86",
-                "id": "lot-86",
-                "points": "235.87 81.03 221.76 77.33 222.42 47.66 236.93 50.83 235.87 81.03"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "85",
-                "id": "lot-85",
-                "points": "250.25 84.98 235.87 81.03 236.93 50.83 251.17 54.65 250.25 84.98"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "84",
-                "id": "lot-84",
-                "points": "264.49 88.81 250.25 84.98 251.17 54.65 265.15 58.08 264.49 88.81"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "83",
-                "id": "lot-83",
-                "points": "265.15 120.19 264.49 88.81 250.25 84.98 250.25 115.97 265.15 120.19"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "82",
-                "id": "lot-82",
-                "points": "235.87 111.62 235.87 81.03 250.25 84.98 250.25 115.97 235.87 111.62"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "81",
-                "id": "lot-81",
-                "points": "221.76 107.79 221.76 77.33 235.87 81.03 235.87 111.62 221.76 107.79"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "80",
-                "id": "lot-80",
-                "points": "207.52 73.77 207.52 104.23 221.76 107.79 221.76 77.33 207.52 73.77"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "79",
-                "id": "lot-79",
-                "points": "193.02 100.28 193.02 69.82 207.52 73.77 207.52 104.23 193.02 100.28"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "78",
-                "id": "lot-78",
-                "points": "178.64 96.58 178.64 65.86 193.02 69.82 193.02 100.28 178.64 96.58"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "77",
-                "id": "lot-77",
-                "points": "164.14 62.43 164.14 93.03 178.64 96.58 178.64 65.86 164.14 62.43"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.00",
-                "data-number": "76",
-                "id": "lot-76",
-                "points": "149.76 58.74 149.76 88.81 164.14 93.03 164.14 62.43 149.76 58.74"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "75",
-                "id": "lot-75",
-                "points": "135.65 54.65 135.65 85.9 149.76 88.81 149.76 58.74 135.65 54.65"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "74",
-                "id": "lot-74",
-                "points": "121.81 51.35 121.81 81.68 135.65 85.9 135.65 54.65 121.81 51.35"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "73",
-                "id": "lot-73",
-                "points": "107.17 47.66 107.17 78.39 121.81 81.68 121.81 51.35 107.17 47.66"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "72",
-                "id": "lot-72",
-                "points": "92.67 43.97 92.67 74.56 107.17 78.39 107.17 47.66 92.67 43.97"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "71",
-                "id": "lot-71",
-                "points": "78.29 40.15 78.29 69.82 92.67 74.56 92.67 43.97 78.29 40.15"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "70",
-                "id": "lot-70",
-                "points": "63.92 36.19 63.92 65.86 78.29 69.82 78.29 40.15 63.92 36.19"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "275.00",
-                "data-number": "69",
-                "id": "lot-69",
-                "points": "49.55 32.5 49.55 62.43 63.92 65.86 63.92 36.19 49.55 32.5"
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1269.3969,449.01633 -15.0122,-4.38066 -0.01,-40.04636 -0.01,-40.04637 2.3775,0.52219 c 1.3076,0.2872 8.2564,2.17663 15.4417,4.19874 l 13.0642,3.67655 0.2197,40.28975 c 0.1208,22.15936 -0.069,40.26209 -0.4231,40.22829 -0.3535,-0.0338 -7.3982,-2.03276 -15.6549,-4.44213 z",
+                "id": "lot1"
               },
               "children": []
             },
@@ -431,258 +167,9 @@
               "type": "element",
               "value": "",
               "attributes": {
-                "data-available": "3",
-                "data-area": "271.97",
-                "data-number": "68",
-                "id": "lot-68",
-                "d": "M35.17,28.54V56a5.57,5.57,0,0,0,4.09,4.29l10.28,2.17V32.5Z"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "284.51",
-                "data-number": "67",
-                "id": "lot-67",
-                "points": "0.16 64.67 5.9 93.03 19.35 97.38 19.35 68.63 0.16 64.67"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "273.90",
-                "data-number": "66",
-                "id": "lot-66",
-                "points": "35.17 73.77 19.35 68.63 19.35 97.38 35.17 101.73 35.17 73.77"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "253.16",
-                "data-number": "65",
-                "id": "lot-65",
-                "points": "49.55 77.33 35.17 73.77 35.17 101.73 49.55 105.49 49.55 77.33"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "255.15",
-                "data-number": "64",
-                "id": "lot-64",
-                "points": "63.92 81.03 49.55 77.33 49.55 105.49 63.92 109.44 63.92 81.03"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "257.14",
-                "data-number": "63",
-                "id": "lot-63",
-                "points": "78.29 85.18 63.92 81.03 63.92 109.44 78.29 113.4 78.29 85.18"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "259.13",
-                "data-number": "62",
-                "id": "lot-62",
-                "points": "92.67 88.81 78.29 85.18 78.29 113.4 92.67 117.16 92.67 88.81"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "261.12",
-                "data-number": "61",
-                "id": "lot-61",
-                "points": "107.17 92.23 92.67 88.81 92.67 117.16 107.17 121.51 107.17 92.23"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "263.11",
-                "data-number": "60",
-                "id": "lot-60",
-                "points": "121.02 96.58 107.17 92.23 107.17 121.51 121.81 124.9 121.02 96.58"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "265.10",
-                "data-number": "59",
-                "id": "lot-59",
-                "points": "135.65 129.42 121.81 124.9 121.02 96.58 135.65 99.55 135.65 129.42"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "267.09",
-                "data-number": "58",
-                "id": "lot-58",
-                "points": "149.76 132.59 135.65 129.42 135.65 99.55 150.49 102.58 149.76 132.59"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "269.08",
-                "data-number": "57",
-                "id": "lot-57",
-                "points": "164.14 137.13 149.76 132.59 150.49 102.58 164.93 106.67 164.14 137.13"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "271.01",
-                "data-number": "56",
-                "id": "lot-56",
-                "points": "178.64 141.29 164.14 137.13 164.93 106.67 178.64 110.83 178.64 141.29"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "273.06",
-                "data-number": "55",
-                "id": "lot-55",
-                "points": "193.02 144.26 178.64 141.29 178.64 110.83 193.81 114.19 193.02 144.26"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "2",
-                "data-area": "275.05",
-                "data-number": "54",
-                "id": "lot-54",
-                "points": "207.52 148.61 193.02 144.26 193.81 114.19 207.52 118.15 207.52 148.61"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "277.04",
-                "data-number": "53",
-                "id": "lot-53",
-                "points": "221.76 151.97 207.52 148.61 207.52 118.15 221.76 121.51 221.76 151.97"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.04",
-                "data-number": "52",
-                "id": "lot-52",
-                "points": "235.87 156.12 221.76 151.97 221.76 121.51 235.87 126.06 235.87 156.12"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "281.03",
-                "data-number": "51",
-                "id": "lot-51",
-                "points": "250.25 160.28 235.87 156.12 235.87 126.06 251.17 129.42 250.25 160.28"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "283.02",
-                "data-number": "50",
-                "id": "lot-50",
-                "points": "265.15 164.23 250.25 160.28 251.17 129.42 265.15 133.38 265.15 164.23"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "311.02",
-                "data-number": "49",
-                "id": "lot-49",
-                "points": "280.25 168.19 265.15 164.23 265.15 133.38 280.25 137.13 280.25 168.19"
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1237.6609,439.65551 -14.5955,-4.2154 V 395.4507 355.4613 l 4.0191,1.17752 c 2.2104,0.64763 8.7093,2.49349 14.4419,4.1019 5.7326,1.60842 10.591,3.09246 10.7964,3.29788 0.2054,0.20543 0.2745,18.25173 0.1536,40.10291 l -0.2199,39.7294 z",
+                "id": "lot2"
               },
               "children": []
             },
@@ -691,11 +178,9 @@
               "type": "element",
               "value": "",
               "attributes": {
-                "data-available": "3",
-                "data-area": "312.57",
-                "data-number": "48",
-                "id": "lot-48",
-                "d": "M296.47,172.54l-16.22-4.35V137.13l11.87,3.17s4.35,1,4.35,4.94Z"
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1209.1044,431.41559 c -6.0497,-1.82879 -12.4274,-3.71019 -14.1725,-4.18089 l -3.1729,-0.85582 v -39.75111 -39.75112 l 1.9037,0.4901 c 1.0471,0.26956 7.6151,2.09576 14.5956,4.05823 l 12.6918,3.56812 0.2198,39.9561 c 0.1209,21.97585 -0.07,39.91906 -0.4231,39.87378 -0.3535,-0.0453 -5.5926,-1.57861 -11.6424,-3.40739 z",
+                "id": "lot3"
               },
               "children": []
             },
@@ -704,596 +189,9 @@
               "type": "element",
               "value": "",
               "attributes": {
-                "data-available": "3",
-                "data-area": "315.98",
-                "data-number": "17",
-                "id": "lot-17",
-                "d": "M310.71,57.42V86.3s-.4,3.23,5.14,4.48l10.29,3.7V62.17Z"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "319.68",
-                "data-number": "16",
-                "id": "lot-16",
-                "points": "341.57 65.93 326.14 62.17 326.14 94.47 341.57 98.5 341.57 65.93"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "300.23",
-                "data-number": "15",
-                "id": "lot-15",
-                "points": "356.6 69.68 341.57 65.93 341.57 98.5 356.6 102.58 356.6 69.68"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "302.04",
-                "data-number": "14",
-                "id": "lot-14",
-                "points": "371.24 73.77 356.6 69.68 356.6 102.58 371.24 106.47 371.24 73.77"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "303.80",
-                "data-number": "13",
-                "id": "lot-13",
-                "points": "385.87 77.33 371.24 73.77 371.24 106.47 385.87 110.83 385.87 77.33"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "305.57",
-                "data-number": "12",
-                "id": "lot-12",
-                "points": "400.51 81.03 385.87 77.33 385.87 110.83 400.51 114.58 400.51 81.03"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "307.33",
-                "data-number": "11",
-                "id": "lot-11",
-                "points": "415.15 84.98 400.51 81.03 400.51 114.58 415.15 118.15 415.15 84.98"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "309.09",
-                "data-number": "10",
-                "id": "lot-10",
-                "points": "429.79 88.81 415.15 84.98 415.15 118.15 429.79 122.69 429.79 88.81"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "310.86",
-                "data-number": "9",
-                "id": "lot-9",
-                "points": "444.23 92.3 429.79 88.81 429.79 122.69 444.23 127.25 444.23 92.3"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "312.62",
-                "data-number": "8",
-                "id": "lot-8",
-                "points": "459.06 95.96 444.23 92.3 444.23 127.25 459.06 131 459.06 95.96"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "314.39",
-                "data-number": "7",
-                "id": "lot-7",
-                "points": "473.7 99.58 459.06 95.96 459.06 131 473.7 134.96 473.7 99.58"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "316.15",
-                "data-number": "6",
-                "id": "lot-6",
-                "points": "487.94 103.84 473.7 99.58 473.7 134.96 487.94 138.72 487.94 103.84"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "317.92",
-                "data-number": "5",
-                "id": "lot-5",
-                "points": "502.18 108.03 487.94 103.84 487.94 138.72 502.18 142.87 502.18 108.03"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "319.68",
-                "data-number": "4",
-                "id": "lot-4",
-                "points": "517.02 111.65 502.18 108.03 502.18 142.87 517.02 146.83 517.02 111.65"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "321.44",
-                "data-number": "3",
-                "id": "lot-3",
-                "points": "531.65 115.46 517.02 111.65 517.02 146.83 531.65 150.78 531.65 115.46"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "323.21",
-                "data-number": "2",
-                "id": "lot-2",
-                "points": "546.69 119.15 531.65 115.46 531.65 150.78 546.69 154.84 546.69 119.15"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "3",
-                "data-area": "325.05",
-                "data-number": "1",
-                "id": "lot-1",
-                "points": "560.73 123.35 546.69 119.15 546.69 154.84 560.73 158.1 560.73 123.35"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.87",
-                "data-number": "18",
-                "id": "lot-18",
-                "points": "341.57 112.41 342.36 142.87 356.6 146.83 356.6 115.46 341.57 110.63 341.57 112.41"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.02",
-                "data-number": "19",
-                "id": "lot-19",
-                "points": "371.24 150.78 356.6 146.83 356.6 115.46 371.24 120.19 371.24 150.78"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.92",
-                "data-number": "20",
-                "id": "lot-20",
-                "points": "385.87 154.84 371.24 150.78 371.24 120.19 385.87 124.9 385.87 154.84"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.94",
-                "data-number": "21",
-                "id": "lot-21",
-                "points": "400.51 159.09 385.87 154.84 385.87 124.9 400.51 128.73 400.51 159.09"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.08",
-                "data-number": "22",
-                "id": "lot-22",
-                "points": "415.15 162.85 400.51 159.09 400.51 128.73 415.15 133.12 415.15 162.85"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.11",
-                "data-number": "23",
-                "id": "lot-23",
-                "points": "429.79 166.81 415.15 162.85 415.15 133.12 429.79 136.34 429.79 166.81"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.20",
-                "data-number": "24",
-                "id": "lot-24",
-                "points": "444.23 171.35 429.79 166.81 429.79 136.34 444.23 140.69 444.23 171.35"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.13",
-                "data-number": "25",
-                "id": "lot-25",
-                "points": "459.06 174.91 444.23 171.35 444.23 140.69 459.06 144.45 459.06 174.91"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.14",
-                "data-number": "26",
-                "id": "lot-26",
-                "points": "473.7 178.87 459.06 174.91 459.06 144.45 473.7 148.21 473.7 178.87"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.20",
-                "data-number": "27",
-                "id": "lot-27",
-                "points": "487.94 182.83 473.7 178.87 473.7 148.21 487.94 152.17 487.94 182.83"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.12",
-                "data-number": "28",
-                "id": "lot-28",
-                "points": "502.18 186.78 487.94 182.83 487.94 152.17 502.18 155.73 502.18 186.78"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.17",
-                "data-number": "29",
-                "id": "lot-29",
-                "points": "517.02 190.74 502.18 186.78 502.18 155.73 517.02 160.28 517.02 190.74"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.17",
-                "data-number": "30",
-                "id": "lot-30",
-                "points": "531.65 194.5 517.02 190.74 517.02 160.28 531.65 164.43 531.65 194.5"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.20",
-                "data-number": "31",
-                "id": "lot-31",
-                "points": "546.69 198.65 531.65 194.5 531.65 164.43 546.69 168.19 546.69 198.65"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.66",
-                "data-number": "32",
-                "id": "lot-32",
-                "points": "560.73 202.41 546.69 198.65 546.69 168.19 560.73 172.34 560.73 202.41"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "279.93",
-                "data-number": "47",
-                "id": "lot-47",
-                "points": "341.57 173.23 356.6 177.39 356.6 146.83 342.36 142.87 341.57 173.23"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.08",
-                "data-number": "46",
-                "id": "lot-46",
-                "points": "371.24 181.54 356.6 177.39 356.6 146.83 371.24 150.78 371.24 181.54"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.30",
-                "data-number": "45",
-                "id": "lot-45",
-                "points": "385.87 185.3 371.24 181.54 371.24 150.78 385.87 154.84 385.87 185.3"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.20",
-                "data-number": "44",
-                "id": "lot-44",
-                "points": "400.51 189.35 385.87 185.3 385.87 154.84 400.51 159.09 400.51 189.35"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.33",
-                "data-number": "43",
-                "id": "lot-43",
-                "points": "415.15 193.11 400.51 189.35 400.51 159.09 415.15 162.85 415.15 193.11"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.32",
-                "data-number": "42",
-                "id": "lot-42",
-                "points": "429.79 197.46 415.15 193.11 415.15 162.85 429.79 166.81 429.79 197.46"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.29",
-                "data-number": "41",
-                "id": "lot-41",
-                "points": "444.23 201.03 429.79 197.46 429.79 166.81 444.23 171.35 444.23 201.03"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.26",
-                "data-number": "40",
-                "id": "lot-40",
-                "points": "459.06 205.18 444.23 201.03 444.23 171.35 459.06 174.91 459.06 205.18"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.27",
-                "data-number": "39",
-                "id": "lot-39",
-                "points": "473.7 209.33 459.06 205.18 459.06 174.91 473.7 178.87 473.7 209.33"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.25",
-                "data-number": "38",
-                "id": "lot-38",
-                "points": "487.94 212.89 473.7 209.33 473.7 178.87 487.94 182.83 487.94 212.89"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.24",
-                "data-number": "37",
-                "id": "lot-37",
-                "points": "502.18 217.44 487.94 212.89 487.94 182.83 502.18 186.78 502.18 217.44"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.26",
-                "data-number": "36",
-                "id": "lot-36",
-                "points": "517.02 221.79 502.18 217.44 502.18 186.78 517.02 190.74 517.02 221.79"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "280.23",
-                "data-number": "35",
-                "id": "lot-35",
-                "points": "531.65 225.55 517.02 221.79 517.02 190.74 531.65 194.5 531.65 225.55"
-              },
-              "children": []
-            },
-            {
-              "name": "polygon",
-              "type": "element",
-              "value": "",
-              "attributes": {
-                "data-available": "1",
-                "data-area": "278.27",
-                "data-number": "34",
-                "id": "lot-34",
-                "points": "546.69 228.52 531.65 225.55 531.65 194.5 546.69 198.65 546.69 228.52"
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1174.202,421.19307 -14.5956,-4.30275 V 377.3745 337.85867 l 15.2302,4.24982 15.2301,4.24982 v 39.61984 c 0,21.79091 -0.2855,39.59685 -0.6346,39.56875 -0.349,-0.0281 -7.2025,-1.98732 -15.2301,-4.35383 z",
+                "id": "lot4"
               },
               "children": []
             },
@@ -1302,11 +200,1021 @@
               "type": "element",
               "value": "",
               "attributes": {
-                "data-available": "1",
-                "data-area": "242.64",
-                "data-number": "33",
-                "id": "lot-33",
-                "d": "M560.73,225.55V202.41l-14-3.76v29.87S559.35,228.72,560.73,225.55Z"
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1145.6455,412.8332 c -6.0498,-1.81028 -12.4274,-3.69136 -14.1725,-4.18018 l -3.173,-0.88876 V 368.3618 c 0,-32.11422 0.2048,-39.32387 1.1072,-38.9776 0.6089,0.23367 7.0818,2.05629 14.384,4.05026 l 13.2769,3.62541 v 39.6154 c 0,21.78847 -0.095,39.57804 -0.2115,39.53237 -0.1164,-0.0457 -5.1614,-1.56417 -11.2111,-3.37444 z",
+                "id": "lot5"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1113.4929,403.49365 c -6.0497,-1.82878 -12.4273,-3.71018 -14.1725,-4.18088 l -3.1729,-0.85583 v -38.88887 c 0,-29.13377 0.2484,-38.88887 0.9902,-38.88887 0.7793,0 19.6709,5.07376 27.1433,7.28995 1.3826,0.41007 1.4807,3.04137 1.4807,39.72669 0,21.60813 -0.2856,39.25048 -0.6346,39.2052 -0.349,-0.0453 -5.5844,-1.5786 -11.6342,-3.40739 z",
+                "id": "lot6"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1085.1479,395.18709 c -4.4209,-1.30035 -10.7985,-3.19219 -14.1725,-4.20408 l -6.1343,-1.83981 v -38.97618 c 0,-33.40116 0.1726,-38.90995 1.2067,-38.51312 0.6637,0.25468 7.1365,2.09665 14.384,4.09326 l 13.1773,3.6302 v 39.14935 c 0,21.53214 -0.095,39.12128 -0.2115,39.087 -0.1163,-0.0343 -3.8287,-1.12627 -8.2497,-2.42662 z",
+                "id": "lot7"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1050.034,384.91126 c -6.0498,-1.81027 -12.4274,-3.69135 -14.1725,-4.18017 l -3.1729,-0.88877 v -38.46581 c 0,-21.1562 0.2855,-38.47465 0.6345,-38.48545 0.3491,-0.0108 7.2026,1.77402 15.2302,3.96627 l 14.5955,3.98589 v 38.76276 c 0,30.49041 -0.2257,38.74504 -1.0576,38.67973 -0.5817,-0.0457 -6.0074,-1.56417 -12.0572,-3.37445 z",
+                "id": "lot8"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1017.8815,375.57172 c -6.0498,-1.82879 -12.4274,-3.71019 -14.1725,-4.18089 l -3.173,-0.85582 v -38.55634 c 0,-30.4764 0.2217,-38.47955 1.0577,-38.18994 0.5817,0.20152 7.2449,2.04791 14.8071,4.10308 l 13.7494,3.73667 v 38.71648 c 0,21.29406 -0.2856,38.67942 -0.6346,38.63415 -0.349,-0.0453 -5.5844,-1.57861 -11.6341,-3.40739 z",
+                "id": "lot9"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 989.53647,367.26516 c -4.42097,-1.30035 -10.7986,-3.19219 -14.1725,-4.20409 l -6.13436,-1.83981 v -38.03953 c 0,-24.43085 0.29841,-38.03954 0.83412,-38.03954 0.45877,0 7.12196,1.7629 14.80709,3.91755 l 13.97296,3.91754 v 38.38842 c 0,21.11363 -0.28556,38.36036 -0.63459,38.32607 -0.34902,-0.0343 -4.25175,-1.12626 -8.67272,-2.42661 z",
+                "id": "lot10"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 951.88416,356.2761 -13.5379,-4.01255 -0.2201,-38.13231 -0.2201,-38.13231 7.41211,2.02817 c 4.07666,1.11549 10.45814,2.90185 14.18107,3.96969 l 6.76895,1.94151 0.22015,38.25425 c 0.12109,21.03984 -0.0693,38.21867 -0.42306,38.17518 -0.35376,-0.0435 -6.73527,-1.88473 -14.18112,-4.09163 z",
+                "id": "lot11"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 919.73163,346.9265 -13.53791,-4.03692 -0.22024,-37.75795 c -0.12113,-20.76687 0.0693,-37.75971 0.42306,-37.76187 0.35382,-0.002 7.02093,1.77469 14.8158,3.94855 l 14.1725,3.95247 v 37.93436 c 0,29.83035 -0.22595,37.91555 -1.05765,37.84632 -0.58171,-0.0484 -7.14971,-1.90465 -14.59556,-4.12496 z",
+                "id": "lot12"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 893.925,339.34322 c -4.42098,-1.30035 -10.7986,-3.19219 -14.1725,-4.20408 l -6.13437,-1.83981 v -37.6326 -37.6326 l 1.90377,0.49172 c 1.04707,0.27045 7.61507,2.10761 14.59556,4.08258 l 12.69179,3.59085 0.22024,37.81645 c 0.12113,20.79905 -0.0693,37.7884 -0.42306,37.75411 -0.35382,-0.0343 -4.26046,-1.12627 -8.68143,-2.42662 z",
+                "id": "lot13"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 863.04164,330.1494 c -3.72292,-1.29406 -9.91017,-3.24564 -13.74944,-4.33685 l -6.98048,-1.98401 v -37.11168 c 0,-20.41142 0.25419,-37.11168 0.56487,-37.11168 0.31068,0 6.97387,1.77527 14.80709,3.94505 l 14.24221,3.94504 v 37.5148 c 0,29.4538 -0.22726,37.51237 -1.05764,37.50348 -0.58171,-0.006 -4.10368,-1.0701 -7.82661,-2.36415 z",
+                "id": "lot14"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 825.55587,318.90865 c -7.58694,-2.17813 -13.96861,-4.13442 -14.18149,-4.34729 -0.21288,-0.21288 -0.28782,-16.93307 -0.16653,-37.15597 l 0.22052,-36.76891 13.96097,3.91652 13.96096,3.91652 0.22772,18.75939 c 0.12525,10.31767 0.12525,27.05753 0,37.19969 l -0.22772,18.4403 z",
+                "id": "lot15"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 792.18561,309.40666 -15.01217,-4.38067 -0.006,-36.96115 -0.006,-36.96116 7.40354,2.0688 c 4.07195,1.13783 11.11589,3.07857 15.65321,4.31274 l 8.24966,2.24395 v 37.09054 c 0,20.39979 -0.28556,37.06288 -0.63459,37.02907 -0.34902,-0.0338 -7.39006,-2.03276 -15.64675,-4.44212 z",
+                "id": "lot16"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 761.12617,300.22571 c -6.2594,-1.85031 -12.45239,-4.1273 -13.76221,-5.05997 -4.88881,-3.48114 -4.89431,-3.52616 -4.89431,-40.01877 0,-18.40505 0.2481,-33.46372 0.55134,-33.46372 0.30324,0 7.53756,1.9606 16.07627,4.35689 l 15.52492,4.3569 v 36.67989 c 0,28.82433 -0.22651,36.66201 -1.05765,36.59643 -0.58171,-0.0459 -6.17897,-1.59734 -12.43836,-3.44765 z",
+                "id": "lot17"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 824.75575,422.3587 -13.74843,-3.95273 -0.001,-34.47936 c -5.6e-4,-18.96364 0.0942,-34.47223 0.21052,-34.46353 0.11634,0.009 6.49396,1.8632 14.1725,4.12109 l 13.96096,4.10527 0.22102,34.37733 c 0.12157,18.90754 -0.0688,34.34748 -0.42306,34.311 -0.35424,-0.0365 -6.83087,-1.84507 -14.39251,-4.01907 z",
+                "id": "lot18"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 861.77246,433.21876 c -3.9556,-1.32668 -9.95247,-3.21945 -13.32637,-4.20616 l -6.13437,-1.79403 v -34.232 c 0,-18.8276 0.0952,-34.22967 0.21153,-34.22682 0.11634,0.003 6.68434,1.85718 14.59556,4.12073 l 14.38402,4.11556 0.22103,34.37769 c 0.20806,32.36296 0.13368,34.37416 -1.26918,34.31742 -0.81961,-0.0331 -4.72661,-1.14572 -8.68222,-2.47239 z",
+                "id": "lot19"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 887.5791,440.88805 -13.53791,-4.01251 -0.22102,-34.40683 c -0.17506,-27.25267 8.7e-4,-34.40122 0.84612,-34.37984 0.58693,0.0149 7.1592,1.84616 14.60505,4.06959 l 13.53791,4.04258 0.22102,34.42884 c 0.1752,27.29209 -1.9e-4,34.41246 -0.84612,34.34977 -0.58693,-0.0435 -7.1592,-1.88471 -14.60505,-4.0916 z",
+                "id": "lot20"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 919.73163,450.26855 -13.53791,-3.9963 -0.22102,-34.45153 c -0.12156,-18.94834 0.0688,-34.44447 0.42306,-34.43585 0.35425,0.009 6.92652,1.85188 14.60505,4.09611 l 13.96097,4.08041 0.22102,34.40233 c 0.17513,27.25887 -5.6e-4,34.39181 -0.84612,34.35172 -0.58693,-0.0278 -7.1592,-1.84893 -14.60505,-4.04689 z",
+                "id": "lot21"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 951.2565,459.56235 -13.31945,-3.92713 -0.007,-34.47936 c -0.004,-18.96365 0.27864,-34.46721 0.62767,-34.45236 0.34902,0.0148 6.72664,1.84616 14.17249,4.06958 l 13.53791,4.04258 0.22102,34.42885 c 0.17524,27.29744 -2e-5,34.4098 -0.84612,34.33691 -0.58692,-0.0506 -7.06089,-1.85915 -14.38659,-4.01907 z",
+                "id": "lot22"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 983.19058,468.84845 -13.53791,-3.999 -0.22102,-34.43282 c -0.12156,-18.93805 0.079,-34.43282 0.44571,-34.43282 0.3667,0 6.93897,1.84937 14.60504,4.1097 l 13.93832,4.10971 0.22102,34.38872 c 0.17517,27.2546 -3.6e-4,34.37491 -0.84612,34.32211 -0.58692,-0.0366 -7.15919,-1.86615 -14.60504,-4.0656 z",
+                "id": "lot23"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1021.2659,480.02565 c -3.7229,-1.14952 -9.9101,-3.02676 -13.7494,-4.17165 l -6.9805,-2.08161 v -34.24063 c 0,-26.83663 0.2287,-34.23731 1.0577,-34.22527 0.5817,0.008 7.1497,1.8272 14.5955,4.04166 l 13.5379,4.0263 0.2211,34.45676 c 0.1752,27.3175 -10e-5,34.43892 -0.8462,34.37062 -0.5869,-0.0474 -4.1131,-1.02666 -7.8361,-2.17618 z",
+                "id": "lot24"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1046.6495,487.42461 -13.5379,-4.01251 -0.221,-34.40683 c -0.1216,-18.92376 0.098,-34.40683 0.4867,-34.40683 0.3893,0 4.4867,1.11415 9.1053,2.47588 4.6186,1.36174 11.158,3.28164 14.5319,4.26643 l 6.1343,1.79054 v 34.232 c 0,32.06795 -0.094,34.227 -1.4807,34.15292 -0.8144,-0.0435 -7.5727,-1.88471 -15.0186,-4.0916 z",
+                "id": "lot25"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1078.8021,496.8051 -13.538,-3.99629 -0.2211,-34.55272 c -0.2088,-32.64209 -0.1387,-34.53022 1.2692,-34.14583 0.8197,0.22379 7.2942,2.0779 14.3879,4.12025 l 12.8976,3.71337 0.01,34.47936 c 0,18.96365 -0.2798,34.45659 -0.6288,34.42876 -0.3491,-0.0278 -6.7267,-1.84893 -14.1725,-4.0469 z",
+                "id": "lot26"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1110.1085,505.99695 -13.5379,-4.03689 -0.2211,-34.44283 -0.2211,-34.44282 2.3364,0.52214 c 1.285,0.28718 7.8573,2.15259 14.6051,4.14537 l 12.2687,3.62323 0.221,34.42238 c 0.1753,27.29062 0,34.40414 -0.8461,34.33435 -0.5869,-0.0484 -7.1592,-1.90464 -14.605,-4.12493 z",
+                "id": "lot27"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1142.261,515.38501 -13.5379,-3.999 -0.2211,-34.53401 c -0.2089,-32.62094 -0.1386,-34.51203 1.2692,-34.13733 0.8196,0.21818 7.295,2.07229 14.3897,4.12026 l 12.8994,3.72357 v 34.47936 c 0,18.96365 -0.2817,34.44939 -0.6307,34.41275 -0.349,-0.0366 -6.7267,-1.86616 -14.1725,-4.0656 z",
+                "id": "lot28"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1180.3364,526.56221 c -3.723,-1.14952 -9.9102,-3.02676 -13.7495,-4.17165 l -6.9805,-2.08161 v -34.24064 c 0,-18.85071 0.3309,-34.24063 0.7361,-34.24063 0.4049,0 4.6884,1.16431 9.5189,2.58735 4.8305,1.42304 11.3528,3.34293 14.494,4.26642 l 5.7113,1.67908 v 34.232 c 0,32.07065 -0.094,34.22657 -1.4807,34.14586 -0.8144,-0.0474 -4.5267,-1.02666 -8.2496,-2.17618 z",
+                "id": "lot29"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1205.7199,533.96117 -13.5379,-4.01251 -0.221,-34.40683 c -0.1215,-18.92376 0.069,-34.39971 0.4231,-34.39101 0.3542,0.009 6.9265,1.8632 14.605,4.12109 l 13.961,4.10527 0.221,34.37733 c 0.1752,27.25064 -2e-4,34.36094 -0.8461,34.29826 -0.5869,-0.0435 -7.1592,-1.88472 -14.6051,-4.0916 z",
+                "id": "lot30"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1237.2379,542.98239 -14.1725,-4.30032 v -34.11988 c 0,-26.74623 0.2286,-34.11405 1.0576,-34.09289 0.5817,0.0149 7.1497,1.84616 14.5956,4.06959 l 13.5379,4.04258 0.221,34.42884 c 0.1216,18.93587 -0.069,34.39365 -0.423,34.35062 -0.3543,-0.043 -7.0217,-2.01337 -14.8166,-4.37854 z",
+                "id": "lot31"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1268.9674,552.3115 -14.5956,-4.29874 V 513.5896 479.16643 l 11.2111,3.28399 c 6.1661,1.80619 13.21,3.8682 15.6532,4.58223 l 4.4421,1.29824 v 34.20779 c 0,26.83848 -0.2278,34.19312 -1.0576,34.13967 -0.5817,-0.0375 -7.6257,-2.00255 -15.6532,-4.36685 z",
+                "id": "lot32"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1254.3718,583.20042 v -33.01293 l 9.5188,2.7504 c 5.2354,1.51271 12.2793,3.57574 15.6532,4.58449 l 6.1344,1.83411 v 24.4799 24.4799 l -2.3268,1.18844 c -6.3356,3.23592 -15.4257,5.81853 -21.9991,6.25021 l -6.9805,0.45841 z",
+                "id": "lot33"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1242.9492,615.00111 c -2.3268,-0.43144 -7.7526,-1.77346 -12.0572,-2.98227 l -7.8266,-2.19784 v -34.15234 c 0,-18.78378 0.2856,-34.16693 0.6346,-34.18478 0.349,-0.0178 7.0103,1.79074 14.803,4.01907 l 14.1684,4.05151 v 33.21018 33.21018 l -2.7499,-0.0946 c -1.5125,-0.0521 -4.6537,-0.44763 -6.9805,-0.87908 z",
+                "id": "lot34"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1209.1044,605.73198 c -6.0497,-1.82635 -12.4274,-3.71031 -14.1725,-4.18658 l -3.1729,-0.86595 V 566.377 532.07456 l 2.3268,0.52004 c 1.2798,0.28602 7.8478,2.1505 14.5956,4.14327 l 12.2687,3.62323 0.221,34.42238 c 0.1216,18.93231 -0.069,34.3879 -0.4231,34.34575 -0.3542,-0.0421 -5.5938,-1.57091 -11.6436,-3.39725 z",
+                "id": "lot35"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1173.7789,595.43441 -14.1725,-4.2756 v -34.12855 c 0,-24.35747 0.2678,-34.12856 0.9353,-34.12856 0.5144,0 4.1316,0.95189 8.0382,2.1153 3.9065,1.16341 10.3392,3.07942 14.2948,4.25779 l 7.192,2.1425 v 34.24063 c 0,26.87871 -0.2274,34.22036 -1.0576,34.14636 -0.5817,-0.0518 -7.4353,-2.01829 -15.2302,-4.36987 z",
+                "id": "lot36"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1145.6455,587.13377 c -6.0498,-1.81028 -12.4274,-3.69136 -14.1725,-4.18018 l -3.173,-0.88877 v -34.3339 c 0,-32.28486 0.088,-34.3104 1.4807,-33.94017 0.8144,0.21654 7.2872,2.06448 14.3841,4.10652 l 12.9033,3.71279 v 34.49059 c 0,18.96983 -0.095,34.45323 -0.2115,34.40756 -0.1164,-0.0457 -5.1614,-1.56417 -11.2111,-3.37444 z",
+                "id": "lot37"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1121.108,579.99589 c -1.8614,-0.63494 -8.2391,-2.56066 -14.1725,-4.27936 l -10.788,-3.12492 v -34.2195 -34.21949 l 2.3268,0.51352 c 1.2798,0.28243 7.8478,2.13993 14.5956,4.12776 l 12.2687,3.61424 0.221,34.4379 c 0.1216,18.94084 -0.069,34.40783 -0.423,34.37109 -0.3543,-0.0367 -2.1671,-0.5863 -4.0286,-1.22124 z",
+                "id": "lot38"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1082.1865,568.53409 c -6.0497,-1.82754 -12.4273,-3.71904 -14.1725,-4.20334 l -3.1729,-0.88055 v -34.3339 c 0,-32.28504 0.088,-34.31038 1.4807,-33.93973 0.8144,0.2168 7.2855,2.06979 14.3802,4.11775 l 12.8994,3.72358 v 34.47936 c 0,18.96365 -0.091,34.45242 -0.2077,34.41949 -0.1163,-0.0329 -5.1613,-1.55513 -11.2111,-3.38266 z",
+                "id": "lot39"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1046.8611,558.23935 -14.1725,-4.27011 v -34.14839 c 0,-18.79842 0.3308,-34.1484 0.736,-34.1484 0.4049,0 4.6884,1.16431 9.5189,2.58735 4.8305,1.42304 11.3528,3.34293 14.494,4.26642 l 5.7113,1.67908 v 34.23201 c 0,26.86414 -0.2276,34.21479 -1.0576,34.15207 -0.5817,-0.044 -7.4353,-2.00147 -15.2301,-4.35003 z",
+                "id": "lot40"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 1015.1316,548.85337 -14.5956,-4.22508 v -34.13158 c 0,-21.50491 0.3039,-34.13157 0.8214,-34.13157 1.4568,0 27.5013,7.74635 28.1679,8.37791 0.3544,0.33573 0.5448,15.84855 0.4231,34.47292 l -0.2213,33.86249 z",
+                "id": "lot41"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 986.57505,540.56497 c -6.04975,-1.82878 -12.42737,-3.71018 -14.17249,-4.18088 l -3.17295,-0.85583 v -34.23521 c 0,-18.82937 0.28556,-34.22816 0.63459,-34.21953 0.34902,0.009 6.91702,1.85187 14.59556,4.0961 l 13.96096,4.08042 0.22102,34.40232 c 0.12157,18.92128 -0.0688,34.36528 -0.42306,34.32 -0.35424,-0.0453 -5.59387,-1.5786 -11.64363,-3.40739 z",
+                "id": "lot42"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 957.807,532.06092 c -4.65366,-1.36704 -11.03128,-3.24173 -14.1725,-4.16597 l -5.7113,-1.68043 V 491.9255 c 0,-32.25545 0.0878,-34.26359 1.48071,-33.86031 0.81439,0.23579 7.00163,2.01702 13.74943,3.95828 6.7478,1.94126 12.55868,3.79638 12.91306,4.12248 0.35438,0.3261 0.54475,15.84961 0.42306,34.4967 l -0.22127,33.9038 z",
+                "id": "lot43"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 923.11611,521.96617 c -6.04975,-1.82634 -12.42738,-3.7103 -14.1725,-4.18658 l -3.17295,-0.86595 v -34.23522 c 0,-18.82937 0.28557,-34.22809 0.63459,-34.21939 0.34903,0.009 6.91703,1.8632 14.59556,4.12109 l 13.96097,4.10527 0.22102,34.37733 c 0.12156,18.90754 -0.0688,34.34286 -0.42306,34.30071 -0.35424,-0.0421 -5.59388,-1.57091 -11.64363,-3.39726 z",
+                "id": "lot44"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 888.21369,511.67259 -14.59556,-4.24751 v -34.14459 c 0,-18.77953 0.28557,-34.14586 0.63459,-34.14741 1.27882,-0.006 27.73066,7.83348 28.35473,8.40307 0.35438,0.32345 0.54476,15.84215 0.42306,34.48602 l -0.22126,33.89794 z",
+                "id": "lot45"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 859.65717,503.35155 c -6.04976,-1.82635 -12.42738,-3.71031 -14.1725,-4.18658 l -3.17295,-0.86595 V 464.0638 c 0,-18.82937 0.2305,-34.23522 0.51223,-34.23522 0.28172,0 3.70851,0.95189 7.61507,2.1153 3.90657,1.16341 10.33925,3.07942 14.29486,4.2578 l 7.19201,2.14249 v 34.24063 c 0,18.83235 -0.28556,34.20615 -0.63458,34.164 -0.34903,-0.0421 -5.58439,-1.57091 -11.63414,-3.39725 z",
+                "id": "lot46"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 831.73523,495.24381 c -3.72292,-1.15612 -9.91017,-3.04416 -13.74944,-4.19566 l -6.98048,-2.09362 V 454.7379 c 0,-18.81915 0.0952,-34.20957 0.21153,-34.20094 0.11634,0.009 6.49396,1.85187 14.1725,4.0961 l 13.96096,4.08042 0.22102,34.40232 c 0.12157,18.92128 -0.0688,34.36356 -0.42306,34.31618 -0.35424,-0.0474 -3.69011,-1.03206 -7.41303,-2.18817 z",
+                "id": "lot47"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 694.32728,484.28427 c -8.05985,-2.41654 -15.26184,-4.54619 -16.00443,-4.73257 l -1.35017,-0.33887 v -36.39235 -36.39235 l 11.51721,3.20587 c 12.47227,3.47172 16.11299,5.29317 18.93358,9.47248 1.42928,2.11778 1.43477,2.19136 1.90992,25.59227 0.62132,30.59951 0.65107,44.12495 0.0969,44.04441 -0.2468,-0.0359 -7.04314,-2.04237 -15.10299,-4.45889 z",
+                "id": "lot48"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 662.9127,475.01826 c -6.58126,-1.95176 -13.78326,-4.09753 -16.00443,-4.76838 l -4.0385,-1.21974 v -35.88058 c 0,-19.73431 0.20192,-35.88611 0.44872,-35.89287 0.2468,-0.007 7.5161,1.94345 16.15401,4.33382 l 15.70529,4.34612 v 36.35035 c 0,19.99269 -0.0673,36.3345 -0.14958,36.31514 -0.0823,-0.0194 -5.53424,-1.63211 -12.11551,-3.58386 z",
+                "id": "lot49"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 625.66874,464.10298 -14.5087,-4.26935 v -35.76955 c 0,-19.67325 0.20193,-35.76236 0.44873,-35.75358 0.24679,0.009 6.91032,1.82846 14.80784,4.04373 l 14.35912,4.02776 0.15424,36.04215 c 0.0848,19.82318 -0.0498,36.021 -0.29915,35.99517 -0.24936,-0.0258 -6.9823,-1.96819 -14.96208,-4.31633 z",
+                "id": "lot50"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 593.95901,454.80872 -13.3121,-3.96136 v -35.51203 -35.51202 l 1.64532,0.36341 c 0.90492,0.19988 7.29922,1.9373 14.20954,3.86093 l 12.56423,3.4975 0.15429,35.6742 c 0.14581,33.71579 0.0965,35.67081 -0.89745,35.61246 -0.57845,-0.034 -7.04217,-1.84434 -14.36383,-4.02309 z",
+                "id": "lot51"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 566.28779,446.65621 c -5.7586,-1.7324 -12.01828,-3.59913 -13.91039,-4.14827 l -3.44021,-0.99843 v -35.29419 -35.29419 l 1.64532,0.41248 c 0.90492,0.22686 7.56845,2.06094 14.80784,4.07574 l 13.16252,3.66327 0.15432,35.42323 c 0.14584,33.47517 0.0965,35.42013 -0.89744,35.36671 -0.57847,-0.0311 -5.76335,-1.47394 -11.52196,-3.20635 z",
+                "id": "lot52"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 532.03531,436.59132 -14.20955,-4.23281 v -35.10648 -35.10648 l 11.51721,3.22627 c 6.33447,1.77444 12.93069,3.62698 14.65827,4.11675 l 3.14106,0.89049 v 35.28279 c 0,19.40554 -0.20193,35.25568 -0.44872,35.22253 -0.2468,-0.0331 -6.84302,-1.96502 -14.65827,-4.29306 z",
+                "id": "lot53"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 501.22827,427.5764 -14.50345,-4.28151 -0.005,-34.91479 c -0.004,-27.67622 0.14981,-34.8598 0.74263,-34.64956 0.41133,0.14588 7.00755,1.98846 14.65827,4.09462 l 13.91039,3.82938 v 35.15783 c 0,19.3368 -0.0673,35.13256 -0.14957,35.10168 -0.0823,-0.0309 -6.67613,-1.98282 -14.65303,-4.33765 z",
+                "id": "lot54"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 469.66288,418.24944 -13.76082,-4.07433 -0.15444,-34.47897 c -0.10528,-23.50627 0.043,-34.47896 0.466,-34.47896 0.53576,0 16.0486,4.22307 25.56477,6.95952 l 3.14106,0.90324 v 34.65875 c 0,27.34779 -0.15776,34.65098 -0.74787,34.62192 -0.41133,-0.0203 -6.94025,-1.87029 -14.5087,-4.11117 z",
+                "id": "lot55"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 440.94464,409.78886 c -6.58126,-1.96004 -12.97556,-3.83921 -14.20954,-4.17592 l -2.24362,-0.61222 v -34.44301 c 0,-27.30774 0.15493,-34.38389 0.74787,-34.15763 0.41133,0.15696 7.00563,2.00309 14.654,4.10251 l 13.90613,3.81714 0.004,34.55163 c 0.002,19.0034 -0.19766,34.53579 -0.44445,34.51642 -0.2468,-0.0194 -5.83339,-1.63888 -12.41466,-3.59892 z",
+                "id": "lot56"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 407.88875,400.0711 -14.50869,-4.23126 v -33.98663 c 0,-20.97539 0.21677,-33.98664 0.56622,-33.98664 0.76052,0 28.23485,7.66126 28.52892,7.95533 0.1272,0.1272 0.16174,15.58734 0.0768,34.35586 l -0.15451,34.12459 z",
+                "id": "lot57"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 376.9269,390.96856 -14.35912,-4.22896 -0.15454,-33.98966 c -0.12981,-28.54923 -0.0236,-33.9394 0.6636,-33.6757 0.44999,0.17268 6.84652,1.97731 14.21452,4.0103 7.368,2.03299 13.60053,3.88902 13.85008,4.12452 0.24954,0.2355 0.38415,15.62924 0.29914,34.20832 l -0.15456,33.78015 z",
+                "id": "lot58"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 349.40525,382.92798 c -5.26501,-1.57432 -11.52469,-3.44539 -13.9104,-4.15793 l -4.33765,-1.29552 v -33.47928 c 0,-18.41361 0.20193,-33.47809 0.44873,-33.47662 0.24679,0.001 6.72283,1.75147 14.39119,3.88892 7.66836,2.13745 14.06266,3.88628 14.20955,3.88628 0.14689,0 0.26707,15.21169 0.26707,33.80376 0,26.67374 -0.15774,33.79206 -0.74787,33.74827 -0.41133,-0.0305 -5.05561,-1.34357 -10.32062,-2.91788 z",
+                "id": "lot59"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 313.95725,372.53105 -14.50761,-4.27945 -10e-4,-33.36644 -0.001,-33.36644 1.64532,0.41126 c 0.90492,0.22619 7.56845,2.0735 14.80784,4.10513 l 13.16253,3.69388 0.15455,33.59896 c 0.085,18.47942 -0.0496,33.57276 -0.29915,33.54075 -0.24953,-0.032 -6.98213,-1.98395 -14.96132,-4.33765 z",
+                "id": "lot60"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 282.24889,363.24677 -13.30967,-3.96962 -0.002,-33.05589 c -0.001,-18.18074 0.17657,-33.05589 0.39536,-33.05589 0.43156,0 23.1949,6.26787 26.37598,7.26261 l 1.94446,0.60804 v 33.15907 c 0,31.20744 -0.0616,33.15501 -1.04702,33.09018 -0.57586,-0.0379 -7.03637,-1.85521 -14.35668,-4.0385 z",
+                "id": "lot61"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 251.58375,354.2117 -13.46168,-4.03454 -0.15462,-32.94845 -0.15462,-32.94845 4.3427,1.23063 c 2.38848,0.67685 8.91967,2.49656 14.51374,4.04382 l 10.17104,2.8132 0.15464,33.00589 c 0.14607,31.17598 0.0963,33.0022 -0.89744,32.93917 -0.57865,-0.0367 -7.10984,-1.88227 -14.51376,-4.10127 z",
+                "id": "lot62"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 224.0621,346.10227 c -5.7586,-1.74182 -12.01828,-3.60978 -13.9104,-4.15102 l -3.4402,-0.98406 V 308.3212 c 0,-30.80251 0.0591,-32.6297 1.04702,-32.35738 0.57586,0.15874 7.17208,1.98654 14.65827,4.06178 l 13.61124,3.77316 v 32.80325 c 0,25.88 -0.15784,32.78889 -0.74787,32.73523 -0.41133,-0.0374 -5.45945,-1.49314 -11.21806,-3.23497 z",
+                "id": "lot63"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 189.66004,336.02454 -14.35912,-4.29134 -0.15469,-32.37758 -0.15469,-32.37758 7.33425,2.082 c 4.03384,1.14511 10.69967,2.9559 14.81296,4.02398 l 7.47871,1.94197 0.15468,32.70241 c 0.0851,17.98632 -0.0495,32.67654 -0.29915,32.64494 -0.2496,-0.0316 -6.91543,-1.98856 -14.81295,-4.3488 z",
+                "id": "lot64"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.598297",
+                "d": "m 157.20486,326.47644 -14.50629,-4.29369 -0.002,-32.11621 -0.002,-32.11622 4.03851,1.15671 c 2.22117,0.63619 9.08663,2.54651 15.25656,4.24515 l 11.21806,3.08843 v 32.20872 c 0,25.39157 -0.15829,32.19942 -0.74787,32.16476 -0.41133,-0.0242 -7.2757,-1.97612 -15.25415,-4.33765 z",
+                "id": "lot65"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 162.33718,229.85286 c -10.12034,-2.95174 -14.19867,-5.3838 -17.21661,-10.26692 -1.7774,-2.8759 -1.85848,-4.05846 -2.32851,-33.96212 -0.47474,-30.20355 -0.44641,-30.97023 1.12673,-30.49586 0.88755,0.26763 6.56352,1.85383 12.61327,3.5249 6.04976,1.67106 12.237,3.43004 13.74944,3.90884 l 2.74989,0.87055 v 34.62527 c 0,19.0439 -0.28557,34.60705 -0.63459,34.58477 -0.34903,-0.0223 -4.87585,-1.27752 -10.05962,-2.78943 z",
+                "id": "lot68"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 201.37638,240.70131 c -0.46536,-0.16999 -6.65261,-1.90608 -13.74943,-3.85797 l -12.90332,-3.5489 v -34.57365 c 0,-22.15349 0.29964,-34.57365 0.83412,-34.57365 0.45876,0 7.12195,1.76289 14.80708,3.91754 l 13.97297,3.91755 v 34.58088 c 0,35.26024 0.003,35.22121 -2.96142,34.1382 z",
+                "id": "lot69"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 221.26019,246.34578 -13.96097,-3.9671 -0.221,-34.97933 c -0.19035,-30.13007 -0.0524,-34.91464 0.99519,-34.51264 0.6689,0.25668 7.14597,2.10028 14.39349,4.09689 l 13.17731,3.6302 v 34.91875 c 0,19.20531 -0.0952,34.88761 -0.21153,34.84955 -0.11634,-0.0381 -6.49396,-1.85441 -14.17249,-4.03632 z",
+                "id": "lot70"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 251.93201,254.88411 -13.74944,-3.87849 v -34.54499 c 0,-27.07791 0.22862,-34.54256 1.05765,-34.53375 0.58171,0.006 6.95933,1.66031 14.1725,3.67583 l 13.11485,3.66459 0.22091,34.82259 c 0.12151,19.15243 -0.0689,34.78888 -0.42306,34.74766 -0.35418,-0.0412 -6.83122,-1.82027 -14.39341,-3.95344 z",
+                "id": "lot71"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 282.3923,263.36292 -13.74944,-3.8759 v -34.55509 c 0,-27.08452 0.22866,-34.55326 1.05765,-34.54661 0.58171,0.005 6.95933,1.67345 14.1725,3.70841 l 13.11485,3.69992 0.22092,34.79002 c 0.1215,19.13451 -0.0689,34.75967 -0.42306,34.72258 -0.35419,-0.0371 -6.83123,-1.81159 -14.39342,-3.94333 z",
+                "id": "lot72"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 316.4486,272.81964 c -5.58438,-1.60078 -11.58126,-3.30528 -13.32638,-3.78778 l -3.17294,-0.87728 V 233.4963 c 0,-19.06205 0.21892,-34.65827 0.48649,-34.65827 0.26757,0 6.74039,1.76114 14.38403,3.91366 l 13.89753,3.91367 v 34.58476 c 0,27.13166 -0.22792,34.57347 -1.05765,34.53239 -0.5817,-0.0288 -5.62669,-1.3621 -11.21108,-2.96287 z",
+                "id": "lot73"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 345.63972,281.0074 -13.96097,-3.95712 -0.22099,-34.96969 c -0.19036,-30.12168 -0.0524,-34.90499 0.99518,-34.50299 0.6689,0.25668 7.14597,2.10028 14.39349,4.09689 l 13.17731,3.6302 v 34.91875 c 0,19.20531 -0.0952,34.87877 -0.21153,34.82991 -0.11634,-0.0489 -6.49396,-1.86954 -14.17249,-4.04595 z",
+                "id": "lot74"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 376.10001,289.49787 -13.96097,-3.96711 -0.22096,-34.94519 -0.22097,-34.94518 1.91321,0.61583 c 1.05226,0.33871 7.6245,2.21021 14.60499,4.1589 l 12.69179,3.54307 0.22091,34.82259 c 0.12151,19.15243 -0.0689,34.79146 -0.42306,34.7534 -0.35418,-0.0381 -6.92641,-1.8544 -14.60494,-4.03631 z",
+                "id": "lot75"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 406.77183,298.05381 -13.74944,-3.8759 v -34.55509 c 0,-25.82424 0.25019,-34.5551 0.99018,-34.5551 0.77935,0 19.6709,5.07376 27.14329,7.28996 1.37893,0.40897 1.48071,2.81976 1.48071,35.07302 0,27.17899 -0.22766,34.61936 -1.05765,34.56644 -0.58171,-0.0371 -7.2449,-1.81159 -14.80709,-3.94333 z",
+                "id": "lot76"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 439.55895,307.19182 -13.96096,-3.99321 -0.221,-34.92901 c -0.18125,-28.64768 -0.0202,-34.85194 0.89564,-34.50051 0.61415,0.23567 7.09122,2.05993 14.39349,4.0539 l 13.27686,3.6254 v 34.96175 c 0,19.22896 -0.0952,34.91971 -0.21153,34.86832 -0.11634,-0.0514 -6.49396,-1.89037 -14.1725,-4.08664 z",
+                "id": "lot77"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 470.01925,315.69829 -13.96097,-3.95712 -0.22092,-34.87553 c -0.1215,-19.18154 -0.1215,-34.86666 0,-34.85582 0.12151,0.0109 6.69373,1.85173 14.60495,4.09086 l 14.38402,4.07113 0.22092,34.83063 c 0.1215,19.15685 -0.0689,34.79066 -0.42306,34.7418 -0.35419,-0.0489 -6.92641,-1.86954 -14.60494,-4.04595 z",
+                "id": "lot78"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 500.69107,324.23971 -13.74944,-3.90534 v -34.81731 -34.81731 l 11.63414,3.27003 c 6.39878,1.79851 13.06197,3.66105 14.80709,4.13898 l 3.17295,0.86896 V 293.636 c 0,27.20233 -0.22753,34.64222 -1.05765,34.58366 -0.58171,-0.041 -7.2449,-1.83201 -14.80709,-3.97995 z",
+                "id": "lot79"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 534.74737,333.7061 c -5.58439,-1.59932 -11.58126,-3.29555 -13.32638,-3.76939 l -3.17294,-0.86154 v -34.65828 c 0,-19.06205 0.2552,-34.65828 0.56711,-34.65828 0.46408,0 21.39125,5.70947 26.72023,7.28996 1.37893,0.40897 1.48071,2.81976 1.48071,35.07302 0,27.18076 -0.2276,34.61865 -1.05765,34.56312 -0.58171,-0.0389 -5.62669,-1.37929 -11.21108,-2.97861 z",
+                "id": "lot80"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 563.93848,341.88271 -13.96096,-3.99321 -0.221,-34.92901 c -0.17603,-27.82306 -0.004,-34.85009 0.84612,-34.54112 0.58692,0.21334 7.06399,2.04646 14.39349,4.0736 l 13.32638,3.68573 v 34.94204 c 0,19.21812 -0.0952,34.9 -0.21153,34.84861 -0.11634,-0.0514 -6.49396,-1.89037 -14.1725,-4.08664 z",
+                "id": "lot81"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 594.61031,350.43033 -13.74944,-3.92132 V 311.71006 276.9111 l 14.1725,3.93622 14.1725,3.93622 0.22091,34.87021 c 0.1215,19.17862 -0.0689,34.83145 -0.42306,34.78406 -0.35418,-0.0474 -6.83122,-1.85075 -14.39341,-4.00748 z",
+                "id": "lot82"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 625.0706,358.92635 -13.74944,-3.87014 v -34.83279 -34.83278 l 11.63414,3.27003 c 6.39878,1.79851 13.06197,3.66105 14.80709,4.13898 l 3.17295,0.86896 v 34.65827 c 0,27.21286 -0.22721,34.63802 -1.05765,34.56394 -0.58171,-0.0519 -7.2449,-1.8359 -14.80709,-3.96447 z",
+                "id": "lot83"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 629.08967,288.32318 c -6.28244,-1.75629 -12.85044,-3.58592 -14.59556,-4.06585 l -3.17295,-0.8726 v -34.54809 -34.54809 l 14.42678,4.02214 c 7.93472,2.21217 14.60223,4.19759 14.81669,4.41204 0.21445,0.21446 0.2904,15.78077 0.16878,34.59181 l -0.22113,34.2019 z",
+                "id": "lot84"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 594.51151,278.76822 c -7.15116,-2.03226 -13.15236,-3.84526 -13.33598,-4.02888 -0.18362,-0.18363 -0.23435,-15.74869 -0.11273,-34.58903 l 0.22113,-34.25516 13.96097,3.91688 13.96097,3.91688 0.22102,34.43746 c 0.17518,27.29536 -3e-4,34.42288 -0.84612,34.36716 -0.58693,-0.0387 -6.9181,-1.73305 -14.06926,-3.76531 z",
+                "id": "lot85"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 563.3039,270.08808 -13.74944,-3.90535 v -34.609 c 0,-27.328 0.2225,-34.52818 1.05765,-34.22484 0.5817,0.21128 7.05452,2.03083 14.38402,4.04344 l 13.32638,3.65928 v 34.54552 c 0,19.00003 -0.28556,34.51194 -0.63459,34.4709 -0.34902,-0.041 -6.82183,-1.83201 -14.38402,-3.97995 z",
+                "id": "lot86"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 532.63207,261.4512 -13.96097,-3.86165 -0.22102,-34.45248 c -0.12156,-18.94886 0.0688,-34.44815 0.42306,-34.44286 0.9961,0.0149 27.46251,7.48909 27.8338,7.86038 0.1806,0.1806 0.22885,15.72509 0.10723,34.54331 l -0.22113,34.21495 z",
+                "id": "lot87"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 504.71014,253.63229 c -6.28244,-1.75629 -12.85044,-3.58592 -14.59556,-4.06585 l -3.17295,-0.8726 v -34.53803 -34.53803 l 14.47987,4.06517 c 7.96392,2.23584 14.63143,4.21673 14.81669,4.40198 0.18525,0.18526 0.23731,15.72768 0.11569,34.53872 l -0.22113,34.2019 z",
+                "id": "lot88"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 469.38466,243.88456 -13.74944,-3.87849 v -34.54499 c 0,-18.99975 0.0952,-34.53612 0.21153,-34.52527 0.11634,0.0108 6.68434,1.85172 14.59556,4.09084 l 14.38402,4.07113 0.22103,34.40758 c 0.17519,27.27325 -2.5e-4,34.39204 -0.84612,34.33263 -0.58693,-0.0412 -7.25439,-1.82026 -14.81658,-3.95343 z",
+                "id": "lot89"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 438.92436,235.42336 -13.74943,-3.87849 v -34.63551 c 0,-28.18696 0.20613,-34.55641 1.10716,-34.21065 0.60895,0.23367 7.08176,2.05629 14.38403,4.05026 l 13.27686,3.6254 v 34.53869 c 0,18.99628 -0.28556,34.50496 -0.63459,34.46374 -0.34902,-0.0412 -6.82183,-1.82027 -14.38403,-3.95344 z",
+                "id": "lot90"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 412.06008,227.829 c -5.58439,-1.54995 -12.15239,-3.38707 -14.59556,-4.0825 l -4.44213,-1.26441 V 188.2379 c 0,-26.8364 0.2288,-34.24212 1.05765,-34.23458 1.26519,0.0115 27.7755,7.38851 28.24737,7.86038 0.1806,0.1806 0.22885,15.73074 0.10723,34.55587 l -0.22113,34.22751 z",
+                "id": "lot91"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 375.46542,217.68161 -13.74944,-3.89759 v -34.60583 -34.60583 l 1.90377,0.61284 c 1.04707,0.33706 7.61507,2.20721 14.59556,4.1559 l 12.69179,3.54306 0.22102,34.39954 c 0.17513,27.25723 -5.5e-4,34.38874 -0.84612,34.34752 -0.58693,-0.0286 -7.25439,-1.80594 -14.81658,-3.94961 z",
+                "id": "lot92"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 345.00513,209.21129 -13.74944,-3.8759 v -34.64562 c 0,-29.6514 0.17395,-34.57887 1.20671,-34.18256 0.66369,0.25468 7.13651,2.09665 14.38403,4.09326 l 13.17731,3.6302 v 34.49569 c 0,18.97263 -0.28556,34.46535 -0.63459,34.42826 -0.34902,-0.0371 -6.82183,-1.81159 -14.38402,-3.94333 z",
+                "id": "lot93"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 314.3333,200.65535 -13.96096,-3.96711 -0.22102,-34.46211 c -0.12157,-18.95417 0.002,-34.46212 0.27496,-34.46212 0.27279,0 6.74988,1.76115 14.39352,3.91366 l 13.89753,3.91367 v 34.58476 c 0,19.02162 -0.0952,34.55362 -0.21153,34.51556 -0.11634,-0.0381 -6.49396,-1.8544 -14.1725,-4.03631 z",
+                "id": "lot94"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 287.25749,193.17991 c -3.95561,-1.15328 -9.7621,-2.84302 -12.90332,-3.75498 l -5.71131,-1.65811 v -34.232 c 0,-26.83656 0.2285,-34.22591 1.05765,-34.20381 0.58171,0.0155 6.95933,1.67815 14.1725,3.69477 l 13.11485,3.66658 0.22102,34.3806 c 0.20813,32.37474 0.13408,34.37543 -1.26918,34.29221 -0.81961,-0.0486 -4.7266,-1.03198 -8.68221,-2.18526 z",
+                "id": "lot95"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 255.95108,184.375 c -4.88634,-1.38303 -10.88321,-3.08393 -13.32638,-3.77979 l -4.44213,-1.2652 v -34.24419 c 0,-26.83728 0.22877,-34.24177 1.05765,-34.23295 0.58171,0.006 6.95933,1.6603 14.1725,3.67582 l 13.11485,3.66458 0.22102,34.39954 c 0.17513,27.25697 -5.6e-4,34.38888 -0.84612,34.34816 -0.58693,-0.0283 -5.06506,-1.18295 -9.95139,-2.56597 z",
+                "id": "lot96"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 220.6256,174.5204 -13.74944,-3.8759 v -34.49853 -34.49854 l 7.40354,2.06355 c 4.07195,1.13496 10.54476,2.89933 14.38403,3.92083 l 6.98048,1.85727 v 34.52104 c 0,18.98657 -0.28556,34.4907 -0.63459,34.45361 -0.34902,-0.0371 -6.82183,-1.81159 -14.38402,-3.94333 z",
+                "id": "lot97"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 194.18437,167.16932 c -5.3517,-1.51969 -11.91971,-3.40315 -14.59556,-4.18545 l -4.86518,-1.42236 v -34.2442 c 0,-21.93701 0.29978,-34.244192 0.83412,-34.244192 0.45876,0 7.12195,1.762896 14.80708,3.917546 l 13.97297,3.917546 v 34.58088 c 0,19.01948 -0.0952,34.54993 -0.21153,34.5121 -0.11634,-0.0378 -4.5902,-1.31217 -9.9419,-2.83187 z",
+                "id": "lot98"
+              },
+              "children": []
+            },
+            {
+              "name": "path",
+              "type": "element",
+              "value": "",
+              "attributes": {
+                "style": "fill:#a0a0a0;stroke:none;stroke-width:0.846119",
+                "d": "m 157.37818,156.65792 -14.38403,-3.9535 0.0499,-27.2876 0.0499,-27.287598 3.3346,-3.472647 c 5.82052,-6.061482 9.87912,-6.915052 20.25698,-4.26028 l 5.92284,1.515126 0.22102,34.425619 c 0.12156,18.93409 -0.0688,34.39159 -0.42306,34.35 -0.35424,-0.0416 -7.11689,-1.8547 -15.02811,-4.02912 z",
+                "id": "lot99"
               },
               "children": []
             }
