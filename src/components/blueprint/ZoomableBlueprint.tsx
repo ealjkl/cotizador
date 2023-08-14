@@ -1,7 +1,7 @@
 "use client";
 import { SvgObject } from "@/utils/getSvg";
 import { Button } from "@chakra-ui/react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 // import useZoom from "../zoom/hooks/useZoomWithDefaultOnZoomedOutMax";
 import useZoom from "../zoom/hooks/useZoom";
 import { Blueprint } from "./Blueprint";
@@ -12,25 +12,24 @@ import {
   faMagnifyingGlassPlus,
   faMagnifyingGlassMinus,
 } from "@fortawesome/free-solid-svg-icons";
+import { Lote } from "../Main";
 
 type Props = {
   onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
-  temp: any;
-  svgObject: SvgObject;
+  lots: {
+    [id: string]: Lote;
+  };
+  // svgObject: SvgObject;
 };
 
-export default function ZoomableBlueprint(props: Props) {
+function ZoomableBlueprintComponent(props: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const { zoomIn, zoomOut } = useZoom({ svgRef });
 
   return (
     <div className="blueprint-container">
       <div className="blueprint-group">
-        <Blueprint
-          svgObject={props.svgObject}
-          svgRef={svgRef}
-          onClick={props.onClick}
-        />
+        <Blueprint lots={props.lots} svgRef={svgRef} onClick={props.onClick} />
         <div className="blueprint__zoom-button-group">
           <button
             onClick={zoomIn}
@@ -57,3 +56,7 @@ export default function ZoomableBlueprint(props: Props) {
     </div>
   );
 }
+
+const ZoomableBlueprint = React.memo(ZoomableBlueprintComponent);
+
+export default ZoomableBlueprint;

@@ -12,7 +12,7 @@ export type SvgObject = {
   children: SvgObject[];
 };
 
-export default async function getSvg(lots: { [lotId: string]: Lote }) {
+export default function getSvg(lots: { [lotId: string]: Lote }) {
   // const lots = await getLots();
   const svg = ariaSvg;
 
@@ -24,8 +24,14 @@ export default async function getSvg(lots: { [lotId: string]: Lote }) {
       "id" in current.attributes &&
       (current.attributes.id as string).startsWith("lot")
     ) {
-      current.attributes["data-available"] =
-        lots[current.attributes.id]["available"];
+      let lotKey = current.attributes.id;
+      if (!current.attributes.id.startsWith("lot-")) {
+        lotKey = (current.attributes.id as string).replace("lot", "lot-");
+      }
+      delete current.attributes.style;
+      current.attributes.id = lotKey;
+      current.attributes["data-number"] = lots[lotKey]["number"];
+      current.attributes["data-available"] = lots[lotKey]["available"];
     }
     for (const child of current.children) {
       stack.push(child);

@@ -54,9 +54,7 @@ export const PDFPreviewer: React.FC<PDFPreviewerProps> = ({ url }) => {
           <PDFDocument
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
-            onItemClick={(ev) => {
-              console.log("hey");
-            }}
+            onItemClick={(ev) => {}}
           >
             <PDFPage pageNumber={pageNumber} width={600} />
           </PDFDocument>

@@ -38,10 +38,7 @@ export default function TestForm() {
     //   "24240113",
     //   "3836fc42-4397-4abc-9730-919960d2a1d1"
     // );
-    console.log("form submited");
   };
-
-  // console.log(watch("example")); // watch input value by passing the name of it
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */

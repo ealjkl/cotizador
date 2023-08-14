@@ -52,13 +52,11 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
     }
 
     function onTouchEnd(_event: TouchEvent) {
-      // console.log(_event.type);
       defaultTouchmoveStartedRef.current! = false;
       zoomTouchmoveStartedRef.current! = false;
     }
 
     function onTouchStart(event: TouchEvent) {
-      console.log(event.type);
       const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
       prevPosRef.current!.x = event.touches[0].clientX;
       prevPosRef.current!.y = event.touches[0].clientY;
@@ -73,7 +71,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
       //returning true means that it will preventDefault
       const _event = event as TouchEvent;
       if (event.type == "touchmove") {
-        // console.log(event.type);
         const touches = _event.touches;
         if (defaultTouchmoveStartedRef.current) {
           //if thee touch already started (meaning default wasn't prevented) it cannot be cancelled
@@ -97,7 +94,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
         let shouldFilter = true;
         const { top, bottom, left, right } = isBorderRef.current!;
 
-        console.log(isHorizontal ? "Horizontal" : "Veretical");
         if (left && isHorizontal && deltaX >= 0) {
           shouldFilter = false;
           defaultTouchmoveStartedRef.current = true;

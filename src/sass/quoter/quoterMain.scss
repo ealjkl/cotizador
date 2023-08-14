@@ -13,8 +13,10 @@
 }
 
 .quoter__price-section {
+    padding-top: 1em;
     padding-left: 1em;
     width: 50%;
+    border-left: 1px solid var(--secondary-color);
 }
 
 .quoter__total-price__label {
@@ -23,13 +25,24 @@
 }
 
 .quoter__total-price__value-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    // align-items: ;
+    // justify-content: space-between;
     // text-align: end;
 }
 
 .quoter__total-price__value {
+    color: var(--available-3);
     font-size: 1.5rem;
     font-weight: bold;
     text-align: end;
+}
+
+.quoter__base-price__value {
+    font-size: 1.2rem;
+    text-decoration: line-through;
 }
 
 .input-section {

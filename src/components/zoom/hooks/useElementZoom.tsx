@@ -35,7 +35,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
     const gSel = svgSel.selectChild();
     // const { x, y, width, height } = svgRef.current!.viewBox.baseVal;
     // const { x, y, width, height } = svgRef.current!.getBoundingClientRect();
-    // console.log("rectangle", svgRef.current!.getBoundingClientRect());
 
     const { x, y, width, height } = {
       x: 0,
@@ -43,8 +42,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
       width: svgRef.current!.clientWidth,
       height: svgRef.current!.clientHeight,
     };
-    console.log(width);
-    console.log(height);
 
     const zoom = d3.zoom().scaleExtent([1, step * step]);
     // .translateExtent([
@@ -56,20 +53,16 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
 
     function handleZoom(e: d3.D3ZoomEvent<SVGSVGElement, any>) {
       const transformString = `scale(${e.transform.k}) translate(${e.transform.x}px, ${e.transform.y}px)`;
-      console.log(transformString, e.transform.toString());
-      console.log("transform", gSel.style("transform"));
       gSel.style("transform", transformString);
       // gSel.attr("transform", e.transform.toString());
     }
 
     function onTouchEnd(_event: TouchEvent) {
-      // console.log(_event.type);
       defaultTouchmoveStarted.current! = false;
       zoomTouchmoveStarted.current! = false;
     }
 
     function onTouchStart(event: TouchEvent) {
-      console.log(event.type);
       const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
       prevPosRef.current!.x = event.touches[0].clientX;
       prevPosRef.current!.y = event.touches[0].clientY;
@@ -84,7 +77,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
       //returning true means that it will preventDefault
       const _event = event as TouchEvent;
       if (event.type == "touchmove") {
-        // console.log(event.type);
         const touches = _event.touches;
         if (defaultTouchmoveStarted.current) {
           //if thee touch already started (meaning default wasn't prevented) it cannot be cancelled
@@ -108,7 +100,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
         let shouldFilter = true;
         const { top, bottom, left, right } = isBorderRef.current!;
 
-        console.log(isHorizontal ? "Horizontal" : "Veretical");
         if (left && isHorizontal && deltaX >= 0) {
           shouldFilter = false;
           defaultTouchmoveStarted.current = true;

@@ -1,6 +1,6 @@
 "use client";
 import { QuoterSection } from "./quoter/QuoterSection";
-import { createContext, useRef, useState } from "react";
+import React, { createContext, useCallback, useRef, useState } from "react";
 import Banner from "./Banner";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -23,7 +23,7 @@ export const LoteContext = createContext<{
 }>({ current: null, lotes: null, priceM2: 19_000 });
 
 type Props = {
-  svgObject: SvgObject;
+  // svgObject: SvgObject;
   lotes: { [lotId: string]: Lote };
 };
 export default function Main(props: Props) {
@@ -38,6 +38,18 @@ export default function Main(props: Props) {
       precioBase,
     });
 
+  const lotes = props.lotes;
+  const handleClickLote = useCallback(
+    (ev: React.MouseEvent<Element, MouseEvent>, id: string) => {
+      ev.stopPropagation();
+      if (lotes[id].available == 1) {
+        setLote(lotes[id]);
+        onOpen();
+      }
+    },
+    [lotes]
+  );
+
   return (
     <LoteContext.Provider
       value={{ current: lote, lotes: props.lotes, priceM2: 19_000 }}
@@ -47,15 +59,9 @@ export default function Main(props: Props) {
           <Header />
           <Banner />
           <ZoomableBlueprint
-            temp="hey"
-            svgObject={props.svgObject}
-            onClick={(ev, id) => {
-              ev.stopPropagation();
-              if (props.lotes[id].available == 1) {
-                setLote(props.lotes[id]);
-                onOpen();
-              }
-            }}
+            lots={props.lotes}
+            // svgObject={props.svgObject}
+            onClick={handleClickLote}
           />
 
           {/* <ExampleUseZoom /> */}

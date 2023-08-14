@@ -1,59 +1,66 @@
-import { customCreateSvgElementFromObject } from "@/utils/customCreateSvgElementFromObject";
-import { SvgObject } from "@/utils/getSvg";
-import React, { forwardRef } from "react";
-import ariaSvg from "../../data/aria-masterplan.json";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ElementRef,
+  RefObject,
+  useLayoutEffect,
+} from "react";
+import svgJson from "../../data/aria-masterplan.json";
+import { parseSync } from "svgson";
+import * as svgson from "svgson";
+import getSvg from "@/utils/getSvg";
+import { Lote } from "../Main";
+
+// const svgJsonString = JSON.stringify(svgJson);
 
 type Props = {
-  ref?: React.RefObject<SVGSVGElement>;
-  svgObject: SvgObject;
-  onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
+  onClick: (ev: Event | React.MouseEvent) => void;
+  svgRef?: React.RefObject<ElementRef<"svg">>;
+  lots: {
+    [id: string]: Lote;
+  };
 };
 
-const main = {
-  x: 0,
-  y: 0,
-  width: 560.86,
-  height: 228.67,
-};
+export default function AriaMasterPlan({ svgRef, lots, onClick }: Props) {
+  const svgJson = getSvg(lots);
+  const divRef = useRef<ElementRef<"div">>(null);
 
-const background = {
-  x: -44,
-  y: -125,
-  width: 790,
-  // height: 900,
-};
+  useEffect(() => {
+    console.log("it is running right now");
+    const svgEl = divRef.current!.querySelector(
+      ":scope > svg"
+    ) as SVGSVGElement;
 
-const margin = {
-  top: 50,
-  right: 70,
-  left: 20,
-  bottom: 50,
-};
+    if (svgEl && svgRef) {
+      console.log("we are trying to set ref");
+      console.log("selectedElement", svgEl);
+      (svgRef.current as any) = svgEl;
+      console.log("svgRef", svgRef);
+    }
+  }, [svgRef]);
 
-const viewBox = {
-  x: main.x - margin.left,
-  y: main.y - margin.top,
-  width: main.width + margin.left + margin.right,
-  height: main.height + margin.top + margin.bottom,
-};
+  useEffect(() => {
+    const svgEl = divRef.current!.querySelector(
+      ":scope > svg"
+    ) as SVGSVGElement;
 
-const AriaMasterPlan = forwardRef<SVGSVGElement, Props>((props, ref) => {
-  //TODO: make all this modifications before
-  props.svgObject.attributes.viewBox = `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`;
-  return customCreateSvgElementFromObject(
-    props.svgObject,
-    {
-      onClick: props.onClick,
-      ref,
-    },
-    <image
-      href="aria/blueprint/aria-masterplan-background.png"
-      x={background.x}
-      y={background.y}
-      width={background.width}
-    />
-  );
-});
+    if (svgEl && svgRef) {
+      (svgRef.current as any) = svgEl;
+    }
 
-AriaMasterPlan.displayName = "AriaMasterPlan";
-export default AriaMasterPlan;
+    const handleSvgClick = (ev: Event) => {
+      onClick(ev as any); // Typecast as necessary
+    };
+
+    svgEl?.addEventListener("click", handleSvgClick);
+
+    return () => {
+      console.log("removing event listener");
+      removeEventListener("click", handleSvgClick);
+    };
+  }, [onClick, svgRef]);
+
+  const svgString = svgson.stringify(svgJson as svgson.INode);
+  return <div ref={divRef} dangerouslySetInnerHTML={{ __html: svgString }} />;
+}

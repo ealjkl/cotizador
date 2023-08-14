@@ -54,13 +54,11 @@ export default function useZoomWithDefaultOnZoomedOutMax({
     }
 
     function onTouchEnd(_event: TouchEvent) {
-      // console.log(_event.type);
       defaultTouchmoveStarted.current! = false;
       zoomTouchmoveStarted.current! = false;
     }
 
     function onTouchStart(event: TouchEvent) {
-      console.log(event.type);
       const { k, x: tX, y: tY } = d3.zoomTransform(svgSel.node() as any);
       prevPosRef.current!.x = event.touches[0].clientX;
       prevPosRef.current!.y = event.touches[0].clientY;
@@ -75,7 +73,6 @@ export default function useZoomWithDefaultOnZoomedOutMax({
       //returning true means that it will preventDefault
       const _event = event as TouchEvent;
       if (event.type == "touchmove") {
-        // console.log(event.type);
         const touches = _event.touches;
         if (defaultTouchmoveStarted.current) {
           //if thee touch already started (meaning default wasn't prevented) it cannot be cancelled
@@ -89,7 +86,6 @@ export default function useZoomWithDefaultOnZoomedOutMax({
         }
         let shouldFitler = true;
         const { k } = d3.zoomTransform(svgSel.node() as any);
-        console.log("k", k);
         if (Math.abs(k - 1) < 0.05) {
           shouldFitler = false;
         }

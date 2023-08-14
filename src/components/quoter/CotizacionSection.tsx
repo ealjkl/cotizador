@@ -14,8 +14,6 @@ export default function CotizacionSection({}: Props) {
     useQuoterContext();
   const { current: lote } = useContext(LoteContext);
 
-  console.log("planKind", planKind);
-
   return (
     <section className="cotizador-section">
       {planKind != "constructorPlan" ? (
@@ -37,7 +35,10 @@ export default function CotizacionSection({}: Props) {
                 <section
                   className="cotizador-section__mensualidad-sub"
                   style={{
-                    visibility: pagoMensualidad > 1 ? "visible" : "hidden",
+                    visibility:
+                      pagoMensualidad > 1 && pagoMensualidad < Infinity
+                        ? "visible"
+                        : "hidden",
                   }}
                 >
                   <h4 className="cotizador-section__subtitle">Mensualidades</h4>

@@ -8,9 +8,6 @@ export default async function submitHubspotForm(
   portalId: string,
   formGuid: string
 ) {
-  console.log("name", name);
-  console.log("phone", phone);
-  console.log("email", email);
   // Set the URL for the HubSpot form submission endpoint
   const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`;
 

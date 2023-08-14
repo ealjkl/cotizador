@@ -27,7 +27,6 @@ export default function EnganchePercentageDiscreteSlider({
     maxEnganchePercentage,
     setEnganchePercentage,
   } = useQuoterContext();
-  console.log("enganchePercentage", enganchePercentage);
 
   return (
     <Slider

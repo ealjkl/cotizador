@@ -1,6 +1,7 @@
 import { EngancheInicialVar } from "@/hooks/useEnganche";
 import useQuoter from "@/hooks/useQuoter";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { LoteContext } from "../Main";
 import QuoterContext from "./QuoterContext";
 
 type Props = {
@@ -13,7 +14,15 @@ type Props = {
 
 const Quoter: React.FC<Props> = (props) => {
   const { children, ...rest } = props;
+  const { current: lote } = useContext(LoteContext);
   const all = useQuoter(rest);
+  console.log(all);
+
+  useEffect(() => {
+    // if (lote == null) {
+    all.setPlanKind("36-meses");
+    // }
+  }, [lote]);
 
   return (
     <QuoterContext.Provider value={all}>{children}</QuoterContext.Provider>

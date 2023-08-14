@@ -149,11 +149,6 @@ function computePagos({
   }
   pagoTotal = precioBase * ((100 - discountPercentage) / 100);
 
-  console.log("$useQuoter: original", pagoContraEntregaPercentage);
-  console.log(
-    "$useQuoter: tuned",
-    100 - discountPercentage - enganchePercentage
-  );
   const pagoContraEntregaPercentageReal = Math.max(
     Math.min(
       pagoContraEntregaPercentage,
@@ -161,13 +156,9 @@ function computePagos({
     ),
     0
   );
-  console.log("$useQuoter: final", pagoContraEntregaPercentageReal);
 
   const pagoContraEntrega =
     (pagoContraEntregaPercentageReal * precioBase) / 100;
-
-  // console.log("pagoContraEntrega", pagoContraEntregaPercentage);
-  // console.log("pagoContraEntrega", pagoContraEntrega);
 
   const pagoMensualidadTotal = pagoTotal - pagoContraEntrega - pagoInicial;
   const pagoMensualidad = pagoMensualidadTotal / plazo;

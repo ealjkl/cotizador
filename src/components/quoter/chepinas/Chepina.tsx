@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import "./Chepina.scss";
+import useQuoterContext from "../../../hooks/useQuoterContext";
 
 type Props = {
   lote: Lote;
 };
 
 export default function Chepina(props: Props) {
+  const { planKind } = useQuoterContext();
   let numberString: string = props.lote.number;
 
   if (props.lote.number.length < 2) {
@@ -22,7 +24,16 @@ export default function Chepina(props: Props) {
 
   return (
     <div className="chepina-container">
-      <div className="chepina">
+      <div
+        className="chepina"
+        style={
+          planKind == "constructorPlan"
+            ? {
+                margin: "15px 0",
+              }
+            : undefined
+        }
+      >
         <Skeleton
           isLoaded={imageLoaded}
           // isLoaded={false}

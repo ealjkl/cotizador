@@ -1,19 +1,24 @@
-import React, { useEffect } from "react";
+import React, { ElementRef, useEffect, useRef } from "react";
 import { Lote } from "../Main";
 import AriaMasterPlan from "./AriaMasterPlanSvg2";
 import { SvgObject } from "../../utils/getSvg";
 
 type Props = {
   onClick?: (ev: React.MouseEvent<HTMLElement, MouseEvent>, id: string) => void;
-  svgRef?: React.RefObject<SVGSVGElement>;
-  svgObject: SvgObject;
+  svgRef?: React.RefObject<ElementRef<"svg">>;
+  lots: {
+    [id: string]: Lote;
+  };
+  // svgObject: SvgObject;
 };
 
-export function Blueprint({ onClick, svgRef, svgObject }: Props) {
+export function Blueprint({ onClick, svgRef, lots }: Props) {
   return (
     <AriaMasterPlan
-      ref={svgRef}
-      svgObject={svgObject}
+      lots={lots}
+      // ref={svgRef}
+      // svgObject={svgObject}
+      svgRef={svgRef}
       onClick={(ev: any) => {
         if (ev.target === ev.currentTarget) {
           return;

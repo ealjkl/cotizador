@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
   },
   logo: {
     // height: 80,
-    width: "70%",
+    width: "66%",
     marginHorizontal: "auto",
     marginVertical: "-25px",
   },
@@ -271,7 +271,7 @@ MyDocumentProps) {
               </View>
               <View style={{ ...styles.cotizacionRow, ...styles.oddRow }}>
                 <View style={styles.cotizacionCell}>
-                  <Text>Pago Mensualidades ({plazo} pagos)</Text>
+                  <Text>Pago mensualidades ({plazo} pagos)</Text>
                 </View>
                 <View
                   style={{ ...styles.cotizacionCell, ...styles.numberCell }}
@@ -365,7 +365,7 @@ MyDocumentProps) {
           style={{
             ...styles.logo,
             marginHorizontal: "auto",
-            marginVertical: "-60px",
+            marginVertical: "-80px",
           }}
         />
         <PdfImage

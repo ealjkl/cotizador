@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Lote, LoteContext } from "../Main";
 import EngancheSection from "./EngancheSection";
 import PlazoSection from "./PlazoSection";
