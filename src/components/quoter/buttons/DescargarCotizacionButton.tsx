@@ -62,7 +62,7 @@ function DescargarCotizacionButton() {
 
   return (
     <>
-      {/* <div
+      <div
         style={{
           position: "fixed",
           top: 0,
@@ -90,7 +90,7 @@ function DescargarCotizacionButton() {
             }}
           />
         </PDFViewer>
-      </div> */}
+      </div>
       <Button
         className="cotizador-section__button-descargar"
         onClick={handleClick}

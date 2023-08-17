@@ -1,3 +1,4 @@
+import terminosYCondiciones from "@/data/terminosYCondiciones";
 import useQuoterContext from "@/hooks/useQuoterContext";
 import moneyFormater from "@/utils/moneyFormater";
 import { Button } from "@chakra-ui/react";
@@ -67,8 +68,10 @@ export default function CotizacionSection({}: Props) {
                 Si eres constructor, contáctanos para más información.
               </h2>
             )}
+            <p className="cotizador-section__disclaimer">
+              {terminosYCondiciones}
+            </p>
           </div>
-
           <section className="quoter__chepina-section">
             <Chepina lote={lote!} />
           </section>
@@ -79,7 +82,7 @@ export default function CotizacionSection({}: Props) {
           <Link
             //TODO: put the correct link for the whatsappp
             href={
-              "https://api.whatsapp.com/send?phone=5219993380925&text=Hola%2C%20quisiera%20informes%20de%20Aria%20Residencial."
+              "https://api.whatsapp.com/send?phone=5219993380925&text=Hola%2C%20quisiera%20informes%20de%20Aira%20Residencial."
             }
             onClick={() => {}}
             className="cotizador-section__button-contacto"

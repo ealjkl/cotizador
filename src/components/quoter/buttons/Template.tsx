@@ -11,6 +11,7 @@ import {
 import moneyFormater from "../../../utils/moneyFormater";
 import type { Lote } from "@/components/Main";
 import { PlanKind } from "../../../hooks/usePlan";
+import terminosYCondiciones from "@/data/terminosYCondiciones";
 
 // // Register Dolce Vita fonts
 Font.register({
@@ -65,7 +66,7 @@ export const styles = StyleSheet.create({
     // height: 80,
     width: "66%",
     marginHorizontal: "auto",
-    marginVertical: "-25px",
+    marginVertical: "-35px",
   },
   informacionSection: {
     display: "flex",
@@ -186,6 +187,7 @@ MyDocumentProps) {
   }
   const chepinaUri = `/aria/chepinas/images/lote${numberString}.png`;
 
+  const logoUri = "./aria/brand/logotipo.png";
   const ariaPerspectivaUri = `./aria/images/aria-perspectiva-resized.jpg`;
   const currentDate = new Date().toLocaleDateString("es-MX", {
     day: "numeric",
@@ -197,7 +199,7 @@ MyDocumentProps) {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.headerSection}>
-          <PdfImage src="./aria/brand/logotipo.png" style={styles.logo} />
+          <PdfImage src={logoUri} style={styles.logo} />
           <View>
             <Text
               style={{
@@ -318,6 +320,7 @@ MyDocumentProps) {
             <PdfImage
               style={{
                 ...styles.roundBorders,
+                width: 350,
               }}
               src={ariaPerspectivaUri}
             />
@@ -334,8 +337,19 @@ MyDocumentProps) {
         </View>
         <View style={styles.footer}>
           <View>
-            <Text style={styles.boldText}>Web</Text>
-            <Text>www.ariaresidencial.com</Text>
+            <View
+              style={{
+                fontSize: 8,
+                color: "black",
+                marginVertical: 4,
+              }}
+            >
+              <Text>{terminosYCondiciones}</Text>
+            </View>
+            <View>
+              <Text style={styles.boldText}>Web</Text>
+              <Text>www.ariaresidencial.com</Text>
+            </View>
           </View>
         </View>
       </Page>

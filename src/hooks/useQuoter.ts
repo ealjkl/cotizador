@@ -1,9 +1,10 @@
 import { QuoterContextType } from "@/components/quoter/QuoterContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
 import usePlanQuoter, { PlanKind } from "./usePlan";
-import plans, { planInicial, planKindInicial } from "@/data/plans";
+import { planInicial, planKindInicial } from "@/data/plans";
+import PricesContext from "@/contexts/PricesContext";
 
 export default function useQuoter(
   input: {
@@ -21,6 +22,7 @@ export default function useQuoter(
     engancheInicial,
     engancheInicialPercentage,
   } = input;
+  const plans = useContext(PricesContext);
 
   const [minEnganchePercentage, setMinEnganchePercentage] = useState<number>(
     minEnganchePercentageInicial
@@ -60,7 +62,7 @@ export default function useQuoter(
     setPagoContraEntregaPercentage,
   } = usePlanQuoter(
     {
-      planInicial: "contado",
+      planInicial: "36-meses",
     },
     {
       setEnganche,

@@ -1,4 +1,4 @@
-type Plan = {
+export type Plan = {
   engancheInicialPercentage: number;
   minEnganchePercentageInicial: number;
   maxEnganchePercentageInicial: number;
@@ -44,7 +44,7 @@ const plans: {
   },
 };
 
-export const planKindInicial = "contado";
+export const planKindInicial = "36-meses";
 export const planInicial = plans[planKindInicial];
 
 export default plans;

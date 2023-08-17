@@ -93,8 +93,26 @@
     font-size: 2rem;
 }
 
+
+
 .cotizador-section__details {
+    display: flex;
+    flex-flow: column;
+
+
     @media (min-width: bp.$md) {
         flex: 50%;
+    }
+}
+
+.cotizador-section__disclaimer {
+    color: black;
+    font-size: .65rem;
+    margin-top: auto;
+    margin-bottom: 3em;
+
+
+    @media (min-width: bp.$md) {
+        margin-right: 5em;
     }
 }

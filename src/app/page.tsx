@@ -9,8 +9,7 @@ config.autoAddCss = false;
 
 export default async function App() {
   const lotes = await getLots();
-  const prices = await getPrices();
-  console.log("prices", prices);
+  const prices = (await getPrices())!;
   // const svgObject = await getSvg(lotes);
   return (
     <div className="App">
@@ -18,6 +17,7 @@ export default async function App() {
         {/* <FloatingWhatsAppButton phoneNumber="9996586910" /> */}
         <Main
           // svgObject={svgObject}
+          prices={prices}
           lotes={lotes}
         />
       </Providers>

@@ -8,6 +8,8 @@ import { useDisclosure } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
 import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
 import { SvgObject } from "@/utils/getSvg";
+import PricesContext from "../contexts/PricesContext";
+import { Plan } from "@/data/plans";
 
 export type Lote = {
   available: number;
@@ -25,6 +27,7 @@ export const LoteContext = createContext<{
 type Props = {
   // svgObject: SvgObject;
   lotes: { [lotId: string]: Lote };
+  prices: { [id: string]: Plan };
 };
 export default function Main(props: Props) {
   const [lote, setLote] = useState<Lote | null>(null);
@@ -54,23 +57,25 @@ export default function Main(props: Props) {
     <LoteContext.Provider
       value={{ current: lote, lotes: props.lotes, priceM2: 19_000 }}
     >
-      <div className="footer-layout-container">
-        <div className="layout-container">
-          <Header />
-          <Banner />
-          <ZoomableBlueprint
-            lots={props.lotes}
-            // svgObject={props.svgObject}
-            onClick={handleClickLote}
-          />
+      <PricesContext.Provider value={props.prices}>
+        <div className="footer-layout-container">
+          <div className="layout-container">
+            <Header />
+            <Banner />
+            <ZoomableBlueprint
+              lots={props.lotes}
+              // svgObject={props.svgObject}
+              onClick={handleClickLote}
+            />
 
-          {/* <ExampleUseZoom /> */}
-          {/* <ExampleBluePirntAndImage /> */}
-          <QuoterSection onClose={onClose} isOpen={isOpen} />
-          {/* <PDFPreviewer url="sample.pdf" /> */}
+            {/* <ExampleUseZoom /> */}
+            {/* <ExampleBluePirntAndImage /> */}
+            <QuoterSection onClose={onClose} isOpen={isOpen} />
+            {/* <PDFPreviewer url="sample.pdf" /> */}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </PricesContext.Provider>
     </LoteContext.Provider>
   );
 }

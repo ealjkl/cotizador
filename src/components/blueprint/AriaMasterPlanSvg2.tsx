@@ -27,16 +27,12 @@ export default function AriaMasterPlan({ svgRef, lots, onClick }: Props) {
   const divRef = useRef<ElementRef<"div">>(null);
 
   useEffect(() => {
-    console.log("it is running right now");
     const svgEl = divRef.current!.querySelector(
       ":scope > svg"
     ) as SVGSVGElement;
 
     if (svgEl && svgRef) {
-      console.log("we are trying to set ref");
-      console.log("selectedElement", svgEl);
       (svgRef.current as any) = svgEl;
-      console.log("svgRef", svgRef);
     }
   }, [svgRef]);
 
@@ -56,7 +52,6 @@ export default function AriaMasterPlan({ svgRef, lots, onClick }: Props) {
     svgEl?.addEventListener("click", handleSvgClick);
 
     return () => {
-      console.log("removing event listener");
       removeEventListener("click", handleSvgClick);
     };
   }, [onClick, svgRef]);

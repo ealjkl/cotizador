@@ -1,5 +1,5 @@
-import plans from "@/data/plans";
-import React, { useEffect, useState } from "react";
+import PricesContext from "@/contexts/PricesContext";
+import React, { useContext, useEffect, useState } from "react";
 import useQuoterContext from "./useQuoterContext";
 
 export type PlanKind = "contado" | "24-meses" | "36-meses" | "constructorPlan";
@@ -15,6 +15,7 @@ export default function usePlanQuoter(
     setPlazo: React.Dispatch<React.SetStateAction<number>>;
   }
 ) {
+  const plans = useContext(PricesContext);
   const [planKind, setPlanKind] = useState(input.planInicial);
   const plan = plans[planKind];
   const [pagoContraEntregaPercentage, setPagoContraEntregaPercentage] =

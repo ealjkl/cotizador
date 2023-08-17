@@ -141,8 +141,6 @@ export default function useZoom({ svgRef, step = 1.8 }: Args) {
         .transition()
         .duration(250)
         .call(zoomRef.current.zoom.scaleBy as any, step);
-
-      console.log("zoom", zoomRef.current.zoom);
     }
   }
 

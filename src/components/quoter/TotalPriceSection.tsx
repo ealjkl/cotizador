@@ -1,4 +1,4 @@
-import plans from "@/data/plans";
+import PricesContext from "@/contexts/PricesContext";
 import { PlanKind } from "@/hooks/usePlan";
 import useQuoterContext from "@/hooks/useQuoterContext";
 import moneyFormater from "@/utils/moneyFormater";
@@ -7,6 +7,7 @@ import { LoteContext } from "../Main";
 
 export default function TotalPriceSection() {
   const { pagoTotal, planKind } = useQuoterContext();
+  const plans = useContext(PricesContext);
   const { lotes, current: lote } = useContext(LoteContext);
   if (!lote) {
     return null;
