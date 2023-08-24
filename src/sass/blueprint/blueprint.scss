@@ -15,6 +15,10 @@
     // fill: transparent;
 }
 
+[data-available="4"] {
+    fill: var(--available-4);
+}
+
 [data-available] {
     opacity: 0.5;
     /* transition: fill 0.2s ease-in-out; */

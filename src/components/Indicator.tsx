@@ -15,6 +15,11 @@ export default function Indicator() {
         <div className="indicator__label indicator__label__no-disponible"></div>
         <p className="indicator__text">No Disponible</p>
       </div>
+
+      <div className="indicator__option">
+        <div className="indicator__label indicator__label__segunda-etapa"></div>
+        <p className="indicator__text">Segunda Etapa</p>
+      </div>
     </div>
   );
 }

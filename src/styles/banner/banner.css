@@ -38,6 +38,10 @@
   background-color: var(--available-3);
 }
 
+.indicator__label__segunda-etapa {
+  background-color: var(--available-4);
+}
+
 .banner {
   flex: 100%;
   text-align: center;
