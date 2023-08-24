@@ -16,7 +16,6 @@ const Quoter: React.FC<Props> = (props) => {
   const { children, ...rest } = props;
   const { current: lote } = useContext(LoteContext);
   const all = useQuoter(rest);
-  console.log(all);
 
   useEffect(() => {
     // if (lote == null) {
