@@ -4,7 +4,7 @@ import logo from "../../public/aria/brand/logotipo.png";
 export default function Logo() {
   return (
     <a
-      href="https://ariaresidencial.com"
+      href="https://www.airacholul.com/"
       target="_blank"
       className="logo-anchor"
     >

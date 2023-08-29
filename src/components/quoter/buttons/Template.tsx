@@ -348,7 +348,7 @@ MyDocumentProps) {
             </View>
             <View>
               <Text style={styles.boldText}>Web</Text>
-              <Text>www.ariaresidencial.com</Text>
+              <Text>www.airacholul.com</Text>
             </View>
           </View>
         </View>
@@ -393,7 +393,7 @@ MyDocumentProps) {
         <View style={styles.footer}>
           <View>
             <Text style={styles.boldText}>Web</Text>
-            <Text>www.ariaresidencial.com</Text>
+            <Text>www.airacholul.com</Text>
           </View>
         </View>
       </Page>

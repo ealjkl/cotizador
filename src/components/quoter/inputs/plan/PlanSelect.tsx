@@ -20,6 +20,9 @@ export default function PlanSelect({}: Props) {
           setPlanKind(value as any);
         }}
         focusBorderColor="black"
+        sx={{
+          border: "1px solid black",
+        }}
         // colorScheme={"whatsapp"}
         className="plazo-select-input"
       >

@@ -20,15 +20,15 @@ export default function Footer() {
         <FontAwesomeIcon icon={faPhone} className="phone-icon" />
         <p className="phone-number">9993 38 09 25</p>
       </div>
-      <a
+      {/* <a
         href="https://www.facebook.com/"
         className="phone-section"
         style={{ display: "block" }}
       >
         <FontAwesomeIcon icon={faEnvelope} className="phone-icon" />
-        <p className="phone-number">hola@ariaresidencial.com</p>
-        {/* <FontAwesomeIcon icon={faFacebookSquare} className="facebook-icon" /> */}
-      </a>
+        <p className="phone-number">hola@ariaresidencial.com</p> */}
+      {/* <FontAwesomeIcon icon={faFacebookSquare} className="facebook-icon" /> */}
+      {/* </a> */}
     </div>
   );
 }
