@@ -1,7 +1,7 @@
 "use client";
 import { SvgObject } from "@/utils/getSvg";
 import { Button } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { RefObject, useRef, useState } from "react";
 // import useZoom from "../zoom/hooks/useZoomWithDefaultOnZoomedOutMax";
 import useZoom from "../zoom/hooks/useZoom";
 import { Blueprint } from "./Blueprint";
@@ -11,8 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlassPlus,
   faMagnifyingGlassMinus,
+  faHashtag,
 } from "@fortawesome/free-solid-svg-icons";
 import { Lote } from "../Main";
+import { addTextsFn, removeTextsFn } from "./utils";
 
 type Props = {
   onClick?: (ev: React.MouseEvent<Element, MouseEvent>, id: string) => void;
@@ -31,6 +33,7 @@ function ZoomableBlueprintComponent(props: Props) {
       <div className="blueprint-group">
         <Blueprint lots={props.lots} svgRef={svgRef} onClick={props.onClick} />
         <div className="blueprint__zoom-button-group">
+          <NumbersButton svgRef={svgRef} />
           <button
             onClick={zoomIn}
             className="blueprint__zoom-in-button blueprint__zoom-button"
@@ -60,3 +63,30 @@ function ZoomableBlueprintComponent(props: Props) {
 const ZoomableBlueprint = React.memo(ZoomableBlueprintComponent);
 
 export default ZoomableBlueprint;
+
+type NumbersButtonProps = {
+  svgRef: RefObject<SVGSVGElement>;
+};
+
+function NumbersButton(props: NumbersButtonProps) {
+  const [active, setActive] = useState(false);
+  return (
+    <button
+      className="blueprint__zoom-button"
+      onClick={() => {
+        if (!active) {
+          addTextsFn(props.svgRef!);
+        } else {
+          removeTextsFn();
+        }
+        setActive(!active);
+      }}
+    >
+      <FontAwesomeIcon
+        icon={faHashtag}
+        size="2x"
+        className="zoom-in-icon fa-regular"
+      />
+    </button>
+  );
+}
