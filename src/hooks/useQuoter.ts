@@ -3,8 +3,8 @@ import { useEffect, useState, useContext } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
 import usePlanQuoter, { PlanKind } from "./usePlan";
-import { planInicial, planKindInicial } from "@/data/plans";
-import PricesContext from "@/contexts/PricesContext";
+import { planKindInicial } from "@/data/plans";
+import PlansContext, { usePlans } from "@/contexts/PricesContext";
 
 export default function useQuoter(
   input: {
@@ -22,7 +22,8 @@ export default function useQuoter(
     engancheInicial,
     engancheInicialPercentage,
   } = input;
-  const plans = useContext(PricesContext);
+  const plans = usePlans();
+  const planInicial = plans[planKindInicial];
 
   const [minEnganchePercentage, setMinEnganchePercentage] = useState<number>(
     minEnganchePercentageInicial
@@ -62,7 +63,7 @@ export default function useQuoter(
     setPagoContraEntregaPercentage,
   } = usePlanQuoter(
     {
-      planInicial: "36-meses",
+      planInicial: "24-meses",
     },
     {
       setEnganche,

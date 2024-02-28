@@ -26,8 +26,8 @@ export default function PlanSelect({}: Props) {
         // colorScheme={"whatsapp"}
         className="plazo-select-input"
       >
-        <option value="36-meses">36 meses</option>
         <option value="24-meses">24 meses</option>
+        <option value="12-meses">12 meses</option>
         <option value="contado">Contado</option>
         <option value="constructorPlan">Constructor</option>
       </Select>

@@ -50,7 +50,7 @@ Font.register({
 
 const planMap = {
   "24-meses": "24 Meses",
-  "36-meses": "36 Meses",
+  "12-meses": "12 Meses",
   constructorPlan: "Constructor",
   contado: "Contado",
 } as const;

@@ -1,5 +1,14 @@
-import plans, { Plan } from "@/data/plans";
-import { createContext } from "react";
+import { Plan } from "@/data/plans";
+import { createContext, useContext } from "react";
 
-const PricesContext = createContext<{ [id: string]: Plan }>(plans);
-export default PricesContext;
+const PlansContext = createContext<{ [id: string]: Plan } | null>(null);
+
+export function usePlans() {
+  const plans = useContext(PlansContext)
+  if (!plans) {
+    throw new Error("Prices is null in this context");
+  }
+  return plans;
+}
+
+export default PlansContext;

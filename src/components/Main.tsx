@@ -8,7 +8,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import useEnganche from "@/hooks/useEnganche";
 import ZoomableBlueprint from "./blueprint/ZoomableBlueprint";
 import { SvgObject } from "@/utils/getSvg";
-import PricesContext from "../contexts/PricesContext";
+import PlansContext from "../contexts/PricesContext";
 import { Plan } from "@/data/plans";
 
 export type Lote = {
@@ -31,15 +31,15 @@ type Props = {
 };
 export default function Main(props: Props) {
   const [lote, setLote] = useState<Lote | null>(null);
-  const blueprintRef = useRef<SVGSVGElement>(null);
+  // const blueprintRef = useRef<SVGSVGElement>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const precioBase = 399100000705020;
-  const { enganche, enganchePercentage, setEnganche, setEnganchePercentage } =
-    useEnganche({
-      engancheInicialPercentage: 20,
-      precioBase,
-    });
+  // const precioBase = 399100000705020;
+  // const { enganche, enganchePercentage, setEnganche, setEnganchePercentage } =
+  //   useEnganche({
+  //     engancheInicialPercentage: 20,
+  //     precioBase,
+  //   });
 
   const lotes = props.lotes;
   const handleClickLote = useCallback(
@@ -57,7 +57,7 @@ export default function Main(props: Props) {
     <LoteContext.Provider
       value={{ current: lote, lotes: props.lotes, priceM2: 19_000 }}
     >
-      <PricesContext.Provider value={props.prices}>
+      <PlansContext.Provider value={props.prices}>
         <div className="footer-layout-container">
           <div className="layout-container">
             <Header />
@@ -75,7 +75,7 @@ export default function Main(props: Props) {
           </div>
           <Footer />
         </div>
-      </PricesContext.Provider>
+      </PlansContext.Provider>
     </LoteContext.Provider>
   );
 }

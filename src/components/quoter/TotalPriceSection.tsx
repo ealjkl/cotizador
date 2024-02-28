@@ -1,4 +1,4 @@
-import PricesContext from "@/contexts/PricesContext";
+import  { usePlans } from "@/contexts/PricesContext";
 import { PlanKind } from "@/hooks/usePlan";
 import useQuoterContext from "@/hooks/useQuoterContext";
 import moneyFormater from "@/utils/moneyFormater";
@@ -7,12 +7,13 @@ import { LoteContext } from "../Main";
 
 export default function TotalPriceSection() {
   const { pagoTotal, planKind } = useQuoterContext();
-  const plans = useContext(PricesContext);
+  const plans = usePlans();
+  
   const { lotes, current: lote } = useContext(LoteContext);
-  if (!lote) {
+  if (!lote || !plans) {
     return null;
   }
-  const basePlan: PlanKind = "36-meses";
+  const basePlan: PlanKind = "24-meses";
   const precioBase = plans[basePlan].precioM2 * lote.area;
   return (
     <section className="quoter__price-section">
@@ -24,7 +25,7 @@ export default function TotalPriceSection() {
         <span
           className="quoter__base-price__value"
           style={{
-            visibility: planKind == "36-meses" ? "hidden" : "visible",
+            visibility: planKind == "24-meses" ? "hidden" : "visible",
           }}
         >
           {moneyFormater.format(precioBase)}

@@ -1,8 +1,8 @@
-import PricesContext from "@/contexts/PricesContext";
+import PlansContext, { usePlans } from "@/contexts/PricesContext";
 import React, { useContext, useEffect, useState } from "react";
 import useQuoterContext from "./useQuoterContext";
 
-export type PlanKind = "contado" | "24-meses" | "36-meses" | "constructorPlan";
+export type PlanKind = "contado" | "12-meses" | "24-meses" | "constructorPlan";
 
 export default function usePlanQuoter(
   input: { planInicial: PlanKind },
@@ -15,7 +15,7 @@ export default function usePlanQuoter(
     setPlazo: React.Dispatch<React.SetStateAction<number>>;
   }
 ) {
-  const plans = useContext(PricesContext);
+  const plans = usePlans();
   const [planKind, setPlanKind] = useState(input.planInicial);
   const plan = plans[planKind];
   const [pagoContraEntregaPercentage, setPagoContraEntregaPercentage] =

@@ -19,7 +19,7 @@ const Quoter: React.FC<Props> = (props) => {
 
   useEffect(() => {
     // if (lote == null) {
-    all.setPlanKind("36-meses");
+    all.setPlanKind("24-meses");
     // }
   }, [lote]);
 
