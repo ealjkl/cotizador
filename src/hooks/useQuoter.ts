@@ -3,7 +3,6 @@ import { useEffect, useState, useContext } from "react";
 import useEnganche from "./useEnganche";
 import type { EngancheInicialVar } from "./useEnganche";
 import usePlanQuoter, { PlanKind } from "./usePlan";
-import { planKindInicial } from "@/data/plans";
 import PlansContext, { usePlans } from "@/contexts/PricesContext";
 
 export default function useQuoter(
