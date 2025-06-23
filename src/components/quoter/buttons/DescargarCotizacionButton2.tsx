@@ -10,6 +10,7 @@ import ReactPDF, {
 import useQuoterContext from "@/hooks/useQuoterContext";
 import { Template } from "./Template";
 import { LoteContext } from "../../Main";
+import { usePlans } from "@/contexts/PricesContext";
 
 function DescargarCotizacionButton() {
   const {
@@ -22,6 +23,8 @@ function DescargarCotizacionButton() {
   } = useQuoterContext();
 
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
+  const plans = usePlans();
+  const plan = plans[planKind];
 
   return (
     <>
@@ -66,7 +69,8 @@ function DescargarCotizacionButton() {
                 pagoMensualidad,
                 plazo,
                 lote: currentLote,
-                plan: planKind,
+                planKind,
+                plan,
               }}
             />
           ) : (

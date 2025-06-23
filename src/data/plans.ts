@@ -5,6 +5,7 @@ export type Plan = {
   pagoContraEntregaPercentage: number;
   plazoInicial: number;
   precioM2: number;
+  plan: string;
 };
 
 // const plans: {

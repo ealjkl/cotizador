@@ -12,6 +12,7 @@ import moneyFormater from "../../../utils/moneyFormater";
 import type { Lote } from "@/components/Main";
 import { PlanKind } from "../../../hooks/usePlan";
 import terminosYCondiciones from "@/data/terminosYCondiciones";
+import { Plan } from "@/data/plans";
 
 // // Register Dolce Vita fonts
 Font.register({
@@ -48,12 +49,12 @@ Font.register({
   ],
 });
 
-const planMap = {
-  "24-meses": "24 Meses",
-  "12-meses": "12 Meses",
-  constructorPlan: "Constructor",
-  contado: "Contado",
-} as const;
+// const planMap = {
+//   "24-meses": "24 Meses",
+//   "12-meses": "12 Meses",
+//   constructorPlan: "Constructor",
+//   contado: "Contado",
+// } as const;
 
 export const styles = StyleSheet.create({
   page: {
@@ -166,7 +167,8 @@ export type MyDocumentProps = {
   pagoContraEntrega: number;
   pagoMensualidad: number;
   lote: Lote;
-  plan: string;
+  planKind: string;
+  plan: Plan;
 };
 
 // Create Document Component
@@ -177,6 +179,7 @@ export function Template({
   pagoTotal,
   plazo,
   lote,
+  planKind,
   plan,
 }: // lote,
 MyDocumentProps) {
@@ -236,7 +239,7 @@ MyDocumentProps) {
             >
               Plan:
             </Text>
-            <Text>{planMap[plan as PlanKind] as any}</Text>
+            <Text>{plan.plan}</Text>
           </View>
           {plazo > 0 ? (
             <View

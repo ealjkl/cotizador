@@ -12,6 +12,7 @@ import useQuoterContext from "@/hooks/useQuoterContext";
 import { Template } from "./Template";
 import { LoteContext } from "../../Main";
 import { Button } from "@chakra-ui/react";
+import { usePlans } from "@/contexts/PricesContext";
 
 function DescargarCotizacionButton() {
   const {
@@ -26,6 +27,8 @@ function DescargarCotizacionButton() {
   const { lotes, current: currentLote, priceM2 } = useContext(LoteContext);
 
   const [loading, setLoading] = useState(false);
+  const plans = usePlans();
+  const plan = plans[planKind];
 
   const handleClick = async () => {
     setLoading(true);
@@ -39,7 +42,8 @@ function DescargarCotizacionButton() {
             pagoMensualidad,
             plazo,
             lote: currentLote!,
-            plan: planKind,
+            planKind,
+            plan,
           }}
         />
       ).toBlob();

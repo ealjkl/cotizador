@@ -69,7 +69,7 @@ export default function Previewer() {
             pagoMensualidad: 1,
             pagoTotal: 1,
             plazo: 1,
-            plan: "Contado",
+            planKind: "Contado",
           }}
         />
       </PDFViewer>
