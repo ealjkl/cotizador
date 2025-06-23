@@ -47,14 +47,11 @@ export function useAddText(svgRef: React.RefObject<SVGSVGElement>) {
 
 export function addTextsFn(svgRef: React.RefObject<SVGSVGElement>) {
   const textsGroups = document.getElementById("texts-group");
-  console.log("textsGroups", textsGroups);
   if (textsGroups) {
     return;
   }
 
   const g = svgRef!.current?.children[1]?.children[1];
-  console.log("svgRef.current", svgRef.current);
-  console.log("g", g);
 
   const children = g?.children;
   const textsGroupElement = document.createElementNS(

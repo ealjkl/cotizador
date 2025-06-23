@@ -18,8 +18,9 @@ const Quoter: React.FC<Props> = (props) => {
   const all = useQuoter(rest);
 
   useEffect(() => {
+    //TODO maybe reset to initialPlan
     // if (lote == null) {
-    all.setPlanKind("24-meses");
+    // all.setPlanKind("24-meses");
     // }
   }, [lote]);
 

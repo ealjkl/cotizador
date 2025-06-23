@@ -23,6 +23,7 @@ export default function useQuoter(
     engancheInicialPercentage,
   } = input;
   const plans = usePlans();
+  const planKindInicial = Object.keys(plans)[0];
   const planInicial = plans[planKindInicial];
 
   const [minEnganchePercentage, setMinEnganchePercentage] = useState<number>(
@@ -63,7 +64,7 @@ export default function useQuoter(
     setPagoContraEntregaPercentage,
   } = usePlanQuoter(
     {
-      planInicial: "24-meses",
+      planInicial: planKindInicial,
     },
     {
       setEnganche,

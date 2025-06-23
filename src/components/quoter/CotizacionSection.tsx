@@ -7,17 +7,20 @@ import { useContext } from "react";
 import { LoteContext } from "../Main";
 import DescargarCotizacionButton from "./buttons/DescargarCotizacionButtonDynamic";
 import Chepina from "./chepinas/Chepina";
+import { usePlans } from "@/contexts/PricesContext";
 
 type Props = {};
 
 export default function CotizacionSection({}: Props) {
   const { enganche, pagoMensualidad, plazo, pagoContraEntrega, planKind } =
     useQuoterContext();
+  const plans = usePlans();
+  const plan = plans[planKind];
   const { current: lote } = useContext(LoteContext);
 
   return (
     <section className="cotizador-section">
-      {planKind != "constructorPlan" ? (
+      {!Number.isNaN(plan.precioM2) ? (
         <h3 className="cotizador-section__title">Cotización</h3>
       ) : null}
 

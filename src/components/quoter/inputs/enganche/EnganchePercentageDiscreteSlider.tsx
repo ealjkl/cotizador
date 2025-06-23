@@ -26,6 +26,7 @@ export default function EnganchePercentageDiscreteSlider({
     minEnganchePercentage,
     maxEnganchePercentage,
     setEnganchePercentage,
+    pagoTotal,
   } = useQuoterContext();
 
   return (
@@ -44,7 +45,8 @@ export default function EnganchePercentageDiscreteSlider({
       }}
     >
       {Math.round(enganchePercentage) != minEnganchePercentage &&
-      Math.round(enganchePercentage) != maxEnganchePercentage ? (
+      Math.round(enganchePercentage) != maxEnganchePercentage &&
+      !Number.isNaN(pagoTotal) ? (
         <SliderMark
           value={Math.round(enganchePercentage)}
           sx={{

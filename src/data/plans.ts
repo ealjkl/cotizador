@@ -44,7 +44,7 @@ export type Plan = {
 //   },
 // };
 
-export const planKindInicial = "24-meses";
+// export const planKindInicial = "24-meses";
 // export const planInicial = plans[planKindInicial];
 
 // export default plans;

@@ -23,6 +23,10 @@
     border-bottom: black 2px solid;
 }
 
+.enganche-input-box.disabled {
+    border-color: var(--disabled-input);
+}
+
 
 .enganche-input-box:focus {
     border-bottom-color: var(--highlight-input);

@@ -11,7 +11,7 @@ import { useState } from "react";
 import { NumericFormat } from "react-number-format";
 
 export default function EngancheCurrencyInput() {
-  const { enganche, minEnganche, maxEnganche, setEnganche } =
+  const { enganche, minEnganche, maxEnganche, setEnganche, pagoTotal } =
     useQuoterContext();
 
   const { valueString: engancheString, setValueString: setEngancheString } =
@@ -21,6 +21,8 @@ export default function EngancheCurrencyInput() {
       minValue: minEnganche,
       maxValue: maxEnganche,
     });
+
+  const isDisabled = Number.isNaN(pagoTotal);
   return (
     <>
       {/* <InputGroup>
@@ -62,7 +64,6 @@ export default function EngancheCurrencyInput() {
         onInput={(e: any) => {
           const val = e.currentTarget.value as string;
           const parsedValue = val.replaceAll(",", "");
-          console.log("parsedValue", parsedValue);
           setEngancheString(parsedValue);
         }}
         allowLeadingZeros
@@ -75,12 +76,15 @@ export default function EngancheCurrencyInput() {
 }
 
 function CustomInput(props: any) {
+  const { pagoTotal } = useQuoterContext();
+  const isDisabled = Number.isNaN(pagoTotal);
   return (
     <InputGroup>
       <InputLeftElement
         pointerEvents="none"
         fontSize="1.6rem"
         sx={{
+          color: isDisabled ? "var(--disabled-input)" : undefined,
           padding: "0",
           margin: "0",
           bottom: "0",
@@ -90,11 +94,12 @@ function CustomInput(props: any) {
         $
       </InputLeftElement>
       <Input
+        isDisabled={isDisabled}
         {...props}
         key="enganche-input-box"
         type="currency"
         id="enganche"
-        className="enganche-input-box"
+        className={"enganche-input-box" + " " + (isDisabled ? "disabled" : "")}
         // value={engancheString}
         // onInput={(ev) => {
         //   setEngancheString(ev.currentTarget.value);
@@ -104,7 +109,7 @@ function CustomInput(props: any) {
           borderRadius: 0,
           outline: "none",
           "&:hover": {
-            borderColor: "var(--highlight-input)",
+            borderColor: isDisabled ? null : "var(--highlight-input)",
           },
           "&:focus": {
             outline: "none",
