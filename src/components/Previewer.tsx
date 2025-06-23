@@ -56,7 +56,7 @@ export default function Previewer() {
         }}
       >
         {/* <MyDocument /> */}
-        <Template
+        {/* <Template
           {...{
             lote: {
               area: 1,
@@ -71,7 +71,7 @@ export default function Previewer() {
             plazo: 1,
             planKind: "Contado",
           }}
-        />
+        /> */}
       </PDFViewer>
     </div>
   );
